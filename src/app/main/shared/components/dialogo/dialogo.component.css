@@ -1,0 +1,56 @@
+::ng-deep .mat-dialog-container{
+    border: 5px solid green;
+    min-width: 400px;
+}
+
+::ng-deep .mat-dialog-container{
+    word-wrap:break-word;
+}
+
+
+
+
+
+.escan-dialog-title{
+    width: 100%;
+    font-style: italic;
+    color: #ff4500;
+    font-family: 'SavingsBond';
+    font-size: 2em;
+    text-align: center;
+}
+
+.escan-dialog-content{
+    width: 100%;
+}
+
+div.escan-dialog-msj{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;
+    font-size: 1em;
+    color: black;
+    font-weight: bold;
+}
+
+.escan-dialog-btn-a{
+    box-shadow: none;
+    background-color: #ff4500;
+    color: whitesmoke;
+}
+
+.escan-dialog-btn-a:hover{
+    background-color: green;
+    color: white;
+    box-shadow: 0px 15px 20px rgba(0,128,0, 0.8);
+    transform: translateY(-2px);
+  }
+  
+
+::ng-deep .color-red{
+    color:red;
+}
+
+::ng-deep .color-blue{
+    color:blue;
+}
