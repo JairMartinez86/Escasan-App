@@ -25,9 +25,8 @@
     width: 100%;
 }
 
-div.escan-dialog-msj{
-    padding-top: 15px;
-    padding-bottom: 15px;
+div .escan-dialog-msj{
+    margin-bottom: 25px;
     text-align: left;
     font-size: 1em;
     color: black;
