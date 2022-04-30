@@ -114,7 +114,7 @@ export class LoginService {
 
 
 
-  InicioSesion(str_user : string, str_pass : string, bol_recordar : boolean) {
+  InicioSesion(str_user : string, str_pass : string, bol_recordar : boolean) : void {
 
      this.http.get<any>(this._Cnx.Url() + "Usuario" + "?usr="+str_user+"&pwd="+ str_pass).subscribe(
       datos => {
@@ -135,6 +135,11 @@ export class LoginService {
         }
 
         
+      },
+      err =>{
+
+        let s : string = "{ \"d\":  [{ }],  \"msj\": " + "{\"Codigo\":\""+ 0+ "\",\"Mensaje\":\""+ "Error al conectar con el servidor."+ "\"}"+ ", \"count\":"+ 0 + ", \"esError\":"+ 1+ "}";
+        this.change.emit(JSON.parse(s));
       }
     );
 
