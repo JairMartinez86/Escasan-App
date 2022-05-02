@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
 }
-html, body { height: 100%; }
+html, body { min-height: 100%; }
 body {
     margin: 0;
     padding: 0;
@@ -14,16 +14,16 @@ body {
     background-position: left top; 
 }
 
-footer{
-    position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.escan-footer{
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
     min-width: 350px;
     min-height: 100px;
 }
 
-footer div{
+.escan-footer div{
     margin-left: 5%;
     margin-right: 5%;
 }
