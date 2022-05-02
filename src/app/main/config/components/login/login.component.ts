@@ -77,28 +77,13 @@ export class LoginComponent implements OnInit {
       this.bol_Load = false;
       let _json = s
 
-      if(_json["esError"] == 0)
-      {
-        if(_json["count"] > 0)
-        {
-          
-          this.ServerScv._Router.navigate(['/main'], { skipLocationChange: false });
-        }
-        else
-        {
-          this.ServerScv._Dialog.open(DialogoComponent, {
-            data: _json["msj"],
-          });
-        }
-
-      }
-      else
-      {
+      if( _json["msj"] != ""){
         this.ServerScv._Dialog.open(DialogoComponent, {
           data: _json["msj"],
         });
       }
 
+      if(_json["count"] > 0) this.ServerScv._Router.navigate(['/Main'], { skipLocationChange: false });
 
     });
   }

@@ -61,6 +61,8 @@ import { DialogoComponent } from './main/shared/components/dialogo/dialogo.compo
 //JAIR
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MainComponent } from './main/config/components/main/main.component';
+
 //FIN
 
 @NgModule({
@@ -68,7 +70,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     LoginComponent,
     AutofocusDirective,
-    DialogoComponent
+    DialogoComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
