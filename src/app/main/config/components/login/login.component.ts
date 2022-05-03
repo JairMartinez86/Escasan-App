@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit {
       this.bol_Load = false;
       let _json = s
 
-      if( _json["msj"] != ""){
+      if( _json["msj"]["Mensaje"] != ""){
         this.ServerScv._Dialog.open(DialogoComponent, {
           data: _json["msj"],
         });

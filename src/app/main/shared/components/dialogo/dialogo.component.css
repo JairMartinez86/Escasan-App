@@ -1,14 +1,17 @@
 ::ng-deep .mat-dialog-container{
     border: 5px solid green;
-    min-width: 400px;
+    min-width: 350px;
     max-width: 400px;
 }
 
-::ng-deep .mat-dialog-container{
+
+
+
+.escan-dialog-container{
+    margin: 0 auto;
     word-wrap:break-word;
+  
 }
-
-
 
 
 
