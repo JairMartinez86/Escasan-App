@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DialogoComponent } from './main/shared/components/dialogo/dialogo.component';
 import { ServerService } from './main/shared/service/server.service';
 
 @Component({
@@ -9,8 +10,9 @@ import { ServerService } from './main/shared/service/server.service';
 export class AppComponent implements OnInit {
   public title = 'Escalante Sanchez S.A.';
 
-  constructor(public ServerScv : ServerService){
-    this.ServerScv._Router.navigate(['/Login'], { skipLocationChange: true });
+  constructor(private ServerScv : ServerService){
+    
+    ServerScv._loginserv.VerificarSession();
   }
 
   ngOnInit(): void {
@@ -19,5 +21,7 @@ export class AppComponent implements OnInit {
       e.returnValue = confirmationMessage; // Gecko, Trident, Chrome 34+
       return confirmationMessage; // Gecko, WebKit, Chrome <34
     });
+
+
   }
 }

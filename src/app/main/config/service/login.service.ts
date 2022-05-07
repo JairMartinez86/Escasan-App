@@ -1,7 +1,10 @@
 
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { EventEmitter, Injectable, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Conexion } from '../../shared/class/conexion';
+import { DialogoComponent } from '../../shared/components/dialogo/dialogo.component';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +17,6 @@ export class LoginService {
   private isCancel : boolean = false;
   public isOpen : boolean = false;
   public isLogin : boolean = false;
-  public bol_remenber : boolean = false;
 
   private Nombre : string = "";
   private str_Form : string = "";
@@ -23,18 +25,17 @@ export class LoginService {
   private str_Fecha : string = "";
 
 
-  constructor(private http : HttpClient) { }
+  constructor(private _Router: Router, private http : HttpClient, private _Dialog: MatDialog) { }
 
 
-  VerificarSession() {
+  public VerificarSession() : void {
 
-
+ 
     if(localStorage.getItem("User") != null)
     {
       this.str_user = <string>localStorage.getItem("User");
       this.str_pass = <string>localStorage.getItem("Pwd");
       this.Nombre = <string>localStorage.getItem("Nombre");
-      this.bol_remenber = true;
     }
 
     if(this.str_user == "") {
@@ -46,20 +47,27 @@ export class LoginService {
       return;
     }
 
-    this.ValidarSession(this.str_user, this.str_pass);
+    this.http.get<any>(this._Cnx.Url() + "Usuario" + "?usr="+this.str_user+"&pwd="+ this.str_pass).subscribe(
+      datos => {
+        this.ProcesarAcceso(JSON.parse(datos));
+      },
+      err =>{
 
-    return;
+        let s : string = "{ \"d\":  [{ }],  \"msj\": " + "{\"Codigo\":\""+ 1 + "\",\"Mensaje\":\""+ "Error al conectar con el servidor."+ "\"}"+ ", \"count\":"+ 0 + ", \"esError\":"+ 1 + "}";
+        this.ProcesarAcceso(JSON.parse(s));
+      }
+    );
+
   }
 
-  GuardarSession(bol_remenber : boolean, str_user : string, str_pass : string, str_Nombre : string, str_Fecha : string ) : void
+  private GuardarSession(bol_recordar : boolean, str_user : string, str_pass : string, str_Nombre : string, str_Fecha : string ) : void
   {
     this.Nombre = str_Nombre;
     this.str_user = str_user;
     this.str_pass = str_pass;
     this.str_Fecha = str_Fecha;
-    this.bol_remenber = bol_remenber;
 
-    if(bol_remenber)
+    if(bol_recordar)
     {
       localStorage.setItem('Nombre', str_Nombre);
       localStorage.setItem('User', str_user);
@@ -73,13 +81,12 @@ export class LoginService {
     sessionStorage.setItem('Fecha', str_Fecha);
 
     this.isLogin = true;
-    /*this.router.navigate(['/main'], { skipLocationChange: false });
-    this.change.emit(this.str_Form);*/
+
   }
 
 
   
-  CerrarSession() : void{
+  public CerrarSession() : void{
     
     this.str_user = "";
     this.str_pass = "";
@@ -96,21 +103,11 @@ export class LoginService {
     sessionStorage.removeItem("Nombre");
 
     this.isLogin = false;
-
-    /*this.change.emit("CerrarTodo");
-    this.router.navigate(['/login'], { skipLocationChange: false });*/
+    this.ProcesarAcceso("");
   }
 
 
-  ValidarSession(str_user : string, str_Pass : string) {
 
-    return this.http.get<any>(this._Cnx.Url() + "Usuario" + "?usr="+str_user+"&pwd="+ str_Pass).subscribe(
-      datos => {
-        this.change.emit(JSON.parse(datos));
-      }
-    );
-
-  }
 
 
 
@@ -121,13 +118,12 @@ export class LoginService {
 
         
         let _json = (JSON.parse(datos));
-        this.bol_remenber = bol_recordar;
 
         if(Object.keys(_json["d"]).length > 0)
         {
 
-          this.GuardarSession(this.bol_remenber,  this.str_user, this.str_pass, _json["d"][0]["Nombre"], _json["d"][0]["Fecha"]);
-          this.change.emit(_json);
+          this.GuardarSession(bol_recordar,  str_user, str_pass, _json["d"][0]["Nombre"], _json["d"][0]["Fecha"]);
+          this.ProcesarAcceso(_json);
         }
         else
         {
@@ -139,11 +135,47 @@ export class LoginService {
       err =>{
 
         let s : string = "{ \"d\":  [{ }],  \"msj\": " + "{\"Codigo\":\""+ 1 + "\",\"Mensaje\":\""+ "Error al conectar con el servidor."+ "\"}"+ ", \"count\":"+ 0 + ", \"esError\":"+ 1 + "}";
-        this.change.emit(JSON.parse(s));
+        this.ProcesarAcceso(JSON.parse(s));
       }
     );
 
   }
   
+
+  private Msj (s : any) : void{
+    this.isLogin = false;
+
+    let _json = s
+
+    this._Dialog.open(DialogoComponent, {
+      data: _json["msj"],
+    });
+
+    this.change.emit("");
+  }
+
+  private ProcesarAcceso(s : any) : void{
+
+        let _json = s
+  
+        if(s == ""){
+          this._Router.navigate(['/Login'], { skipLocationChange: false });
+          return;
+        }
+
+
+        if( _json["msj"]["Mensaje"] != ""){
+          this.Msj(_json);
+        }
+
+  
+        if(_json["count"] > 0){
+          this._Router.navigate(['/Main'], { skipLocationChange: false });
+        }
+        else{
+          this._Router.navigate(['/Login'], { skipLocationChange: false });
+        }
+
+  }
 
 }

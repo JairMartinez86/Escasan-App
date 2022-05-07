@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   val = new Validacion();
 
   
-  constructor(public ServerScv : ServerService) {
+  constructor(private ServerScv : ServerService) {
 
     this.val.add("txtUsuario", "1","LEN>", "0");
     this.val.add("txtUsuario", "2","LEN>=", "3");
@@ -69,22 +69,12 @@ export class LoginComponent implements OnInit {
 
     this.ServerScv._loginserv.change.subscribe(s =>{
 
-       
+
       this.val.ValForm.get("txtUsuario")?.enable();
       this.val.ValForm.get("txtPass")?.enable();
       this.val.ValForm.get("chkRecordar")?.enable();
-
-      this.bol_Load = false;
-      let _json = s
-
-      if( _json["msj"]["Mensaje"] != ""){
-        this.ServerScv._Dialog.open(DialogoComponent, {
-          data: _json["msj"],
-        });
-      }
-
-      if(_json["count"] > 0) this.ServerScv._Router.navigate(['/Main'], { skipLocationChange: false });
-
+      this.bol_Load = false
+     
     });
   }
 
