@@ -21,17 +21,13 @@
 
 
 #lblTitulo1 {
-  font-style: italic;
   color: green;
-  font-family: 'SavingsBond';
   font-size: 3.5em;
   text-align: center;
 }
 
 #lblTitulo2 {
-  font-style: italic;
   color: #ff4500;
-  font-family: 'SavingsBond';
   font-size: 1em;
   text-align: center;
 }

@@ -30,7 +30,7 @@ export class LoginService {
 
   public VerificarSession() : void {
 
- 
+
     if(localStorage.getItem("User") != null)
     {
       this.str_user = <string>localStorage.getItem("User");

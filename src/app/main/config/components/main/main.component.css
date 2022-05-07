@@ -1,0 +1,46 @@
+.escan-body{
+    background-color: white;
+    min-width: 100%;
+}
+
+
+
+
+.escan-header ul li a{
+    color: #e0592a;
+    font-weight: bold;
+    margin: 2px;
+}
+
+
+.escan-header ul li a:active, .escan-header  ul li .activo{
+    color: white;
+    background-color: #009d43;
+}
+
+.escan-header ul li a:hover{
+    color: white;
+    background-color: #e0592a;
+}
+
+.escan-header span{
+    color: #009d43;
+    padding-left: 5px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
