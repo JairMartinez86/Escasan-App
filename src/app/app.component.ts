@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
   }
 
 
-/*
+
   @Input() public href: string | undefined;
   @HostListener('click', ['$event']) public onClick(event: Event): void {
 
@@ -40,11 +40,12 @@ export class AppComponent implements OnInit {
     ) {
       var element = <HTMLElement>event.target;
 
-      if (element.tagName == 'A' && element.getAttribute('href') == '#') {
+      if (element.tagName.toString().toLocaleLowerCase() == "a" && element.getAttribute("href") == "#") {
         //this.AbrirForm(element.id);
+        
       }
 
       event.preventDefault();
     }
-  }*/
+  }
 }
