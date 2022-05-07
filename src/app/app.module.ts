@@ -62,6 +62,8 @@ import { DialogoComponent } from './main/shared/components/dialogo/dialogo.compo
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MainComponent } from './main/config/components/main/main.component';
+import { DropDownDirective } from './main/shared/directive/drop-down.directive';
+
 
 //FIN
 
@@ -71,7 +73,8 @@ import { MainComponent } from './main/config/components/main/main.component';
     LoginComponent,
     AutofocusDirective,
     DialogoComponent,
-    MainComponent
+    MainComponent,
+    DropDownDirective
   ],
   imports: [
     BrowserModule,

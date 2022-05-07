@@ -16,6 +16,11 @@ body {
 }
 
 
+.escan-min-width{
+    min-width: 400px;
+}
+
+
 .escan-text{
     font-style: italic;
     font-family: 'SavingsBond';
@@ -47,4 +52,5 @@ body {
     font-size: 4em;
     font-family: 'SavingsBond';
 }
+
 

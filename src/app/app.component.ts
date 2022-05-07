@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { DialogoComponent } from './main/shared/components/dialogo/dialogo.component';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { ServerService } from './main/shared/service/server.service';
+
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,10 @@ export class AppComponent implements OnInit {
   constructor(private ServerScv : ServerService){
     
     ServerScv._loginserv.VerificarSession();
+
   }
+
+  
 
   ngOnInit(): void {
     window.addEventListener('beforeunload', function (e) {
@@ -24,4 +27,24 @@ export class AppComponent implements OnInit {
 
 
   }
+
+
+/*
+  @Input() public href: string | undefined;
+  @HostListener('click', ['$event']) public onClick(event: Event): void {
+
+    if (
+      !this.href ||
+      this.href == '#' ||
+      (this.href && this.href.length === 0)
+    ) {
+      var element = <HTMLElement>event.target;
+
+      if (element.tagName == 'A' && element.getAttribute('href') == '#') {
+        //this.AbrirForm(element.id);
+      }
+
+      event.preventDefault();
+    }
+  }*/
 }
