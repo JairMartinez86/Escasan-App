@@ -21,3 +21,7 @@ body {
     font-family: 'SavingsBond';
 }
 
+.escan-min-width{
+    min-width: 400px; 
+}
+
