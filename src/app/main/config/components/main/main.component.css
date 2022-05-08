@@ -1,16 +1,22 @@
 .escan-body{
-    background-color: white;
+
     min-width: 300px;
-    min-height: 100vh;
+    
 }
 
-.escan-header{
+.escan-content-header{
+    background-color: white;
+    width: 100%;
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
     border-bottom: 1px;
     border-color: #e0592a;
     border-style: solid;
+}
+
+.escan-content{
+   
 }
 
 
@@ -63,3 +69,37 @@
 
 
 
+
+
+
+
+    .escan-footer{
+        /*position:fixed;*/
+        /*clear: both;*/
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+
+    }
+    
+    .escan-footer div{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    
+    
+    .text-pie1, .text-pie2{
+        color: white;
+        font-size: 1em;  
+    }
+    
+    .text-pie1{
+        font-size: 4em;
+        font-family: 'SavingsBond';
+    }
+    
+    
+    

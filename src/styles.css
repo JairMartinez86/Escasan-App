@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
 }
-html, body { min-height: 100%; }
+html, body { min-height: 100%; min-width: 400px; }
 
 body {
     margin: 0;
@@ -16,44 +16,8 @@ body {
 }
 
 
-.escan-min-width{
-    min-width: 400px;
-}
-
-
 .escan-text{
     font-style: italic;
     font-family: 'SavingsBond';
 }
-
-.escan-footer{
-    /*position:fixed;*/
-    clear: both;
-    position: relative;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    min-width: 350px;
-    min-height: 150px;
-    max-height: 150px;
-    z-index: 0;
-}
-
-.escan-footer div{
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-
-
-.text-pie1, .text-pie2{
-    color: white;
-    font-size: 1em;  
-}
-
-.text-pie1{
-    font-size: 4em;
-    font-family: 'SavingsBond';
-}
-
 
