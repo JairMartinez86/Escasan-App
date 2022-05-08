@@ -59,7 +59,8 @@
 .escan-content{
    border: 1px solid white;
    min-width: 100%;
-   min-height: calc(100vh - 354px);
+   /*min-height: calc(100vh - 354px);*/
+   z-index: 1;
 }
     
 
@@ -69,10 +70,12 @@
     .escan-footer{
         /*position:fixed;*/
         /*clear: both;*/
-        position: absolute;
+        position:fixed;
         right: 0;
         bottom: 0;
         left: 0;
+        overflow: hidden;
+        z-index: 0;
     }
     
     .escan-footer div{
