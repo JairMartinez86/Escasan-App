@@ -1,10 +1,13 @@
 .escan-body{
-
+    padding: 0;
+    margin: 0;
     min-width: 300px;
     
 }
 
 .escan-content-header{
+    padding: 0;
+    margin: 0;
     background-color: white;
     width: 100%;
     border-top: 0px;
