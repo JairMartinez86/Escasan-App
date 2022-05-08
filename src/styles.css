@@ -10,7 +10,7 @@ body {
     padding: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     background-image: url("src/assets/images/fondo.png");
-    background-size: auto 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: left top; 
 }
@@ -27,13 +27,16 @@ body {
 }
 
 .escan-footer{
-    position:fixed;
+    /*position:fixed;*/
+    clear: both;
+    position: relative;
     right: 0;
     bottom: 0;
     left: 0;
     min-width: 350px;
     min-height: 150px;
     max-height: 150px;
+    z-index: 0;
 }
 
 .escan-footer div{

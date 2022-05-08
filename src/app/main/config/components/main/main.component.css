@@ -1,6 +1,7 @@
 .escan-body{
     background-color: white;
     min-width: 300px;
+    min-height: 100vh;
 }
 
 .escan-header{
@@ -50,8 +51,12 @@
 
 
 
-
-
+#btn{
+    color: red;
+}
+.navbar-toggler{
+    color: red;
+    }
 
 
 
