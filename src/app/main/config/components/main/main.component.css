@@ -20,9 +20,10 @@
 
 
 
+
+
 .escan-header ul li a{
     color: #e0592a;
-    font-weight: bold;
     margin: 2px;
 }
 
@@ -45,12 +46,22 @@
 }
 
 
+
+
 .escan-nav{
-    background-color: #e0592a;
     width: 100%;
+    background-color: #e0592a;
 }
 
-.escan-nav a{
+
+
+
+.escan-nav li ul  a{
+    background-color: white;
+    color: #e0592a;
+}
+
+.escan-nav li ul a:hover{
     background-color: #e0592a;
     color: white;
 }
