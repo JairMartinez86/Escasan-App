@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { DynamicFormDirective } from 'src/app/main/shared/directive/dynamic-form.directive';
 
 export interface I_Nav {
   EsMenu : boolean;
@@ -22,6 +23,10 @@ export class NavComponent{
   public str_Nombre : string = "";
   public str_Modulo : string = "";
 
+  @ViewChild(DynamicFormDirective, { static: true }) dynamicForm!: DynamicFormDirective;
+
+  
+
   public Perfiles: I_Nav[] = [
     {EsMenu: true, Modulo : "SIS", ModuloNombre : "Configuración", Id: "navUsuario", Link : "Usuarios", MenuPadre : "", Activo : false},
     {EsMenu: false, Modulo : "SIS", ModuloNombre : "Configuración", Id: "LinkUsuario", Link : "Nuevo Usuario", MenuPadre : "navUsuario", Activo : false},
@@ -43,6 +48,7 @@ export class NavComponent{
   public SubMenu(Menu : string) : I_Nav[]{
     return this.Perfiles.filter(f => f.MenuPadre == Menu && f.Modulo ==  this.str_Modulo);
   }
+
 
 
 }

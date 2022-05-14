@@ -1,9 +1,9 @@
 import { Directive, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: '[appDynamicChildLoader]'
+  selector: '[DynamicForm]'
 })
-export class DynamicChildLoaderDirective {
+export class DynamicFormDirective {
 
   constructor(public viewContainerRef: ViewContainerRef) { }
 

@@ -40,10 +40,6 @@ export class AppComponent implements OnInit {
     ) {
       var element = <HTMLElement>event.target;
 
-      if (element.tagName.toString().toLocaleLowerCase() == "a" && element.getAttribute("href") == "#") {
-        //this.AbrirForm(element.id);
-      
-      }
 
       if (element.tagName.toString().toLocaleLowerCase() != "a") {
         return;

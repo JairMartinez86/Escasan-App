@@ -65,7 +65,9 @@ import { MenuComponent } from './main/config/components/menu/menu.component';
 import { DropDownDirective } from './main/shared/directive/drop-down.directive';
 import { NavComponent } from './main/config/components/menu/nav/nav/nav.component';
 import { OpenCloseDirective } from './main/shared/directive/open-close.directive';
-import { DynamicChildLoaderDirective } from './main/shared/directive/dynamic-child-loader.directive';
+import { DynamicNavDirective } from './main/config/components/menu/nav/nav/dynamic-nav.directive';
+import { UsuarioComponent } from './main/config/components/usuario/usuario.component';
+import { DynamicFormDirective } from './main/shared/directive/dynamic-form.directive';
 
 
 //FIN
@@ -80,7 +82,9 @@ import { DynamicChildLoaderDirective } from './main/shared/directive/dynamic-chi
     DropDownDirective,
     NavComponent,
     OpenCloseDirective,
-    DynamicChildLoaderDirective
+    DynamicNavDirective,
+    UsuarioComponent,
+    DynamicFormDirective
   ],
   imports: [
     BrowserModule,

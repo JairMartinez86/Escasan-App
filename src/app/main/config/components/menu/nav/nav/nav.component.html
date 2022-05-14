@@ -15,7 +15,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="{{item.Id}}" data-bs-toggle="dropdown">{{item.Link}}</a>
                 <ul class="dropdown-menu"  [ngClass]="{'show':r.isOpen}">
                   <li *ngFor="let subItem of SubMenu(item.Id);">
-                    <a class="dropdown-item" href="#" id="{{subItem.Id}}">{{subItem.Link}}</a>
+                    <a class="dropdown-item" href="#" id="{{(subItem.Id)}}">{{subItem.Link}}</a>
                   </li>
                 </ul>
               </li>
