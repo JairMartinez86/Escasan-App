@@ -28,7 +28,7 @@
 }
 
 
-.escan-header ul li a:active, .escan-header ul li a:focus, .escan-header  ul li .activo{
+.escan-header ul li a:focus, .escan-header  ul li .activo{
     color: white;
     background-color: #009d43;
 }
@@ -47,27 +47,6 @@
 
 
 
-
-.escan-nav{
-    width: 100%;
-    background-color: #e0592a;
-}
-
-
-.escan-nav ul li a:hover, .escan-nav ul li a:focus{
-    background-color: white;
-    color: #e0592a;
-}
-
-.escan-nav li ul  a{
-    background-color: white;
-    color: #e0592a;
-}
-
-.escan-nav li ul a:hover{
-    background-color: #e0592a;
-    color: white;
-}
 
 
 
