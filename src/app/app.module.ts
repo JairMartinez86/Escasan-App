@@ -61,9 +61,9 @@ import { DialogoComponent } from './main/shared/components/dialogo/dialogo.compo
 //JAIR
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MainComponent } from './main/config/components/main/main.component';
+import { MenuComponent } from './main/config/components/menu/menu.component';
 import { DropDownDirective } from './main/shared/directive/drop-down.directive';
-import { NavComponent } from './main/config/components/main/nav/nav/nav.component';
+import { NavComponent } from './main/config/components/menu/nav/nav/nav.component';
 import { OpenCloseDirective } from './main/shared/directive/open-close.directive';
 import { DynamicChildLoaderDirective } from './main/shared/directive/dynamic-child-loader.directive';
 
@@ -76,7 +76,7 @@ import { DynamicChildLoaderDirective } from './main/shared/directive/dynamic-chi
     LoginComponent,
     AutofocusDirective,
     DialogoComponent,
-    MainComponent,
+    MenuComponent,
     DropDownDirective,
     NavComponent,
     OpenCloseDirective,

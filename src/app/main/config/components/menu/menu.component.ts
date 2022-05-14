@@ -4,11 +4,11 @@ import { ServerService } from 'src/app/main/shared/service/server.service';
 import { NavComponent } from './nav/nav/nav.component';
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.css']
 })
-export class MainComponent {
+export class MenuComponent {
 
   @ViewChild(DynamicChildLoaderDirective, { static: true }) dynamicChild!: DynamicChildLoaderDirective;
 

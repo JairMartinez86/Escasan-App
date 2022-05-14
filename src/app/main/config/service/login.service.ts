@@ -170,7 +170,7 @@ export class LoginService {
 
   
         if(_json["count"] > 0){
-          this._Router.navigate(['/Main'], { skipLocationChange: false });
+          this._Router.navigate(['/Menu'], { skipLocationChange: false });
         }
         else{
           this._Router.navigate(['/Login'], { skipLocationChange: false });

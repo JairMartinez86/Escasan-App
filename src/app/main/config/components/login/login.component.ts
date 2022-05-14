@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Validacion } from 'src/app/main/shared/class/validacion';
-import { DialogoComponent } from 'src/app/main/shared/components/dialogo/dialogo.component';
 import { ServerService } from 'src/app/main/shared/service/server.service';
 
 @Component({

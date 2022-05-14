@@ -30,8 +30,6 @@ export class NavComponent{
 
 
     {EsMenu: false, Modulo : "FAC", ModuloNombre : "Facturación", Id: "navProforma", Link : "Proforma", MenuPadre : "", Activo : false},
-    {EsMenu: false, Modulo : "FAC", ModuloNombre : "Factura", Id: "navFactura", Link : "Factura", MenuPadre : "", Activo : false}
-
 
     
   ]
