@@ -89,11 +89,29 @@ body {
 }
 
 
+
+
+
+
+
+
+.igx-drop-down__header {
+  text-align: center !important;
+  padding: 4px !important;
+  color: #ff4500 !important;
+  font-weight: bold;
+}
+
 .igx-drop-down__item--focused,
 .igx-drop-down__item--selected{
   background-color: #ff4500 !important;
   color: white !important;
 }
+
+.idle-bottom-line-color{
+    background-color: white !important;
+    color: black !important;
+  }
 
 
 
@@ -103,5 +121,9 @@ body {
   .igx-drop-down__item--selected[type='checkbox']:checked{
     color: white !important;
     background-color: #009d43 !important;
-    border: 0px solid transparent !important;
+    border: 1px solid #009d43 !important;
   }
+
+
+
+ 

@@ -33,16 +33,20 @@
                                 (selectionChanging)="singleSelection($event)" [itemsMaxHeight]="250">
                                 </igx-combo>
 
-                                <igx-combo #withValueKey [data]="cities" valueKey="id" displayKey="name">
-                                    <ng-template  igxComboEmpty let-display let-key="valueKey">
+                                <!--<igx-combo #withValueKey [data]="cities" valueKey="id" displayKey="name" groupKey="name">
+                                    <ng-template   let-display let-key="valueKey">
                                         <div class="item2">
                                             <span class="state">State: {{ display[key] }}</span>
                                             <span class="region">Region: {{ display.name }}</span>
                                         </div>
                                     </ng-template>
-                                </igx-combo>
+
+                                    
+                                </igx-combo>-->
          
                             </div>
+
+                            
                  
                         </div>
 
