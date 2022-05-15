@@ -6,7 +6,7 @@
 }
 
 
-#frmUsuario mat-card, #frmUsuario  div {
+#frmUsuario .mat-card, #frmUsuario  div {
      margin: 0px;
      padding: 0px;
 }
