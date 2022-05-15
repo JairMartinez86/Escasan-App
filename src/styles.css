@@ -28,6 +28,13 @@ mat-form-field {
 }
 
 
+:root {
+  --escan-naranja:  #ff4500;
+  --escan-verde: #009d43;
+  --escan-fondo: white;
+}
+
+
 mat-label {
   color: black;
   font-size: 1em;
@@ -35,25 +42,26 @@ mat-label {
 
 
 
+
 .mat-form-field.mat-focused  .mat-form-field-ripple{
-    background-color: #009d43; 
+    background-color: var(--escan-naranja); 
 
 }
 
 .mat-error{
-    border-color: #ff4500;
-    color: #ff4500;
+    border-color: var(--escan-naranja);
+    color: var(--escan-naranja);
 }
 
 
 .mat-checkbox-checked .mat-checkbox-background, 
 .mat-checkbox-indeterminate .mat-checkbox-background {
-  background-color: #ff4500 !important;
+  background-color: var(--escan-naranja) !important;
 }
 
 
 .mat-checkbox:not(.mat-checkbox-disabled) .mat-checkbox-ripple .mat-ripple-element {
-  background-color: #ff4500 !important;
+  background-color: var(--escan-naranja) !important;
 }
 
 .mat-checkbox .mat-checkbox-inner-container {
@@ -78,8 +86,8 @@ mat-label {
 
 
 .formulario{
-    background-color: white;
-    border: 3px solid #009d43;
+    background-color: var(--escan-fondo);
+    border: 3px solid var(--escan-verde);
     box-shadow: 3px 4px 14px 6px rgba(0,0,0,0.76);
 }
 
@@ -104,32 +112,45 @@ mat-label {
 
 .formulario .btn-escan-aceptar{
     background-color: transparent;
-    border: 2px solid #009d43;
-    color: #009d43;
+    border: 2px solid var(--escan-verde);
+    color: var(--escan-verde);
 }
 
 .formulario button .mat-icon {
     transform: scale(1.5);
   }
 
-  .formulario .btn-escan-cancelar{
+.formulario .btn-escan-cancelar{
     background-color: transparent;
-    border: 2px solid #ff4500;
-    color: #ff4500;
+    border: 2px solid var(--escan-naranja);
+    color: var(--escan-naranja);
+
+}
+
+.formulario .btn-escan-salir{
+  background-color: transparent;
+  border: 2px solid black;
+  color: black;
 
 }
 
 
 .formulario .btn-escan-aceptar:hover{
-    background-color: #009d43;
+    background-color: var(--escan-verde);
     border: 0;
-    color: white;
+    color: var(--escan-fondo);
 }
 
 .formulario .btn-escan-cancelar:hover{
-    background-color: #ff4500;
+    background-color: var(--escan-naranja);
     border: 0;
-    color: white;
+    color: var(--escan-fondo);
+}
+
+.formulario .btn-escan-salir:hover{
+  background-color: black;
+  border: 0;
+  color: var(--escan-fondo);
 }
 
 
@@ -140,8 +161,8 @@ mat-label {
 **************************************************************************************************/
 
 .igx-input-group__border{
-    background-color: #009d43 !important;
-    border: 1px solid #009d43 !important;
+    background-color: var(--escan-verde) !important;
+    border: 1px solid var(--escan-verde) !important;
 }
 
 
@@ -155,19 +176,19 @@ mat-label {
 
 .igx-drop-down__header span {
     width: 100%;
-    color: #ff4500 !important;
+    color: var(--escan-naranja) !important;
     font-weight: bold;
   }
 
 
 .igx-drop-down__item--focused,
 .igx-drop-down__item--selected{
-  background-color: #ff4500 !important;
-  color: white !important;
+  background-color: var(--escan-verde)  !important;
+  color: var(--escan-fondo) !important;
 }
 
 .idle-bottom-line-color{
-    background-color: white !important;
+    background-color: var(--escan-fondo) !important;
     color: black !important;
   }
 
@@ -177,7 +198,7 @@ mat-label {
   .igx-checkbox__composite-mark,
   .igx-checkbox--checked,
   .igx-drop-down__item--selected[type='checkbox']:checked{
-    color: white !important;
-    background-color: #009d43 !important;
-    border: 1px solid #009d43 !important;
+    color: var(--escan-fondo) !important;
+    background-color: var(--escan-naranja) !important;
+    border: 1px solid var(--escan-naranja) !important;
   }

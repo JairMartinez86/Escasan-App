@@ -8,13 +8,13 @@
 .escan-content-header{
     padding: 0;
     margin: 0;
-    background-color: white;
+    background-color: var(--escan-fondo);
     width: 100%;
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
     border-bottom: 1px;
-    border-color: #e0592a;
+    border-color: var(--escan-naranja);
     border-style: solid;
 }
 
@@ -23,23 +23,23 @@
 
 
 .escan-header ul li a{
-    color: #e0592a;
+    color: var(--escan-naranja);
     margin: 2px;
 }
 
 
 .escan-header ul li a:focus, .escan-header  ul li .activo{
-    color: white;
-    background-color: #009d43;
+    color: var(--escan-fondo);
+    background-color: var(--escan-verde);
 }
 
 .escan-header ul li a:hover{
-    color: white;
-    background-color: #e0592a;
+    color: var(--escan-fondo);
+    background-color: var(--escan-naranja);
 }
 
 .escan-header span{
-    color: #009d43;
+    color: var(--escan-verde);
     padding-left: 5px;
     font-size: 1.5em;
     font-weight: bold;
@@ -53,7 +53,7 @@
 
 
 .escan-content{
-   border: 1px solid white;
+   border: 1px solid var(--escan-fondo);
    min-width: 100%;
    /*min-height: calc(100vh - 354px);*/
    z-index: 1;
@@ -82,7 +82,7 @@
     
     
     .text-pie1, .text-pie2{
-        color: white;
+        color: var(--escan-fondo);
         font-size: 1em;  
     }
     

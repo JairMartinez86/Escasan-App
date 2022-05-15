@@ -24,8 +24,8 @@
 
 
 #frmUsuario  .mat-card-header{
-    background-color: #009d43;
-    color: white;
+    background-color: var(--escan-verde);
+    color: var(--escan-fondo);
     display: flex;
     justify-content: center; 
     align-items: center;

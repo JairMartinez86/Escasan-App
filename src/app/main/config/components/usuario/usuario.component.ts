@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 
 @Component({
   selector: 'app-usuario',
@@ -10,12 +10,20 @@ export class UsuarioComponent implements OnInit {
   public bol_HidePass : boolean = true;
   public cities: { name: string, id: string }[] = [];
 
-  constructor() { }
+  constructor(private viewContainerRef: ViewContainerRef) { }
 
   public singleSelection(event: any) {
     if (event.added.length) {
         event.newSelection = event.added;
     }
+}
+
+Cerrar() : void{
+  this.viewContainerRef
+    .element
+    .nativeElement
+    .parentElement
+    .removeChild(this.viewContainerRef.element.nativeElement);
 }
 
   ngOnInit(): void {

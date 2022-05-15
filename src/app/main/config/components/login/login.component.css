@@ -23,11 +23,11 @@
 
 
 .form-signin {
-  background-color: white;
+  background-color: var(--escan-fondo);
   border-radius: 20px;
   box-shadow: 3px 4px 14px 6px rgba(0,0,0,0.76);
-  border: 5px solid #009d43;
-  color: #009d43;
+  border: 5px solid var(--escan-verde);
+  color: var(--escan-verde);
   text-align: center;
   min-width: 350px;
   max-width: 450px;
@@ -44,7 +44,7 @@
 #lblTitulo1 {
   margin: 0;
   padding: 0;
-  color: #009d43;
+  color: var(--escan-verde);
   font-size: 3.5em;
   text-align: center;
 }
@@ -52,14 +52,14 @@
 #lblTitulo2 {
   margin: 0;
   padding: 0;
-  color: #ff4500;
+  color: var(--escan-naranja);
   font-size: 1em;
   text-align: center;
 }
 
 
   .form-signin  input{
-    color: #009d43;
+    color: var(--escan-verde)3;
     font-family: 'SavingsBond';
     text-align: center;
   }
@@ -67,7 +67,7 @@
 
 
   #btnIniciar{
-    background-color: #009d43;
+    background-color: var(--escan-verde);
     font-family: 'SavingsBond';
     height: 60px;
   }
