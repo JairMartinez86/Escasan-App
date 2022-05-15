@@ -1,5 +1,11 @@
+#msj * {
+    margin: 0;
+    padding: 0;
+}
+
+
 ::ng-deep .mat-dialog-container{
-    border: 5px solid green;
+    border: 5px solid var(--escan-verde) ;
     min-width: 350px;
     max-width: 400px;
 }
@@ -7,7 +13,7 @@
 
 
 
-.escan-dialog-container{
+#msj .escan-dialog-container{
     margin: 0 auto;
     word-wrap:break-word;
   
@@ -15,20 +21,25 @@
 
 
 
-.escan-dialog-title{
+#msj .escan-dialog-title{
     width: 100%;
     font-style: italic;
-    color: #ff4500;
+    color: var(--escan-naranja);
     font-family: 'SavingsBond';
     font-size: 2em;
     text-align: center;
+    max-height: 100px;
 }
 
-.escan-dialog-content{
+#msj .escan-dialog-content{
     width: 100%;
 }
 
-div .escan-dialog-msj{
+
+
+#msj div .escan-dialog-msj{
+    margin: 0;
+    padding: 0;
     margin-bottom: 25px;
     text-align: left;
     font-size: 1em;
@@ -37,16 +48,21 @@ div .escan-dialog-msj{
     word-wrap: break-word;
 }
 
-.escan-dialog-btn-a{
-    box-shadow: none;
-    background-color: #ff4500;
-    color: whitesmoke;
+#msj button {
+    padding: 5px;
 }
 
-.escan-dialog-btn-a:hover{
-    background-color: green;
-    color: white;
-    box-shadow: 0px 15px 20px rgba(0,128,0, 0.8);
+
+#msj .escan-dialog-btn-a{
+    box-shadow: none;
+    background-color: var(--escan-naranja);
+    color: var(--escan-fondo);
+}
+
+#msj .escan-dialog-btn-a:hover{
+    background-color: var(--escan-verde) ;
+    color: var(--escan-fondo);
+    box-shadow: 0px 15px 20px var(--escan-verde) ;
     transform: translateY(-2px);
   }
   
