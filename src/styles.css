@@ -48,9 +48,13 @@ mat-label {
 
 }
 
-.mat-error{
+.mat-error {
     border-color: var(--escan-naranja);
     color: var(--escan-naranja);
+}
+
+.mat-form-field.mat-form-field-invalid .mat-form-field-ripple, .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent {
+  background-color:  var(--escan-naranja);
 }
 
 
