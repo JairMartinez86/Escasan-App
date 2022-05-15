@@ -19,10 +19,32 @@
         
                     <mat-card-content class="row">
         
-                        <mat-form-field class="col-12">
-                            <mat-label>Rol.</mat-label>
-                            <input matInput type="text"  id="txtRol" >
-                        </mat-form-field>
+                        <div class="col-12">
+                           <!-- <div class="combo-section">
+                                <igx-combo class="combo" #withValueKey [data]="cities" valueKey="id" displayKey="name" groupKey="name"
+                                placeholder="Role(s)" searchPlaceholder="Buscar...">
+                                </igx-combo>
+         
+                            </div>-->
+
+                            <div class="combo-section">
+                                <igx-combo class="combo" #withValueKey [data]="cities" valueKey="id" displayKey="name"
+                                placeholder="Rol" searchPlaceholder="Seleccione un Rol..."
+                                (selectionChanging)="singleSelection($event)" [itemsMaxHeight]="250">
+                                </igx-combo>
+
+                                <igx-combo #withValueKey [data]="cities" valueKey="id" displayKey="name">
+                                    <ng-template  igxComboEmpty let-display let-key="valueKey">
+                                        <div class="item2">
+                                            <span class="state">State: {{ display[key] }}</span>
+                                            <span class="region">Region: {{ display.name }}</span>
+                                        </div>
+                                    </ng-template>
+                                </igx-combo>
+         
+                            </div>
+                 
+                        </div>
 
                         <mat-form-field class="col-12">
                             <mat-label>Nombres.</mat-label>

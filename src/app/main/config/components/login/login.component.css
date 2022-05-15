@@ -20,7 +20,7 @@
 
 
 #lblTitulo1 {
-  color: green;
+  color: #009d43;
   font-size: 3.5em;
   text-align: center;
 }
@@ -36,8 +36,8 @@
     background-color: white;
     border-radius: 20px;
     box-shadow: 3px 4px 14px 6px rgba(0,0,0,0.76);
-    border: 5px solid green;
-    color: green;
+    border: 5px solid #009d43;
+    color: #009d43;
     text-align: center;
     min-width: 350px;
     max-width: 450px;
@@ -61,7 +61,7 @@ mat-label {
   }
   
   .form-signin  input{
-    color: green;
+    color: #009d43;
     font-family: 'SavingsBond';
     text-align: center;
   }
@@ -69,7 +69,7 @@ mat-label {
 
 
   #btnIniciar{
-    background-color: green;
+    background-color: #009d43;
     font-family: 'SavingsBond';
     height: 60px;
   }
@@ -89,5 +89,4 @@ mat-label {
   width: 24px;
   height: 24px;
 }
-
 

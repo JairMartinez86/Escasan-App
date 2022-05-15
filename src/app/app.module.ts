@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './main/config/components/login/login.component';
 
-
-
-
+//I keep the new line
 import { CommonModule } from '@angular/common';
 // Material Form Controls
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -56,8 +53,7 @@ import { AutofocusDirective } from './main/shared/directive/autofocus.directive'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DialogoComponent } from './main/shared/components/dialogo/dialogo.component';
 
-
-
+//I keep the new line
 //JAIR
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -68,7 +64,7 @@ import { OpenCloseDirective } from './main/shared/directive/open-close.directive
 import { DynamicNavDirective } from './main/config/components/menu/nav/nav/dynamic-nav.directive';
 import { UsuarioComponent } from './main/config/components/usuario/usuario.component';
 import { DynamicFormDirective } from './main/shared/directive/dynamic-form.directive';
-
+import { IgxComboModule } from 'igniteui-angular';
 
 //FIN
 
@@ -90,7 +86,6 @@ import { DynamicFormDirective } from './main/shared/directive/dynamic-form.direc
     BrowserModule,
     AppRoutingModule,
 
-  
     BrowserAnimationsModule,
     CommonModule,
     MatAutocompleteModule,
@@ -130,12 +125,11 @@ import { DynamicFormDirective } from './main/shared/directive/dynamic-form.direc
     MatTableModule,
     NgbModule,
 
-
-
+    //I keep the new line
     ReactiveFormsModule,
     HttpClientModule,
+    IgxComboModule
 
-    
   ],
   exports: [
     MatAutocompleteModule,
@@ -177,4 +171,5 @@ import { DynamicFormDirective } from './main/shared/directive/dynamic-form.direc
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
