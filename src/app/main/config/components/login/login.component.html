@@ -3,17 +3,17 @@
         <form [formGroup]="val.ValForm"   novalidate>
     
             <div class="logo-login">
-                <img class="mb-4" src="../assets/images/ISOLOGO.png"  width="340px" height="160px"><!--217px-->
+                <img  src="../assets/images/ISOLOGO.png"  width="340px" height="160px"><!--217px-->
             </div>
             
     
             <div>
-                <h1  class="h3 mb-3 fw-normal escan-text" id="lblTitulo1">BALANCES</h1>
-                <h2 class="h3 mb-3 fw-normal escan-text" id="lblTitulo2">PROCESOS RÁPIDOS Y FIDEDIGNOS</h2>
+                <h1  class="h3 fw-normal escan-text" id="lblTitulo1">BALANCES</h1>
+                <h2 class="h3 fw-normal escan-text" id="lblTitulo2">PROCESOS RÁPIDOS Y FIDEDIGNOS</h2>
             </div>
             
     
-            <mat-form-field class="form-floating">
+            <mat-form-field >
                 <mat-label>Usuario.</mat-label>
                 <input matInput type="text" id="txtUsuario" formControlName="txtUsuario" appAutofocus
                 (keydown.enter)="onKeyEnter($event)">
@@ -22,7 +22,7 @@
                 <mat-error *ngIf="val.ValForm.get('txtUsuario')?.errors?.['Regla']=='2'">Debe de contener al menos <strong>{{val.C("txtUsuario", "2")}}</strong> cáracteres</mat-error>
             </mat-form-field>
     
-            <mat-form-field class="form-floating">
+            <mat-form-field >
                 <mat-label>Contraseña.</mat-label>
                 <input matInput [type]="bol_HidePass ? 'password' : 'text'" id="txtPass" formControlName="txtPass"
                 (keydown.enter)="onKeyEnter($event)">
@@ -33,7 +33,7 @@
             </mat-form-field>
     
             <div class="checkbox mb-3">
-                <mat-checkbox  color="primary" formControlName="chkRecordar"  (click)="bol_Recordar = !bol_Recordar">
+                <mat-checkbox  color="primary" formControlName="chkRecordar"  (click)="Recordar()">
                     <b>Recordar ?</b>
                 </mat-checkbox>
             </div>

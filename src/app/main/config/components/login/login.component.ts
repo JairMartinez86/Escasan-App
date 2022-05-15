@@ -62,7 +62,9 @@ export class LoginComponent implements OnInit {
 
   }
 
-
+  Recordar() : void{
+    this.bol_Recordar = !this.bol_Recordar;
+  }
   
   ngOnInit(): void {
 

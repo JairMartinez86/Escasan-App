@@ -21,6 +21,50 @@ body {
     
 }
 
+mat-form-field {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+mat-label {
+  color: black;
+  font-size: 1em;
+}
+
+
+
+.mat-form-field.mat-focused  .mat-form-field-ripple{
+    background-color: #009d43; 
+
+}
+
+.mat-error{
+    border-color: #ff4500;
+    color: #ff4500;
+}
+
+
+.mat-checkbox-checked .mat-checkbox-background, 
+.mat-checkbox-indeterminate .mat-checkbox-background {
+  background-color: #ff4500 !important;
+}
+
+
+.mat-checkbox:not(.mat-checkbox-disabled) .mat-checkbox-ripple .mat-ripple-element {
+  background-color: #ff4500 !important;
+}
+
+.mat-checkbox .mat-checkbox-inner-container {
+  width: 24px;
+  height: 24px;
+}
+
+
+
+
+
 
 .escan-text{
     font-style: italic;
@@ -91,16 +135,32 @@ body {
 
 
 
+/**************************************************************************************************
+                                        COMBO BOX
+**************************************************************************************************/
+
+
+
+.igx-input-group__border{
+    background-color: #009d43 !important;
+    border: 1px solid #009d43 !important;
+}
 
 
 
 
-.igx-drop-down__header {
+.igx-drop-down__header{
   text-align: center !important;
   padding: 4px !important;
-  color: #ff4500 !important;
-  font-weight: bold;
+  
 }
+
+.igx-drop-down__header span {
+    width: 100%;
+    color: #ff4500 !important;
+    font-weight: bold;
+  }
+
 
 .igx-drop-down__item--focused,
 .igx-drop-down__item--selected{
@@ -123,7 +183,3 @@ body {
     background-color: #009d43 !important;
     border: 1px solid #009d43 !important;
   }
-
-
-
- 
