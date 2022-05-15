@@ -1,9 +1,9 @@
 import { Component, HostListener, Input, ViewChild } from '@angular/core';
-import { DynamicNavDirective } from 'src/app/main/config/components/menu/nav/nav/dynamic-nav.directive';
+import { DynamicNavDirective } from 'src/app/main/config/components/menu/nav/dynamic-nav.directive';
 import { DynamicFormDirective } from 'src/app/main/shared/directive/dynamic-form.directive';
 import { ServerService } from 'src/app/main/shared/service/server.service';
 import { UsuarioComponent } from '../usuario/usuario.component';
-import { NavComponent } from './nav/nav/nav.component';
+import { NavComponent } from './nav/nav.component';
 
 @Component({
   selector: 'app-menu',

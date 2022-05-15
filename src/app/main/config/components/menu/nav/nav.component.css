@@ -1,0 +1,21 @@
+
+.escan-nav{
+    width: 100%;
+    background-color: var(--escan-naranja);
+}
+
+
+.escan-nav ul li a:hover, .escan-nav ul li a:focus{
+    background-color: var(--escan-fondo);
+    color: var(--escan-naranja);
+}
+
+.escan-nav li ul  a{
+    background-color: var(--escan-fondo);
+    color: var(--escan-naranja);
+}
+
+.escan-nav li ul a:hover{
+    background-color: var(--escan-naranja);
+    color: var(--escan-fondo);
+}
