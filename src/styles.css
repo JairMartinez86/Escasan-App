@@ -31,3 +31,62 @@ body {
     min-width: 400px; 
 }
 
+
+
+.formulario{
+    background-color: white;
+    border: 3px solid green;
+    box-shadow: 3px 4px 14px 6px rgba(0,0,0,0.76);
+}
+
+
+.formulario .btnAccion{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+
+.formulario button{
+    margin: 10px;
+}
+
+.formulario .line-vertical {
+    
+    border-left: 2px solid black;
+    height: 100%;
+  }
+
+
+.formulario .btn-escan-aceptar{
+    background-color: transparent;
+    border: 2px solid green;
+    color: green;
+}
+
+.formulario button .mat-icon {
+    transform: scale(1.5);
+  }
+
+  .formulario .btn-escan-cancelar{
+    background-color: transparent;
+    border: 2px solid #ff4500;
+    color: #ff4500;
+
+}
+
+
+.formulario .btn-escan-aceptar:hover{
+    background-color: green;
+    border: 0;
+    color: white;
+}
+
+.formulario .btn-escan-cancelar:hover{
+    background-color: #ff4500;
+    border: 0;
+    color: white;
+}
+
+
+

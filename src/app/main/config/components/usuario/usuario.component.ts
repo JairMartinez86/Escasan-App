@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioComponent implements OnInit {
 
+  public bol_HidePass : boolean = true;
   constructor() { }
 
   ngOnInit(): void {
