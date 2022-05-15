@@ -12,6 +12,15 @@
 }
 
 
+#frmUsuario igx-combo{
+    margin-bottom: 7px;
+}
+
+
+#frmUsuario .mat-card{
+    min-height: 220px;
+}
+
 
 
 #frmUsuario  .mat-card-header{
