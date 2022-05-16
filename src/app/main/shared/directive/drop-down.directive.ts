@@ -16,7 +16,7 @@ export class DropDownDirective {
   }
 
   @HostListener('document:click', ['$event'])
-  @HostListener('document:touchstart', ['$event'])
+  //@HostListener('document:touchstart', ['$event'])
   toggle(event : any) {
     if (this.elemRef.nativeElement.contains(event.target)) {
       this.isOpen = !this.isOpen;
