@@ -2,6 +2,7 @@ import { Component, HostListener, Input, ViewChild } from '@angular/core';
 import { DynamicNavDirective } from 'src/app/main/config/components/menu/nav/dynamic-nav.directive';
 import { DynamicFormDirective } from 'src/app/main/shared/directive/dynamic-form.directive';
 import { ServerService } from 'src/app/main/shared/service/server.service';
+import { RolesComponent } from '../roles/roles.component';
 import { UsuarioComponent } from '../usuario/usuario.component';
 import { NavComponent } from './nav/nav.component';
 
@@ -16,8 +17,9 @@ export class MenuComponent {
   @ViewChild(DynamicFormDirective, { static: true }) dynamicForm!: DynamicFormDirective;
 
 
-  private str_NomModulo : string = "INICIO"
-  private str_Modulo : string = ""
+  private str_NomModulo : string = "INICIO";
+  private str_Modulo : string = "";
+  private str_formulario : string = "";
 
 
   @Input() public href: string | undefined;
@@ -111,14 +113,35 @@ export class MenuComponent {
 
 
   private Modulo_SIS(f : string) : void{
+
+
     switch(f){
       case "LinkUsuario":
         
-        this.dynamicForm.viewContainerRef.clear()
-        let LinkUsuario  = this.dynamicForm.viewContainerRef.createComponent(UsuarioComponent);
+        if(this.str_formulario != f){
+          this.dynamicForm.viewContainerRef.clear();
+          this.dynamicForm.viewContainerRef.createComponent(UsuarioComponent);
+          this.str_formulario = f;
+        }
+
+        
+        break;
+
+      case "navRol":
+
+        if(this.str_formulario != f){
+          this.dynamicForm.viewContainerRef.clear();
+          this.dynamicForm.viewContainerRef.createComponent(RolesComponent);
+          this.str_formulario = f;
+        }
 
         break;
     }
+    
+   
+    
+
+    
   }
 
 
@@ -126,6 +149,16 @@ export class MenuComponent {
 
   }
 
+
+  ngOnInit(): void {
+
+    this.ServerScv.change.subscribe(s =>{
+      if(s == "CerrarForm"){
+        this.dynamicForm.viewContainerRef.clear();
+        this.str_formulario = "";
+      }
+    });
+  }
 
   ngAfterContentInit(): void {
     this.AbrirModulo("");

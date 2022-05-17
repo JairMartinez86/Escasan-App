@@ -32,6 +32,10 @@ mat-form-field {
   --escan-naranja:  #ff4500;
   --escan-verde: #009d43;
   --escan-fondo: white;
+
+
+
+  --escan-min--width: 400px;
 }
 
 
@@ -84,8 +88,17 @@ mat-label {
 }
 
 .escan-min-width{
-    min-width: 400px; 
+    min-width: var(--escan-min--width); 
 }
+
+
+
+
+
+
+/**************************************************************************************************
+                                        FORMULARIO
+**************************************************************************************************/
 
 
 
@@ -93,6 +106,7 @@ mat-label {
     background-color: var(--escan-fondo);
     border: 3px solid var(--escan-verde);
     box-shadow: 3px 4px 14px 6px rgba(0,0,0,0.76);
+    border-radius: 5px;
 }
 
 
@@ -158,6 +172,115 @@ mat-label {
 }
 
 
+
+/**************************************************************************************************
+                                        TABLA
+**************************************************************************************************/
+
+
+
+
+
+/*****************************************************TABLA*****************************************************/
+
+table {
+  width: 100%;
+}
+
+table tr a{
+  margin: 15px;
+}
+
+
+.escan-registros{
+  width: 100%;
+  border: 5px solid var(--escan-verde);
+}
+
+.escan-registros div, .escan-registros h3{
+  margin: 0;
+  padding: 0;
+}
+
+.escan-tabla{
+  overflow-x: auto;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+.escan-tabla-franja{
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--escan-naranja);
+  text-align: center;
+;
+}
+
+.escan-registros, .escan-tabla, .escan-tabla-franja, .escan-tabla-filtro{
+  min-width: var(--escan-min--width);
+  background-color: var(--escan-fondo);
+}
+
+.mat-header-row, .mat-header-cell{
+  background-color: var(--escan-verde);
+  color: var(--escan-fondo);
+}
+
+
+
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+}
+
+.nueva-fila{
+  background-color: var(--escan-naranja);
+  color: black;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1.1em;
+}
+
+
+.mat-paginator, .mat-paginator .mat-select-value,
+.mat-paginator .mat-select-arrow,
+.mat-paginator .mat-form-field-underline,
+.mat-paginator .mat-icon-button,
+.mat-paginator .mat-paginator-icon{
+  background-color: var(--escan-naranja);
+  color: var(--escan-fondo);
+}
+
+
+
+
+.mat-option:hover:not(.mat-option-disabled),
+.mat-option .mat-active{
+  background-color: var(--escan-verde);
+  color: var(--escan-fondo);
+}
+
+
+
+.mat-paginator .mat-form-field-underline{
+  background-color: var(--escan-fondo);
+}
+
+.ng-tns-c156-4 .ng-trigger .ng-trigger-transformPanel .mat-select-panel .mat-primary {
+  background-color: var(--escan-verde);
+}
+
+
+/***************************************************************************************************************/
 
 
 /**************************************************************************************************

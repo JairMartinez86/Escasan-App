@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { ServerService } from 'src/app/main/shared/service/server.service';
 
 @Component({
   selector: 'app-usuario',
@@ -10,7 +11,7 @@ export class UsuarioComponent implements OnInit {
   public bol_HidePass : boolean = true;
   public cities: { name: string, id: string }[] = [];
 
-  constructor(private viewContainerRef: ViewContainerRef) { }
+  constructor(private ServerScv : ServerService) { }
 
   public singleSelection(event: any) {
     if (event.added.length) {
@@ -19,11 +20,14 @@ export class UsuarioComponent implements OnInit {
 }
 
 Cerrar() : void{
-  this.viewContainerRef
+  /*this.viewContainerRef
     .element
     .nativeElement
     .parentElement
-    .removeChild(this.viewContainerRef.element.nativeElement);
+    .removeChild(this.viewContainerRef.element.nativeElement);*/
+
+    this.ServerScv.CerrarFormulario();
+    
 }
 
   ngOnInit(): void {

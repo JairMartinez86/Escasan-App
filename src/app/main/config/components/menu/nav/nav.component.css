@@ -5,17 +5,49 @@
 }
 
 
+.escan-nav .nav-item i{
+    font-size: 32px;
+}
+
+.escan-nav .nav-item ul i{
+    font-size: 16px;
+}
+  
+  
+
+.escan-nav  a{
+    color: var(--escan-fondo);
+}
+
+
 .escan-nav ul li a:hover, .escan-nav ul li a:focus{
     background-color: var(--escan-fondo);
     color: var(--escan-naranja);
 }
+
+
+ .escan-nav ul li a:hover > i{
+    color: var(--escan-verde);
+}
+
+
 
 .escan-nav li ul  a{
     background-color: var(--escan-fondo);
     color: var(--escan-naranja);
 }
 
+
 .escan-nav li ul a:hover{
     background-color: var(--escan-naranja);
     color: var(--escan-fondo);
 }
+
+ .escan-nav li ul a:hover > i{
+    color: var(--escan-verde);
+}
+
+
+
+
+

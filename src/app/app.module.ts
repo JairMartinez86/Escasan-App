@@ -65,7 +65,11 @@ import { DynamicNavDirective } from './main/config/components/menu/nav/dynamic-n
 import { UsuarioComponent } from './main/config/components/usuario/usuario.component';
 import { DynamicFormDirective } from './main/shared/directive/dynamic-form.directive';
 import { IgxComboModule } from 'igniteui-angular';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { RolesComponent } from './main/config/components/roles/roles.component';
 //FIN
 
 @NgModule({
@@ -80,7 +84,8 @@ import { IgxComboModule } from 'igniteui-angular';
     OpenCloseDirective,
     DynamicNavDirective,
     UsuarioComponent,
-    DynamicFormDirective
+    DynamicFormDirective,
+    RolesComponent
   ],
   imports: [
     BrowserModule,
@@ -168,8 +173,14 @@ import { IgxComboModule } from 'igniteui-angular';
     MatSortModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+
+  constructor() {
+    library.add(faUser);
+  }
 }

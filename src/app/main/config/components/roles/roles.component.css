@@ -1,0 +1,41 @@
+#frmRoles{
+    border: 5px;
+    margin-top: 5px;
+    max-width: var(--escan-min--width);
+}
+
+
+#frmRoles .mat-card, #frmRoles  div {
+     margin: 0px;
+     padding: 0px;
+}
+
+
+#frmRoles  .mat-card-header{
+    background-color: var(--escan-verde);
+    color: var(--escan-fondo);
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    
+}
+
+#frmRoles  .mat-card-title{
+    font-weight: bold;
+    font-size: 1em;
+}
+
+#frmRoles mat-card mat-form-field{
+    margin-top: 10px;
+    margin-right: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+#registros-tabla{
+    max-width: 600px;
+}
+
+
+

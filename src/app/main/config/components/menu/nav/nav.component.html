@@ -12,16 +12,16 @@
             <ng-container *ngFor="let item of Menu(); let i = index">
 
               <li class="nav-item" *ngIf="item.EsMenu" appDropDown #r="appDropDown">
-                <a class="nav-link dropdown-toggle" href="#" id="{{item.Id}}" data-bs-toggle="dropdown">{{item.Link}}</a>
+                <a class="nav-link dropdown-toggle" href="#" id="{{item.Id}}" data-bs-toggle="dropdown"><i class="{{item.Clase}}"></i> {{item.Link}}</a>
                 <ul class="dropdown-menu"  [ngClass]="{'show':r.isOpen}">
                   <li *ngFor="let subItem of SubMenu(item.Id);">
-                    <a class="dropdown-item" href="#" id="{{(subItem.Id)}}">{{subItem.Link}}</a>
+                    <a class="dropdown-item" href="#" id="{{(subItem.Id)}}"><i class="{{subItem.Clase}}"></i> {{subItem.Link}}</a>
                   </li>
                 </ul>
               </li>
 
               <li class="nav-item" *ngIf="!item.EsMenu">
-                <a class="nav-link" href="#" id="{{item.Id}}">{{item.Link}}</a>
+                <a class="nav-link" href="#" id="{{item.Id}}"><i class="{{item.Clase}}"></i> {{item.Link}}</a>
               </li>
       
               
