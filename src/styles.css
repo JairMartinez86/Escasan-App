@@ -21,6 +21,10 @@ body {
     
 }
 
+.container, .container-fluid{
+  padding: 0;
+}
+
 mat-form-field {
     width: 100%;
     padding-left: 10px;
@@ -35,7 +39,7 @@ mat-form-field {
 
 
 
-  --escan-min--width: 400px;
+  --escan-min--width: 350px;
 }
 
 
@@ -183,8 +187,9 @@ mat-label {
 
 /*****************************************************TABLA*****************************************************/
 
-table {
-  width: 100%;
+table tr , table th{
+  margin: 0;
+  padding: 0;
 }
 
 table tr a{
@@ -192,12 +197,15 @@ table tr a{
 }
 
 
-.escan-registros{
-  width: 100%;
+.escasan-contenedor-tabla{
   border: 5px solid var(--escan-verde);
+  min-width: var(--escan-min--width)
 }
 
-.escan-registros div, .escan-registros h3{
+
+
+.escasan-contenedor-tabla div,
+.escasan-contenedor-tabla mat-form-field{
   margin: 0;
   padding: 0;
 }
@@ -211,7 +219,7 @@ table tr a{
 
 
 
-.escan-tabla-franja{
+.escasan-contenedor-tabla .escan-tabla-franja{
   font-size: 1.5em;
   font-weight: bold;
   color: var(--escan-naranja);
@@ -219,7 +227,7 @@ table tr a{
 ;
 }
 
-.escan-registros, .escan-tabla, .escan-tabla-franja, .escan-tabla-filtro{
+.escasan-contenedor-tabla, .escan-tabla, .escan-tabla-franja, .escan-tabla-filtro{
   min-width: var(--escan-min--width);
   background-color: var(--escan-fondo);
 }
