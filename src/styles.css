@@ -111,6 +111,8 @@ mat-label {
     border: 3px solid var(--escan-verde);
     box-shadow: 3px 4px 14px 6px rgba(0,0,0,0.76);
     border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 
@@ -122,7 +124,7 @@ mat-label {
 
 
 .formulario button{
-    margin: 10px;
+    margin-top: 10px;
 }
 
 .formulario .line-vertical {
@@ -199,7 +201,9 @@ table tr a{
 
 .escasan-contenedor-tabla{
   border: 5px solid var(--escan-verde);
-  min-width: var(--escan-min--width)
+  min-width: var(--escan-min--width);
+  box-shadow: 3px 4px 14px 6px rgba(0,0,0,0.76);
+  
 }
 
 

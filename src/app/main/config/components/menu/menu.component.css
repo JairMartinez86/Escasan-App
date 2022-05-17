@@ -56,6 +56,7 @@
    border: 1px solid var(--escan-fondo);
    min-width: 100%;
    /*min-height: calc(100vh - 354px);*/
+   background-color: var(--escan-fondo);
    z-index: 1;
 }
     
