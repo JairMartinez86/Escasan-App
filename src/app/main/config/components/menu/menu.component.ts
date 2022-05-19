@@ -37,6 +37,10 @@ export class MenuComponent {
         this.AbrirFormulario(element.id);
       }
 
+      if (element.tagName.toString().toLocaleLowerCase() != "a") {
+        return;
+      }
+
       event.preventDefault();
     }
   }

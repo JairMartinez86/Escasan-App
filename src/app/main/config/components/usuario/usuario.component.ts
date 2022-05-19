@@ -10,6 +10,7 @@ import { ServerService } from 'src/app/main/shared/service/server.service';
 export class UsuarioComponent implements OnInit {
 
   public bol_HidePass : boolean = true;
+  public bol_Inactivo : boolean = false;
   public cities: { name: string, id: string }[] = [];
   public val = new Validacion();
 
@@ -29,6 +30,10 @@ export class UsuarioComponent implements OnInit {
     if (event.added.length) {
         event.newSelection = event.added;
     }
+}
+
+Inactivo() :void{
+  this.bol_Inactivo = !this.bol_Inactivo;
 }
 
 Cerrar() : void{

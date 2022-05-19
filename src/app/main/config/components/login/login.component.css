@@ -16,12 +16,6 @@
 
 
 
-#div-login .mat-icon {
-  font-size: 35px;
-  color: black;
-}
-
-
 .form-signin {
   background-color: var(--escan-fondo);
   border-radius: 20px;

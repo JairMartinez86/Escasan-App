@@ -60,7 +60,9 @@ mat-label {
   transform: scale(1.5);
 }
 
-
+.ng-untouched .mat-icon{
+  color: black;
+}
 
 .mat-form-field.mat-focused  .mat-form-field-ripple{
     background-color: var(--escan-verde); 
