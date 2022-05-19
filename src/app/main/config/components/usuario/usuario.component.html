@@ -1,6 +1,6 @@
 <div class="container escan-min-width" id="frmUsuario">
 
-    <form class="formulario">
+    <form class="formulario" [formGroup]="val.ValForm"  novalidate>
 
         <div class="row col-12">
 
@@ -30,8 +30,10 @@
 
                             <div>
                                 <igx-combo class="combo" #withValueKey [data]="cities" valueKey="id" displayKey="name"
+                                id="txtRol"
+                                formControlName="txtRol"
                                 placeholder="Rol" searchPlaceholder="Seleccione un Rol..."
-                                (selectionChanging)="singleSelection($event)" [itemsMaxHeight]="250">
+                                (selectionChanging)="singleSelection($event)" [itemsMaxHeight]="250" appAutofocus>
                             </igx-combo>
 
                                 <!--<igx-combo #withValueKey [data]="cities" valueKey="id" displayKey="name" groupKey="name">
@@ -53,12 +55,14 @@
 
                         <mat-form-field class="col-12">
                             <mat-label>Nombres.</mat-label>
-                            <input matInput type="text"  id="txtNombre" >
+                            <input matInput type="text"  id="txtNombre" formControlName="txtNombre">
+                            <mat-error *ngIf="val.ValForm.get('txtNombre')?.errors?.['Regla']=='1'">Nombres es <strong>requerido</strong></mat-error>
                         </mat-form-field>
         
                         <mat-form-field class="col-12">
                             <mat-label>Apellidos.</mat-label>
-                            <input matInput type="text"  id="txtApellido" >
+                            <input matInput type="text"  id="txtApellido" formControlName="txtApellido">
+                            <mat-error *ngIf="val.ValForm.get('txtApellido')?.errors?.['Regla']=='1'">Apellidos es <strong>requerido</strong></mat-error>
                         </mat-form-field>
     
                     </mat-card-content>
@@ -78,9 +82,10 @@
                     <mat-card-content class="row">
                         <mat-form-field class="col-12">
                             <mat-label>Usuario.</mat-label>
-                            <input matInput type="text" formControlName="txtLogin" id="txtUsuario">
+                            <input matInput type="text" formControlName="txtLogin" id="txtLogin" formControlName="txtLogin">
                             <mat-icon matPrefix>person</mat-icon>
-                          
+                            <mat-error *ngIf="val.ValForm.get('txtLogin')?.errors?.['Regla']=='1'">Usuario es <strong>requerido</strong></mat-error>
+                            <mat-error *ngIf="val.ValForm.get('txtLogin')?.errors?.['Regla']=='2'">Debe de contener al menos <strong>{{val.C("txtLogin", "2")}}</strong> cáracteres</mat-error>
                         </mat-form-field>
                         
                         
@@ -89,12 +94,14 @@
                             <input matInput  [type]="bol_HidePass ? 'password' : 'text'" id="txtPass"  formControlName="txtPass" placeholder="Contraseña">
                             <mat-icon matSuffix (click)="bol_HidePass = !bol_HidePass">{{bol_HidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
                             <mat-icon matPrefix >lock</mat-icon>
+                            <mat-error *ngIf="val.ValForm.get('txtPass')?.errors?.['Regla']=='1'">Contraseña es <strong>requerido</strong></mat-error>
+                            <mat-error *ngIf="val.ValForm.get('txtPass')?.errors?.['Regla']=='2'">Debe de contener al menos <strong>{{val.C("txtPass", "2")}}</strong> cáracteres</mat-error>
                         </mat-form-field>
     
                         <mat-form-field class="col-12">
                             <mat-label>Vendedor.</mat-label>
-                            <input matInput type="text"  id="txtVendedor">
-
+                            <input matInput type="text"  id="txtVendedor" formControlName="txtVendedor">
+                            <mat-error *ngIf="val.ValForm.get('txtVendedor')?.errors?.['Regla']=='1'">Apellidos es <strong>requerido</strong></mat-error>
                         </mat-form-field>
 
                     </mat-card-content>

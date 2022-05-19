@@ -1,7 +1,7 @@
 
 <div class="container" id="frmRoles">
 
-  <form class="formulario">
+  <form class="formulario" [formGroup]="val.ValForm"  novalidate>
 
       <div class="row col-12">
 
@@ -25,9 +25,9 @@
                   <mat-card-content class="row">
                       <mat-form-field class="col-12">
                           <mat-label>Rol.</mat-label>
-                          <input matInput type="text" formControlName="txtRol" id="txtRol">
+                          <input matInput type="text" id="txtRol" formControlName="txtRol">
                           <mat-icon matPrefix>person</mat-icon>
-                        
+                          <mat-error *ngIf="val.ValForm.get('txtVendedor')?.errors?.['Regla']=='1'">Apellidos es <strong>requerido</strong></mat-error>
                       </mat-form-field>
 
                   </mat-card-content>
@@ -46,16 +46,17 @@
 
 
 <!--https://github.com/mazdik/ng-modal-->
-<app-modal #modal1 class="panel-demo1" [maximizable]="true" [backdrop]="true">
+<app-modal #modal1 class="container row escan-modal" [maximizable]="true" [backdrop]="true">
   <ng-container class="app-modal-header">REGISTROS DE ROLES</ng-container>
   <ng-container class="app-modal-body">
     <app-roles-registro></app-roles-registro>
   </ng-container>
   <ng-container class="app-modal-footer">
-    <div class="button-row text-end">
-      <button type="button" class="dt-button dt-escan" id="modal-registro-roles" (click)="modal1.hide()">
-        Close
-      </button>
+    <div class="row col-12 hide-element ">
+      <div class="col-12 btnAccion">
+        <button  mat-fab class="btn-escan-salir" id="modal-registro-roles" (click)="modal1.hide();" ><mat-icon>exit_to_app</mat-icon></button>
+      </div>
     </div>
+
   </ng-container>
 </app-modal>

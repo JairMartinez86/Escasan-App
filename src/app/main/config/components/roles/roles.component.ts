@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Validacion } from 'src/app/main/shared/class/validacion';
 import { ServerService } from 'src/app/main/shared/service/server.service';
 
 @Component({
@@ -8,8 +9,11 @@ import { ServerService } from 'src/app/main/shared/service/server.service';
 })
 export class RolesComponent implements OnInit {
 
+  public val = new Validacion();
   
-  constructor(private ServerScv : ServerService) { }
+  constructor(private ServerScv : ServerService) {
+    this.val.add("txtRol", "1","LEN>", "0");
+   }
 
 
  Cerrar() : void{
@@ -29,7 +33,7 @@ export class RolesComponent implements OnInit {
 
       if(s instanceof Array){
         if(s[0] == "DatosModal" && s[1] == "modal-registro-roles" ) {
-          alert(s[2]);
+          console.log(s[2]);
         }
       }
 
