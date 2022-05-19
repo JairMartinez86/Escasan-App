@@ -53,7 +53,7 @@
 
 
   .form-signin  input{
-    color: var(--escan-verde)3;
+    color: var(--escan-verde);
     font-family: 'SavingsBond';
     text-align: center;
   }

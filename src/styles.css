@@ -144,6 +144,10 @@ mat-label {
     min-width: var(--escan-min--width);
 }
 
+.formulario input, .formulario label{
+  margin-left: 10px;
+}
+
 
 .btnAccion button{
     margin: 10px;
