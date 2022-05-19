@@ -16,6 +16,9 @@
     margin-bottom: 7px;
 }
 
+#frmUsuario input{
+    margin-left: 10px;
+}
 
 #frmUsuario .mat-card{
     min-height: 220px;

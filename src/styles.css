@@ -39,6 +39,7 @@ mat-form-field {
 }
 
 
+
 :root {
   --escan-naranja:  #ff4500;
   --escan-verde: #009d43;
@@ -55,6 +56,9 @@ mat-label {
   font-size: 1em;
 }
 
+.mat-icon{
+  transform: scale(1.5);
+}
 
 
 
@@ -63,12 +67,19 @@ mat-label {
 
 }
 
-.mat-error {
+.mat-error,
+.mat-form-field-invalid .mat-icon {
     border-color: var(--escan-naranja);
     color: var(--escan-naranja);
 }
 
-.mat-form-field.mat-form-field-invalid .mat-form-field-ripple, .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent {
+.ng-valid .mat-icon {
+  color: var(--escan-verde);
+}
+
+
+.mat-form-field.mat-form-field-invalid .mat-form-field-ripple,
+.mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent {
   background-color:  var(--escan-naranja);
 }
 
