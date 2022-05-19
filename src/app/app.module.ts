@@ -66,10 +66,12 @@ import { UsuarioComponent } from './main/config/components/usuario/usuario.compo
 import { DynamicFormDirective } from './main/shared/directive/dynamic-form.directive';
 import { IgxComboModule } from 'igniteui-angular';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { ModalModule } from 'ng-modal-lib';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { RolesComponent } from './main/config/components/roles/roles.component';
+import { RolesRegistroComponent } from './main/config/components/roles/roles-registro/roles-registro.component';
 //FIN
 
 @NgModule({
@@ -85,7 +87,8 @@ import { RolesComponent } from './main/config/components/roles/roles.component';
     DynamicNavDirective,
     UsuarioComponent,
     DynamicFormDirective,
-    RolesComponent
+    RolesComponent,
+    RolesRegistroComponent
   ],
   imports: [
     BrowserModule,
@@ -133,7 +136,8 @@ import { RolesComponent } from './main/config/components/roles/roles.component';
     //I keep the new line
     ReactiveFormsModule,
     HttpClientModule,
-    IgxComboModule
+    IgxComboModule,
+    ModalModule
 
   ],
   exports: [

@@ -157,6 +157,17 @@ export class MenuComponent {
         this.dynamicForm.viewContainerRef.clear();
         this.str_formulario = "";
       }
+
+      if(s instanceof Array){
+
+        if(s[0] == "CerrarModal"){
+          document.getElementById(s[1])!.click();
+
+          if(s[2] != undefined) this.ServerScv.change.emit(["DatosModal", s[1], s[2]])
+        }
+        
+      }
+
     });
   }
 

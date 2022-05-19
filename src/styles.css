@@ -116,42 +116,43 @@ mat-label {
 }
 
 
-.formulario .btnAccion{
+.btnAccion{
     display: flex;
     justify-content: center; 
     align-items: center;
 }
 
 
-.formulario button{
-    margin-top: 10px;
+.btnAccion button{
+    margin: 10px;
 }
 
-.formulario .line-vertical {
+.line-vertical {
     
     border-left: 2px solid black;
     height: 100%;
   }
 
 
-.formulario .btn-escan-aceptar{
+
+.btnAccion .btn-escan-aceptar{
     background-color: transparent;
     border: 2px solid var(--escan-verde);
     color: var(--escan-verde);
 }
 
-.formulario button .mat-icon {
+.btnAccion button .mat-icon {
     transform: scale(1.5);
   }
 
-.formulario .btn-escan-cancelar{
+.btnAccion .btn-escan-cancelar{
     background-color: transparent;
     border: 2px solid var(--escan-naranja);
     color: var(--escan-naranja);
 
 }
 
-.formulario .btn-escan-salir{
+.btnAccion .btn-escan-salir, .btnAccion .btn-escan-buscar{
   background-color: transparent;
   border: 2px solid black;
   color: black;
@@ -159,19 +160,19 @@ mat-label {
 }
 
 
-.formulario .btn-escan-aceptar:hover{
+.btnAccion .btn-escan-aceptar:hover{
     background-color: var(--escan-verde);
     border: 0;
     color: var(--escan-fondo);
 }
 
-.formulario .btn-escan-cancelar:hover{
+.btnAccion .btn-escan-cancelar:hover{
     background-color: var(--escan-naranja);
     border: 0;
     color: var(--escan-fondo);
 }
 
-.formulario .btn-escan-salir:hover{
+.btnAccion .btn-escan-salir:hover, .btnAccion .btn-escan-buscar:hover{
   background-color: black;
   border: 0;
   color: var(--escan-fondo);
@@ -340,4 +341,33 @@ table tr a{
     color: var(--escan-fondo) !important;
     background-color: var(--escan-naranja) !important;
     border: 1px solid var(--escan-naranja) !important;
+  }
+
+
+
+  
+/**************************************************************************************************
+                                        MODAL
+**************************************************************************************************/
+
+  .dt-green {background-color: #4CAF50;} /* Green */
+  .dt-blue {background-color: #008CBA;} /* Blue */
+  .dt-red {background-color: #f44336;} /* Red */
+  .dt-orange {background-color: #ff9800;} /* Orange */
+  .dt-rocedes {background-color: #1b364c;} 
+  
+  /* PanelDemoComponent */
+  .panel-demo1 .ui-modal-header {
+    background-color: var(--escan-verde) !important;
+  }
+
+  /* NestedModalDemoComponent */
+  .nested-modal-demo1 .ui-modal {
+    width: 37.5rem;
+  }
+  .nested-modal-demo2 .ui-modal {
+    width: 34.375rem;
+  }
+  .nested-modal-demo3 .ui-modal {
+    width: 31.25rem;
   }

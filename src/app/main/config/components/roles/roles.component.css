@@ -1,11 +1,9 @@
-#contenedor{
-width: 100%;
-}
 
 #frmRoles{
     border: 5px;
     margin-top: 5px;
-    max-width: var(--escan-min--width);
+    min-width: var(--escan-min--width);
+    max-width: 500px;
     padding-left: 0;
     padding-right: 0;
 }
@@ -37,18 +35,4 @@ width: 100%;
     padding-left: 30px;
     padding-right: 30px;
 }
-
-#registros-tabla{
-    width: 100%;
-}
-
-
-
-.escasan-contenedor-tabla{
-    max-width: 600px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 0;
-}
-
 

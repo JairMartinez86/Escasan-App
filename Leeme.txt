@@ -9,3 +9,22 @@ npm install @fortawesome/free-solid-svg-icons
 npm install @fortawesome/angular-fontawesome
 npm i bootstrap-icons
 npm install autoprefixer@10.4.5 --save-exact
+npm i ng-modal-lib --save --legacy-peer-deps
+
+
+
+
+
+
+
+
+
+
+
+
+NOTA: Ejecutar los siguientes comandos si da error al instalar el modal
+
+npm uninstall bootstrap
+npm cache clean --force
+npm install
+npm install bootstrap
