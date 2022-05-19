@@ -1,5 +1,6 @@
 #registros-tabla{
     width: 100%;
+    min-width: var(--escan-min--width);
 }
 
 
