@@ -37,7 +37,7 @@ export class MenuComponent {
         this.AbrirFormulario(element.id);
       }
 
-      if (element.tagName.toString().toLocaleLowerCase() != "a") {
+      if (element.tagName.toString().toLocaleLowerCase() == "span") {
         return;
       }
 

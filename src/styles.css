@@ -60,7 +60,7 @@ mat-label {
   transform: scale(1.5);
 }
 
-.ng-untouched .mat-icon{
+.ng-untouched  .mat-icon:no-button{
   color: black;
 }
 
@@ -75,7 +75,7 @@ mat-label {
     color: var(--escan-naranja);
 }
 
-.ng-valid .mat-icon {
+.ng-valid > div > div > .mat-form-field-prefix .mat-icon {
   color: var(--escan-verde);
 }
 
@@ -253,6 +253,10 @@ table tr a{
 
 .escasan-contenedor-tabla, .escan-tabla, .escan-tabla-franja, .escan-tabla-filtro{
   background-color: var(--escan-fondo);
+}
+
+.escan-tabla-filtro input{
+  padding: 4px;
 }
 
 .mat-header-row, .mat-header-cell{

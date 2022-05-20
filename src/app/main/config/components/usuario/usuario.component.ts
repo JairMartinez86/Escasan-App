@@ -24,6 +24,8 @@ export class UsuarioComponent implements OnInit {
     this.val.add("txtPass", "1", "LEN>", "0");
     this.val.add("txtPass", "2", "LEN>=", "3");
     this.val.add("txtVendedor", "1","LEN>", "0");
+    this.val.add("chkInactivo", "1","LEN>=", "0");
+    
    }
 
   public singleSelection(event: any) {
