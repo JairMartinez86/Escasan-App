@@ -8,7 +8,7 @@
   min-height: 100vh;
 }
 
-#div-login div{
+#div-login div, #div-login img{
   margin: 0;
   padding: 0;
   word-wrap:break-word;
@@ -18,7 +18,6 @@
 
 .form-signin {
   background-color: var(--escan-fondo);
-  border-radius: 20px;
   box-shadow: 3px 4px 14px 6px rgba(0,0,0,0.76);
   border: 5px solid var(--escan-verde);
   color: var(--escan-verde);
@@ -26,6 +25,10 @@
   min-width: 350px;
   max-width: 450px;
 
+}
+
+.form-signin, .form-signin img {
+  border-radius: 20px;
 }
 
 

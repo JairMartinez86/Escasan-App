@@ -15,19 +15,7 @@
 }
 
 
-#frmRoles  .mat-card-header{
-    background-color: var(--escan-verde);
-    color: var(--escan-fondo);
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    
-}
 
-#frmRoles  .mat-card-title{
-    font-weight: bold;
-    font-size: 1em;
-}
 
 #frmRoles mat-card mat-form-field{
     margin-top: 10px;

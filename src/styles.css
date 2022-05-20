@@ -21,6 +21,12 @@ body {
     
 }
 
+.igx-typography h1, .igx-typography h2, .igx-typography h3{
+  padding: 0;
+  margin: 0;
+  line-height: 1.2em;
+}
+
 .hide-element {
   display: none !important;
 }
@@ -205,6 +211,24 @@ mat-label {
 }
 
 
+/**************************************************************************************************
+                                        MAT-CARD
+**************************************************************************************************/
+
+
+.formulario .mat-card-header{
+  background-color: var(--escan-verde);
+  color: var(--escan-fondo);
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding-top: 10px;    
+}
+
+.formulario  .mat-card-title{
+  font-weight: bold;
+  font-size: 1em;
+}
 
 /**************************************************************************************************
                                         TABLA
@@ -221,12 +245,22 @@ table tr a{
 }
 
 
+
 .escasan-contenedor-tabla{
   border: 5px solid var(--escan-verde);
   box-shadow: 3px 4px 14px 6px rgba(0,0,0,0.76);
-  
+  border-radius: 20px;
 }
 
+.escasan-contenedor-tabla, .escan-tabla-franja{
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+}
+
+.escan-tabla{
+ border-bottom-left-radius: 15px;
+ border-bottom-right-radius: 15px;
+}
 
 
 .escasan-contenedor-tabla div,
@@ -234,6 +268,7 @@ table tr a{
   margin: 0;
   padding: 0;
 }
+
 
 .escan-tabla{
   overflow-x: auto;
@@ -255,8 +290,9 @@ table tr a{
   background-color: var(--escan-fondo);
 }
 
-.escan-tabla-filtro input{
+.escan-tabla-filtro input, .escan-tabla-filtro label{
   padding: 4px;
+  margin-left: 10px;
 }
 
 .mat-header-row, .mat-header-cell{

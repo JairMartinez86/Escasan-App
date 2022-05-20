@@ -23,19 +23,7 @@
 
 
 
-#frmUsuario  .mat-card-header{
-    background-color: var(--escan-verde);
-    color: var(--escan-fondo);
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    
-}
 
-#frmUsuario  .mat-card-title{
-    font-weight: bold;
-    font-size: 1em;
-}
 
 #frmUsuario mat-card mat-form-field, #frmUsuario mat-card igx-combo{
     margin-right: 5px;
