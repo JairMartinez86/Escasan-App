@@ -42,9 +42,11 @@ export class NavComponent{
 
 
     
+  
 
-
-    {EsMenu: false, Modulo : "FAC", ModuloNombre : "Facturación", Id: "navProforma", Link : "Proforma", MenuPadre : "", Clase : ""},
+    {EsMenu: true, Modulo : "FAC", ModuloNombre : "Facturación", Id: "navProforma", Link : "Proforma", MenuPadre : "", Clase : "fa-solid fa-handshake"},
+    {EsMenu: false, Modulo : "FAC", ModuloNombre : "Facturación", Id: "LinkProforma", Link : "Nueva Proforma", MenuPadre : "navProforma", Clase : "bi bi-receipt"},
+    {EsMenu: false, Modulo : "FAC", ModuloNombre : "Facturación", Id: "LinkRegistrosProforma", Link : "Registro Proforma", MenuPadre : "navProforma", Clase : "bi bi-table"},
 
     
   ]

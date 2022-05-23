@@ -72,6 +72,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { RolesComponent } from './main/config/components/roles/roles.component';
 import { RolesRegistroComponent } from './main/config/components/roles/roles-registro/roles-registro.component';
+import { ProformaComponent } from './main/fac/components/proforma/proforma.component';
 //FIN
 
 @NgModule({
@@ -88,7 +89,8 @@ import { RolesRegistroComponent } from './main/config/components/roles/roles-reg
     UsuarioComponent,
     DynamicFormDirective,
     RolesComponent,
-    RolesRegistroComponent
+    RolesRegistroComponent,
+    ProformaComponent
   ],
   imports: [
     BrowserModule,

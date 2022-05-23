@@ -1,5 +1,6 @@
 import { Component, HostListener, Input, ViewChild } from '@angular/core';
 import { DynamicNavDirective } from 'src/app/main/config/components/menu/nav/dynamic-nav.directive';
+import { ProformaComponent } from 'src/app/main/fac/components/proforma/proforma.component';
 import { DynamicFormDirective } from 'src/app/main/shared/directive/dynamic-form.directive';
 import { ServerService } from 'src/app/main/shared/service/server.service';
 import { RolesComponent } from '../roles/roles.component';
@@ -150,7 +151,22 @@ export class MenuComponent {
 
 
   private Modulo_FAC(f : string) : void{
+    switch(f){
+      case "LinkProforma":
+        
+        if(this.str_formulario != f){
+          this.dynamicForm.viewContainerRef.clear();
+          this.dynamicForm.viewContainerRef.createComponent(ProformaComponent);
+          this.str_formulario = f;
+        }
 
+        
+        break;
+
+        break;
+    }
+    
+   
   }
 
 
