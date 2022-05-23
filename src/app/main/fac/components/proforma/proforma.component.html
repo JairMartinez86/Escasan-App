@@ -1,183 +1,301 @@
 <div class="container" id="frmProforma">
 
-    <form class="formulario" [formGroup]="val.ValForm"  novalidate>
+    <div class="formulario" >
+        <div>
+            <form [formGroup]="val.ValForm"  novalidate>
 
-        <div class="row col-12">
+                <div class="row col-12">
+        
+                    <div class="col-12 btnAccion">
+                        <button mat-fab class="btn-escan-aceptar"><mat-icon>save</mat-icon></button>
+                        <button mat-fab class="btn-escan-cancelar"><mat-icon>undo</mat-icon></button>
+                        <div class="line-vertical"></div>
+                        <button mat-fab class="btn-escan-salir" (click)="Cerrar();"><mat-icon>exit_to_app</mat-icon></button>
+                    </div>
+        
+        
+                    <mat-accordion class="col-12 col-sm-12 col-md-6 col-lg-4 col-lx-4" >
+                        <mat-expansion-panel [expanded]="estadoPanel === true" hideToggle>
+                          <mat-expansion-panel-header class="escan-expan-panel">
+                            <mat-panel-title>
+                              DATOS
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                CLIENTE
+                            </mat-panel-description>
+                          </mat-expansion-panel-header>
+        
+        
+        
+                          <div class="row">
+                
+                            <div class="col-12">
+                                <igx-combo class="combo" #withValueKey [data]="lstCliente" valueKey="Codigo" displayKey="Nombre"
+                                    id="txtCliente"
+                                    formControlName="txtCliente"
+                                    placeholder="Cliente" searchPlaceholder="Seleccione un cliente..."
+                                    (selectionChanging)="singleSelection($event)" [itemsMaxHeight]="250" appAutofocus>
+                                </igx-combo>
+                            </div>
+        
+        
+                            <mat-form-field class="col-12">
+                                <mat-label>Nombre.</mat-label>
+                                <input matInput type="text"  id="txtNombre" formControlName="txtNombre">
+                                <mat-error *ngIf="val.ValForm.get('txtNombre')?.errors?.['Regla']=='1'">Nombre es <strong>requerido</strong></mat-error>
+                            </mat-form-field>
+        
+            
+                            <mat-form-field class="col-6">
+                                <mat-label>Ruc</mat-label>
+                                <input matInput type="text"  id="txtRuc" formControlName="txtRuc">
+                                <mat-error *ngIf="val.ValForm.get('txtRuc')?.errors?.['Regla']=='1'">Ruc es <strong>requerido</strong></mat-error>
+                            </mat-form-field>
+        
+                            <mat-form-field class="col-6">
+                                <mat-label>Cedula.</mat-label>
+                                <input matInput type="text"  id="txtCedula" formControlName="txtCedula">
+                                <mat-error *ngIf="val.ValForm.get('txtCedula')?.errors?.['Regla']=='1'">Cedula es <strong>requerido</strong></mat-error>
+                            </mat-form-field>
+        
+        
+                            <mat-form-field class="col-6">
+                                <mat-label>Telefono.</mat-label>
+                                <input matInput type="text"  id="txtTelefono" formControlName="txtTelefono">
+                                <mat-error *ngIf="val.ValForm.get('txtTelefono')?.errors?.['Regla']=='1'">Telefono es <strong>requerido</strong></mat-error>
+                            </mat-form-field>
+        
+                            <mat-form-field class="col-6">
+                                <mat-label>Celular.</mat-label>
+                                <input matInput type="text"  id="txtCelular" formControlName="txtCelular">
+                                <mat-error *ngIf="val.ValForm.get('txtCelular')?.errors?.['Regla']=='1'">Celular es <strong>requerido</strong></mat-error>
+                            </mat-form-field>
+        
+                            <mat-form-field class="col-12">
+                                <mat-label>Correo.</mat-label>
+                                <input matInput type="text"  id="txtCorreo" formControlName="txtCorreo">
+                                <mat-error *ngIf="val.ValForm.get('txtCorreo')?.errors?.['Regla']=='1'">Ruc es <strong>requerido</strong></mat-error>
+                            </mat-form-field>
+        
+            
+                        </div>
+        
+        
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="estadoPanel = true"
+                                             (closed)="estadoPanel = false">
+                         
+                        </mat-expansion-panel>
+                      </mat-accordion>
+        
+        
+        
+        
+                      <mat-accordion class="col-12 col-sm-12 col-md-6 col-lg-4 col-lx-4" >
+                        <mat-expansion-panel [expanded]="estadoPanel === true" hideToggle>
+                          <mat-expansion-panel-header class="escan-expan-panel">
+                            <mat-panel-title>
+                              DATOS
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                PROFORMA
+                            </mat-panel-description>
+                          </mat-expansion-panel-header>
+        
+        
+                          <mat-card-content class="row">
+        
+                            <div class="row">
+                                <mat-form-field class="col-6">
+                                    <mat-label>Serie.</mat-label>
+                                    <input matInput type="text"  id="txtSerie" formControlName="txtSerie">
+                                    <mat-error *ngIf="val.ValForm.get('txtSerie')?.errors?.['Regla']=='1'">Serie es <strong>requerido</strong></mat-error>
+                                </mat-form-field>
+                                
+        
+                                <mat-form-field class="col-6" appearance="legacy">
+                                    <mat-label>Fecha</mat-label>
+                                    <input matInput [matDatepicker]="picker" id="txtFecha" formControlName="txtFecha">
+                                    <mat-datepicker-toggle matSuffix [for]="picker">
+                                      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                                    </mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                    <mat-error *ngIf="val.ValForm.get('txtFecha')?.errors?.['Regla']=='1'">Fecha es <strong>requerido</strong></mat-error>
+                                </mat-form-field>
+                            </div>
+        
+        
+                            <div class="row">
+                               
+                                <igx-combo class="col-5"  #withValueKey [data]="lstPlazo" valueKey="IdPlazo" displayKey="Dias"
+                                    id="txtDias"
+                                    formControlName="txtDias"
+                                    placeholder="Dias" searchPlaceholder="Seleccione un plazo..."
+                                    (selectionChanging)="singleSelection($event)" [itemsMaxHeight]="250" appAutofocus>
+                                </igx-combo>
+                            
+                                <mat-radio-group class="col-7">
+                                    <mat-radio-button value="1">Contado</mat-radio-button>
+                                    <mat-radio-button value="2">Credito</mat-radio-button>
+                                </mat-radio-group>
+        
+                          
+                            </div>
+                           
+                           
+        
+                            <igx-combo class="col-12" #withValueKey [data]="lstBodega" valueKey="Codigo" displayKey="Bodega"
+                                    id="txtBodega"
+                                    formControlName="txtBodega"
+                                    placeholder="Bodega" searchPlaceholder="Seleccione una bodega..."
+                                    (selectionChanging)="singleSelection($event)" [itemsMaxHeight]="250" appAutofocus>
+                                </igx-combo>
+        
+                            <igx-combo class="col-12" #withValueKey [data]="lstVendedor" valueKey="IdVendedor" displayKey="Vendedor"
+                                id="txtVendedor"
+                                formControlName="txtVendedor"
+                                placeholder="Vendedor" searchPlaceholder="Seleccione un plazo..."
+                                (selectionChanging)="singleSelection($event)" [itemsMaxHeight]="250" appAutofocus>
+                            </igx-combo>
+        
+        
+                        </mat-card-content>
+        
+        
+        
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="estadoPanel = true"
+                                             (closed)="estadoPanel = false">
+                         
+                        </mat-expansion-panel>
+                      </mat-accordion>
+        
+                      
+                </div>
+        
+        
+            </form>
+        </div>
 
-            <div class="col-12 btnAccion">
-                <button mat-fab class="btn-escan-aceptar"><mat-icon>save</mat-icon></button>
-                <button mat-fab class="btn-escan-cancelar"><mat-icon>undo</mat-icon></button>
-                <div class="line-vertical"></div>
-                <button mat-fab class="btn-escan-salir" (click)="Cerrar();"><mat-icon>exit_to_app</mat-icon></button>
-            </div>
-
-
-            <mat-accordion class="col-12 col-sm-12 col-md-6 col-lg-4 col-lx-4" >
-                <mat-expansion-panel [expanded]="estadoPanel === true" hideToggle>
+        <div id="registros-tabla">
+            <mat-accordion class="col-12" >
+                <mat-expansion-panel   [expanded]="estadoPanel === true" hideToggle>
                   <mat-expansion-panel-header class="escan-expan-panel">
                     <mat-panel-title>
-                      Datos del Cliente
+                      DETALLE
                     </mat-panel-title>
                     <mat-panel-description>
-      
+                        PRODUCTOS
                     </mat-panel-description>
                   </mat-expansion-panel-header>
-
-
-
-                  <div class="row">
         
-                    <div class="col-12">
-                        <igx-combo class="combo" #withValueKey [data]="lstCliente" valueKey="Codigo" displayKey="Nombre"
-                            id="txtCliente"
-                            formControlName="txtCliente"
-                            placeholder="Cliente" searchPlaceholder="Seleccione un cliente..."
-                            (selectionChanging)="singleSelection($event)" [itemsMaxHeight]="250" appAutofocus>
-                        </igx-combo>
-                    </div>
+        
+        
+                  <div class="escan-registros">
+
+                  
+                    <div class="mat-elevation-z8 escan-tabla">
 
 
-                    <mat-form-field class="col-12">
-                        <mat-label>Nombre.</mat-label>
-                        <input matInput type="text"  id="txtNombre" formControlName="txtNombre">
-                        <mat-error *ngIf="val.ValForm.get('txtNombre')?.errors?.['Regla']=='1'">Nombre es <strong>requerido</strong></mat-error>
-                    </mat-form-field>
+                      <table mat-table class="escan-tabla"  [dataSource]="dataSource"  matSort (matSortChange)="announceSort($event)">
+                    
+                      
 
-    
-                    <mat-form-field class="col-6">
-                        <mat-label>Ruc</mat-label>
-                        <input matInput type="text"  id="txtRuc" formControlName="txtRuc">
-                        <mat-error *ngIf="val.ValForm.get('txtRuc')?.errors?.['Regla']=='1'">Ruc es <strong>requerido</strong></mat-error>
-                    </mat-form-field>
+                      <ng-container matColumnDef="Codigo">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Codigo">
+                          Codigo
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Codigo}} </td>
+                      </ng-container>
 
-                    <mat-form-field class="col-6">
-                        <mat-label>Cedula.</mat-label>
-                        <input matInput type="text"  id="txtCedula" formControlName="txtCedula">
-                        <mat-error *ngIf="val.ValForm.get('txtCedula')?.errors?.['Regla']=='1'">Cedula es <strong>requerido</strong></mat-error>
-                    </mat-form-field>
+                      <ng-container matColumnDef="Producto">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Producto">
+                          Producto
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Producto}} </td>
+                      </ng-container>
+
+ 
+                      <ng-container matColumnDef="Operacion">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Operacion">
+                          Descripcion
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Operacion}} </td>
+                      </ng-container>
+                
+                      <ng-container matColumnDef="Valor">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Valor">
+                          
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Valor}} </td>
+                      </ng-container>
 
 
-                    <mat-form-field class="col-6">
-                        <mat-label>Telefono.</mat-label>
-                        <input matInput type="text"  id="txtTelefono" formControlName="txtTelefono">
-                        <mat-error *ngIf="val.ValForm.get('txtTelefono')?.errors?.['Regla']=='1'">Telefono es <strong>requerido</strong></mat-error>
-                    </mat-form-field>
+                    
+<!--
+                      <ng-container matColumnDef="SubTotal">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by SubTotal">
+                          Sub Total.
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.SubTotal}} </td>
+                      </ng-container>
 
-                    <mat-form-field class="col-6">
-                        <mat-label>Celular.</mat-label>
-                        <input matInput type="text"  id="txtCelular" formControlName="txtCelular">
-                        <mat-error *ngIf="val.ValForm.get('txtCelular')?.errors?.['Regla']=='1'">Celular es <strong>requerido</strong></mat-error>
-                    </mat-form-field>
+                      <ng-container matColumnDef="Descuento">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Descuento">
+                          Descuento.
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Descuento}} </td>
+                      </ng-container>
 
-                    <mat-form-field class="col-12">
-                        <mat-label>Correo.</mat-label>
-                        <input matInput type="text"  id="txtCorreo" formControlName="txtCorreo">
-                        <mat-error *ngIf="val.ValForm.get('txtCorreo')?.errors?.['Regla']=='1'">Ruc es <strong>requerido</strong></mat-error>
-                    </mat-form-field>
+                      <ng-container matColumnDef="SubTotalNeto">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by SubTotalNeto">
+                          Sub Total Neto.
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.SubTotalNeto}} </td>
+                      </ng-container>
 
-    
+                      <ng-container matColumnDef="Impuesto">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Impuesto">
+                          Impuesto.
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Impuesto}} </td>
+                      </ng-container>
+
+                      <ng-container matColumnDef="Total">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Total">
+                          Total.
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Total}} </td>
+                      </ng-container>
+                    -->
+                    
+                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                      <tr
+                      mat-row  [class.demo-row-is-clicked]="clickedRows.has(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+                      
+                    </table>
+                    <mat-paginator [pageSizeOptions]="[25, 50, 100]"  showFirstLastButtons></mat-paginator>
                 </div>
 
 
+  
+
+                  </div>
+        
                 </mat-expansion-panel>
                 <mat-expansion-panel (opened)="estadoPanel = true"
                                      (closed)="estadoPanel = false">
                  
                 </mat-expansion-panel>
               </mat-accordion>
-
-
-
-
-              <mat-accordion class="col-12 col-sm-12 col-md-6 col-lg-4 col-lx-4" >
-                <mat-expansion-panel [expanded]="estadoPanel === true" hideToggle>
-                  <mat-expansion-panel-header class="escan-expan-panel">
-                    <mat-panel-title>
-                      Datos de la Proforma
-                    </mat-panel-title>
-                    <mat-panel-description>
-      
-                    </mat-panel-description>
-                  </mat-expansion-panel-header>
-
-
-                  <mat-card-content class="row">
-
-                    <div class="row">
-                        <mat-form-field class="col-6">
-                            <mat-label>Serie.</mat-label>
-                            <input matInput type="text"  id="txtSerie" formControlName="txtSerie">
-                            <mat-error *ngIf="val.ValForm.get('txtSerie')?.errors?.['Regla']=='1'">Serie es <strong>requerido</strong></mat-error>
-                        </mat-form-field>
-                        
-
-                        <mat-form-field class="col-6" appearance="legacy">
-                            <mat-label>Fecha</mat-label>
-                            <input matInput [matDatepicker]="picker" id="txtFecha" formControlName="txtFecha">
-                            <mat-datepicker-toggle matSuffix [for]="picker">
-                              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-                            </mat-datepicker-toggle>
-                            <mat-datepicker #picker></mat-datepicker>
-                            <mat-error *ngIf="val.ValForm.get('txtFecha')?.errors?.['Regla']=='1'">Fecha es <strong>requerido</strong></mat-error>
-                        </mat-form-field>
-                    </div>
-
-
-                    <div class="row">
-                       
-                        <igx-combo class="col-5"  #withValueKey [data]="lstPlazo" valueKey="IdPlazo" displayKey="Dias"
-                            id="txtDias"
-                            formControlName="txtDias"
-                            placeholder="Dias" searchPlaceholder="Seleccione un plazo..."
-                            (selectionChanging)="singleSelection($event)" [itemsMaxHeight]="250" appAutofocus>
-                        </igx-combo>
-                    
-                        <mat-radio-group class="col-7">
-                            <mat-radio-button value="1">Contado</mat-radio-button>
-                            <mat-radio-button value="2">Credito</mat-radio-button>
-                        </mat-radio-group>
-
-                  
-                    </div>
-                   
-                   
-
-                    <igx-combo class="col-12" #withValueKey [data]="lstBodega" valueKey="Codigo" displayKey="Bodega"
-                            id="txtBodega"
-                            formControlName="txtBodega"
-                            placeholder="Bodega" searchPlaceholder="Seleccione una bodega..."
-                            (selectionChanging)="singleSelection($event)" [itemsMaxHeight]="250" appAutofocus>
-                        </igx-combo>
-
-                    <igx-combo class="col-12" #withValueKey [data]="lstVendedor" valueKey="IdVendedor" displayKey="Vendedor"
-                        id="txtVendedor"
-                        formControlName="txtVendedor"
-                        placeholder="Vendedor" searchPlaceholder="Seleccione un plazo..."
-                        (selectionChanging)="singleSelection($event)" [itemsMaxHeight]="250" appAutofocus>
-                    </igx-combo>
-
-
-                </mat-card-content>
-
-
-
-                </mat-expansion-panel>
-                <mat-expansion-panel (opened)="estadoPanel = true"
-                                     (closed)="estadoPanel = false">
-                 
-                </mat-expansion-panel>
-              </mat-accordion>
-
-
-
-
- 
-
+        
         </div>
-   
-     
-       
-    </form>
+    </div>
+  
+
+    
+
+    
 </div>
 
 

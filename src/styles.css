@@ -251,7 +251,7 @@ mat-label {
 
 }
 
-.mat-expansion-panel-header-title {
+.mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
   color: var(--escan-ver);
 }
 

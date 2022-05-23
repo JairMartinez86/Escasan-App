@@ -5,6 +5,52 @@
     min-width: var(--escan-min-width); 
 }
 
+
+#registros-tabla{
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+.escan-tabla{
+    border-radius: 0;
+    margin-top: 10px;
+}
+
+
+
+.escan-tabla .mat-column-Fila, .escan-tabla .mat-column-EsBonificado   {
+    flex: 0 0 25% !important;
+    min-width: 30px !important;
+}
+
+.escan-tabla .mat-column-Codigo   {
+    flex: 0 0 25% !important;
+    min-width: 80px !important;
+}
+
+.escan-tabla .mat-column-Producto  {
+    flex: 0 0 25% !important;
+    min-width: 130px !important;
+}
+
+
+.escan-tabla .mat-column-Operacion  {
+    flex: 0 0 25% !important;
+    min-width: 50px !important;
+}
+
+.escan-tabla .mat-column-Valor  {
+    flex: 0 0 25% !important;
+    min-width: 100px !important;
+}
+
+
+::ng-deep  #registros-tabla  .mat-expansion-panel-content >  .mat-expansion-panel-body {
+    padding: 0 !important;
+  }
+
+
 .scaled {
     /*transform: scale(0.7);  Igual que: scaleX(0.7) scaleY(0.7) */
     /*transform: scaleY(0.7);*/
