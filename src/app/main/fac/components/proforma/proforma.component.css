@@ -1,0 +1,13 @@
+.formulario{
+    margin-top: 0;
+}
+#frmProforma{
+    min-width: var(--escan-min-width); 
+}
+
+.scaled {
+    /*transform: scale(0.7);  Igual que: scaleX(0.7) scaleY(0.7) */
+    /*transform: scaleY(0.7);*/
+  }
+
+  

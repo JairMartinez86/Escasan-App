@@ -22,6 +22,7 @@ npm i ng-modal-lib --save --legacy-peer-deps
 
 
 
+
 NOTA: Ejecutar los siguientes comandos si da error al instalar el modal
 
 npm uninstall bootstrap

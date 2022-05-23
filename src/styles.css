@@ -46,6 +46,10 @@ mat-form-field {
     padding-right: 10px;
 }
 
+.mat-form-field-infix{
+  margin: 0;
+}
+
 
 
 :root {
@@ -58,6 +62,15 @@ mat-form-field {
   --escan-min--width: 350px;
 }
 
+
+.mat-calendar-body-selected{
+  background-color: var(--escan-verde);
+  color: var(--escan-fondo);
+}
+.mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical){
+  background-color: var(--escan-naranja) !important;
+  color: var(--escan-fondo) !important;
+}
 
 mat-label {
   color: black;
@@ -109,7 +122,13 @@ mat-label {
   height: 24px;
 }
 
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+  border-color: var(--escan-naranja) !important;
+}
 
+.mat-radio-button.mat-accent .mat-radio-inner-circle{
+  background-color: var(--escan-naranja) !important;
+}
 
 
 
@@ -211,6 +230,47 @@ mat-label {
   border: 0;
   color: var(--escan-fondo);
 }
+
+
+/**************************************************************************************************
+                                        EXPANSION PANEL
+**************************************************************************************************/
+.mat-accordion{
+  margin: 10px;
+  padding: 0px;
+}
+
+
+.mat-expansion-panel-header{
+  background-color: var(--escan-naranja);
+  color: var(--escan-fondo);
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding-top: 10px;    
+
+}
+
+.mat-expansion-panel-header-title {
+  color: var(--escan-ver);
+}
+
+
+
+.escan-expan-panel.mat-expanded,
+.escan-expan-panel.mat-expanded:hover,
+.escan-expan-panel:hover,
+.escan-expan-panel.mat-expanded:focus,
+.escan-expan-panel.mat-expanded:focus:not([aria-disabled=true]),
+.mat-expansion-panel .escan-expan-panel.cdk-keyboard-focused:not([aria-disabled=true]),
+.mat-expansion-panel .escan-expan-panel.cdk-program-focused:not([aria-disabled=true]),
+.mat-expansion-panel:not(.mat-expanded) .escan-expan-panel:hover:not([aria-disabled=true]),
+.escan-expan-panel.mat-expanded:hover:not([aria-disabled=true]) {
+  background-color: var(--escan-verde);
+}
+
+
+
 
 
 /**************************************************************************************************

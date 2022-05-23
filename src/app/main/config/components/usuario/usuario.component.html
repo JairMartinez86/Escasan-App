@@ -82,7 +82,7 @@
                     <mat-card-content class="row">
                         <mat-form-field class="col-12">
                             <mat-label>Usuario.</mat-label>
-                            <input matInput type="text" formControlName="txtLogin" id="txtLogin" formControlName="txtLogin">
+                            <input matInput type="text"  id="txtLogin" formControlName="txtLogin">
                             <mat-icon matPrefix>person</mat-icon>
                             <mat-error *ngIf="val.ValForm.get('txtLogin')?.errors?.['Regla']=='1'">Usuario es <strong>requerido</strong></mat-error>
                             <mat-error *ngIf="val.ValForm.get('txtLogin')?.errors?.['Regla']=='2'">Debe de contener al menos <strong>{{val.C("txtLogin", "2")}}</strong> cáracteres</mat-error>

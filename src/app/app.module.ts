@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import {DateAdapter, MatNativeDateModule, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
@@ -73,7 +74,22 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { RolesComponent } from './main/config/components/roles/roles.component';
 import { RolesRegistroComponent } from './main/config/components/roles/roles-registro/roles-registro.component';
 import { ProformaComponent } from './main/fac/components/proforma/proforma.component';
+import {MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
 //FIN
+
+export const DateFormat = {
+  parse: {
+    dateInput: 'input',
+    },
+    display: {
+    dateInput: 'DD-MM-YYYY',
+    monthYearLabel: 'MMMM YYYY',
+    dateA11yLabel: 'MM/DD/YYYY',
+    monthYearA11yLabel: 'MMMM YYYY',
+    }
+  };
+
+
 
 @NgModule({
   declarations: [
@@ -101,6 +117,7 @@ import { ProformaComponent } from './main/fac/components/proforma/proforma.compo
     MatAutocompleteModule,
     MatCheckboxModule,
     MatDatepickerModule,
+    MatNativeDateModule,
     MatFormFieldModule,
     MatInputModule,
     MatRadioModule,
@@ -180,7 +197,10 @@ import { ProformaComponent } from './main/fac/components/proforma/proforma.compo
     MatTableModule
   ],
   providers: [
-    {provide: LocationStrategy, useClass: HashLocationStrategy}
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+    { provide: MAT_DATE_FORMATS, useValue: DateFormat }
+    
   ],
   bootstrap: [AppComponent]
 })
