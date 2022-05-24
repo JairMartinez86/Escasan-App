@@ -45,8 +45,7 @@
 
 
 
-  .escan-tabla mat-form-field, .escan-tabla .mat-input-element  {
-    width: 100%;
+  .escan-tabla mat-form-field {
     padding: 0px !important;
     margin: 0px !important;
     text-align: end !important;
