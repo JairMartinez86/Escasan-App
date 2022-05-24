@@ -9,13 +9,6 @@
 }
 
 
-#frmRoles .mat-card, #frmRoles  div {
-     margin: 0px;
-     padding: 0px;
-}
-
-
-
 
 #frmRoles mat-card mat-form-field{
     margin-top: 10px;

@@ -21,11 +21,11 @@ html, body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    font-size: 0.7em;
 }
 
+
 .igx-typography h1, .igx-typography h2, .igx-typography h3{
-  padding: 0;
-  margin: 0;
   line-height: 1.2em;
 }
 
@@ -59,7 +59,7 @@ mat-form-field {
 
 
 
-  --escan-min--width: 350px;
+  --escan-min--width: 360px;
 }
 
 
@@ -295,36 +295,21 @@ mat-label {
 /**************************************************************************************************
                                         TABLA
 **************************************************************************************************/
-.escan-registros, .escasan-contenedor-tabla, .btnAccion{
-  min-width: calc(var(--escan-min--width) - 30px);
-  
+
+.escan-registros{
+  min-width: var(--escan-min--width);
+  border: 3px solid var(--escan-verde);
 }
 
-table tr , table th{
-  margin: 0;
-  padding: 0;
-}
+
 
 table tr a{
   margin: 15px;
 }
 
-
-
 .escasan-contenedor-tabla{
-  border: 5px solid var(--escan-verde);
-  box-shadow: 3px 4px 14px 6px rgba(0,0,0,0.76);
-  border-radius: 20px;
-}
-
-.escasan-contenedor-tabla, .escan-tabla-franja{
-border-top-left-radius: 20px;
-border-top-right-radius: 20px;
-}
-
-.escan-tabla{
- border-bottom-left-radius: 15px;
- border-bottom-right-radius: 15px;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -355,10 +340,7 @@ border-top-right-radius: 20px;
   background-color: var(--escan-fondo);
 }
 
-.escan-tabla-filtro input, .escan-tabla-filtro label{
-  padding: 4px;
-  margin-left: 10px;
-}
+
 
 .mat-header-row, .mat-header-cell{
   background-color: var(--escan-verde);
@@ -486,7 +468,9 @@ border-top-right-radius: 20px;
                                         MODAL
 **************************************************************************************************/
 
-
+.ui-modal-body{
+  padding: 0px !important;
+}
   .dt-green {background-color: #4CAF50;} /* Green */
   .dt-blue {background-color: #008CBA;} /* Blue */
   .dt-red {background-color: #f44336;} /* Red */

@@ -6,12 +6,6 @@
 
 
 
-#frmUsuario .mat-card, #frmUsuario  div {
-     margin: 0px;
-     padding: 0px;
-}
-
-
 #frmUsuario igx-combo{
     margin-bottom: 7px;
 }

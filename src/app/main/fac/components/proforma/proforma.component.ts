@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Validacion } from 'src/app/main/shared/class/validacion';
@@ -14,21 +14,27 @@ export interface I_Detalle {
   }
 
   let ELEMENT_DATA: I_Detalle[] = [
-    {Fila: "1", Codigo : '05-B1-AR11', Producto : 'Aretes de Identificación Animal: Hembra Visual Tipo Bandera y Macho de Botón de Cierre/Hembra de Botón Visual y Macho de Botón de Cierre (PARES)', Operacion : "Cantidad", Valor : "10"},
-    {Fila: "", Codigo : "", Producto : '', Operacion : "Precio", Valor : "25.5"},
+    {Fila: "1", Codigo : '05-B1-AR11', Producto : 'Aretes de Identificación Animal: Hembra Visual Tipo Bandera y Macho de Botón de Cierre/Hembra de Botón Visual y Macho de Botón de Cierre (PARES)', Operacion : "", Valor : ""},
+    {Fila: "", Codigo : "", Producto : '', Operacion : "Cantidad", Valor : "10.00"},
+    {Fila: "", Codigo : "", Producto : '', Operacion : "Precio", Valor : "45.25"},
     {Fila: "", Codigo : "", Producto : '', Operacion : "Bonificado", Valor : ""},
-    {Fila: "", Codigo : "", Producto : '', Operacion : "Descuento", Valor : "2.5"},
-
-    {Fila: "2", Codigo : '02-B2-AB01', Producto : 'ABRAZADERA T/CLAMP/ACERO INOXIDABLE', Operacion : "Cantidad", Valor : "10"},
+    {Fila: "", Codigo : "", Producto : '', Operacion : "Sub.Total", Valor : "452.50"},
+    {Fila: "", Codigo : "", Producto : '', Operacion : "Descuento", Valor : "0.00"},
+    
+    {Fila: "2", Codigo : '02-B2-AB01', Producto : 'ABRAZADERA T/CLAMP/ACERO INOXIDABLE', Operacion : "", Valor : ""},
+    {Fila: "", Codigo : "", Producto : '', Operacion : "Cantidad", Valor : "1"},
     {Fila: "", Codigo : "", Producto : '', Operacion : "Precio", Valor : "40.55"},
     {Fila: "", Codigo : "", Producto : '', Operacion : "Bonificado", Valor : "Si"},
-    {Fila: "", Codigo : "", Producto : '', Operacion : "Descuento", Valor : "4.55"},
+    {Fila: "", Codigo : "", Producto : '', Operacion : "Sub.Total", Valor : "40.55"},
+    {Fila: "", Codigo : "", Producto : '', Operacion : "Descuento", Valor : "40.55"},
+    
   ];
 
 @Component({
   selector: 'app-proforma',
   templateUrl: './proforma.component.html',
-  styleUrls: ['./proforma.component.css']
+  styleUrls: ['./proforma.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ProformaComponent implements OnInit {
 

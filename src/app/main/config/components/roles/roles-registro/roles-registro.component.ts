@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ServerService } from 'src/app/main/shared/service/server.service';
@@ -15,7 +15,8 @@ export interface I_Rol {
 @Component({
   selector: 'app-roles-registro',
   templateUrl: './roles-registro.component.html',
-  styleUrls: ['./roles-registro.component.css']
+  styleUrls: ['./roles-registro.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class RolesRegistroComponent implements OnInit {
 

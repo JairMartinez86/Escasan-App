@@ -1,4 +1,4 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { ServerService } from './main/shared/service/server.service';
 
 
@@ -6,6 +6,7 @@ import { ServerService } from './main/shared/service/server.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
   public title = 'Escalante Sanchez S.A.';
