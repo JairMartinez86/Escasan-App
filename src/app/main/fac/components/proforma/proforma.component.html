@@ -200,7 +200,9 @@
                           <th mat-header-cell *matHeaderCellDef  mat-sort-header sortActionDescription="Sort by Codigo" class="td-codigo">
                             Codigo
                           </th>
-                          <td mat-cell *matCellDef="let element" [ngClass]="element.Operacion == 'Descuento' ? 'td-codigo escan-fila-borde' : 'td-codigo escan-fila-no-borde'"> {{element.Codigo}} </td>
+                          <td mat-cell *matCellDef="let element" [ngClass]="element.Operacion == 'Bonificado' ? 'td-codigo escan-fila-borde' : 'td-codigo escan-fila-no-borde'">
+                           <span *ngIf="element.Fila != '' "> {{element.Codigo}} </span>
+                          </td>
                         </ng-container>
 
 
@@ -208,7 +210,7 @@
                           <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Producto" class="td-Producto">
                             Producto
                           </th>
-                          <td mat-cell *matCellDef="let element" [ngClass]="element.Operacion == 'Descuento' ? 'td-Producto escan-fila-borde' : 'td-Producto escan-fila-no-borde'"> {{element.Producto}} </td>
+                          <td mat-cell *matCellDef="let element" [ngClass]="element.Operacion == 'Bonificado' ? 'td-Producto escan-fila-borde' : 'td-Producto escan-fila-no-borde'"> {{element.Producto}} </td>
                         </ng-container>
 
 
@@ -216,7 +218,7 @@
                           <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Operacion" class="td-Operacion">
                             Descripcion
                           </th>
-                          <td mat-cell *matCellDef="let element" [ngClass]="element.Operacion == 'Descuento' ? 'td-Operacion escan-fila-borde' : 'td-Operacion escan-fila-no-borde'"> {{element.Operacion}} </td>
+                          <td mat-cell *matCellDef="let element" [ngClass]="element.Operacion == 'Bonificado' ? 'td-Operacion escan-fila-borde' : 'td-Operacion escan-fila-no-borde'"> {{element.Operacion}} </td>
                         </ng-container>
      
                       
@@ -225,13 +227,13 @@
                           <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Valor" class="td-Valor">
                             
                           </th>
-                          <td mat-cell *matCellDef="let element" [ngClass]="element.Operacion == 'Descuento' ? 'td-Valor escan-fila-borde' : 'td-Valor escan-fila-no-borde'" >
+                          <td mat-cell *matCellDef="let element" [ngClass]="element.Operacion == '%Bonificado' ? 'td-Valor escan-fila-borde' : 'td-Valor escan-fila-no-borde'" >
                              <span *ngIf="element.Operacion =='Bonificado' && element.Valor =='Si'"><i class="bi bi-check" style="font-size: 3em; color: var(--escan-verde)"></i></span>
 
                              <span *ngIf="element.Operacion !='Bonificado' && element.Valor != ''">
   
                               <mat-form-field floatLabel="never" class="escan-fila-no-borde">
-                                <input  matInput placeholder="" [value]="element.Valor">
+                                <input  matInput placeholder="" [value]="element.Valor" [disabled]="TieneBonificado(element.Codigo)">
                               </mat-form-field>
                             </span>
                             

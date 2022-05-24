@@ -27,7 +27,7 @@
 
 .mat-column-Codigo {
   padding: 0 !important;
-  max-width: 850px;
+  max-width: 85px;
 }
 
 
@@ -50,6 +50,10 @@
     padding: 0px !important;
     margin: 0px !important;
     text-align: end !important;
+  }
+
+  .mat-input-element:disabled{
+    color: black;
   }
   
 
