@@ -26,30 +26,29 @@
 
 
 .mat-column-Codigo {
-  padding: 0 ;
+  padding: 0 !important;
   max-width: 850px;
 }
 
 
 
 .mat-column-Operacion {
-    font-weight: bold;
-    padding: 0 ;
-    max-width: 85px;
-  }
+  padding: 0 !important;
+  font-weight: bold;
+  max-width: 85px;
+}
 
   .mat-column-Valor {
-    padding: 0 ;
     max-width: 100px;
   }
 
 
 
-  .escan-tabla mat-form-field > input {
-    padding-right: 0px;
-    margin-right: 0px;
-    margin: 0;
-    text-align: end;
+  .escan-tabla mat-form-field, .escan-tabla .mat-input-element  {
+    width: 100%;
+    padding: 0px !important;
+    margin: 0px !important;
+    text-align: end !important;
   }
   
 
