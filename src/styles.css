@@ -25,482 +25,476 @@ html, body {
 }
 
 
-
+mat-form-field {
+  width: 100%;
+}
 
 .igx-typography h1, .igx-typography h2, .igx-typography h3{
-  line-height: 1.2em;
-}
+    line-height: 1.2em;
+  }
+  
+  .container, .container-fluid{
+    padding: 0;
+  }
+  
+  
+ 
+  .mat-form-field-infix{
+    margin: 0;
+  }
+  
+  
+  :root {
+    --escan-naranja:  #ff4500;
+    --escan-verde: #009d43;
+    --escan-fondo: white;
+  
 
-.hide-element {
-  display: none !important;
-}
-
-
-.container, .container-fluid{
-  padding: 0;
-}
-
-
-
-mat-form-field {
-    width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.mat-form-field-infix{
-  margin: 0;
-}
-
-
-
-:root {
-  --escan-naranja:  #ff4500;
-  --escan-verde: #009d43;
-  --escan-fondo: white;
-
-
-
-  --escan-min--width: 360px;
-  --escan-font--size: 1em;
-}
-
-
-.mat-calendar-body-selected{
-  background-color: var(--escan-verde);
-  color: var(--escan-fondo);
-}
-.mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical){
-  background-color: var(--escan-naranja) !important;
-  color: var(--escan-fondo) !important;
-}
-
-
-.mat-icon{
-  transform: scale(1.3);
-}
-
-.ng-untouched  .mat-icon:no-button{
-  color: black;
-}
-
-.mat-form-field.mat-focused  .mat-form-field-ripple{
-    background-color: var(--escan-verde); 
-
-}
-
-.mat-error,
-.mat-form-field-invalid .mat-icon {
-    border-color: var(--escan-naranja);
-    color: var(--escan-naranja);
-}
-
-.ng-valid > div > div > .mat-form-field-prefix .mat-icon {
-  color: var(--escan-verde);
-}
-
-
-.mat-form-field.mat-form-field-invalid .mat-form-field-ripple,
-.mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent {
-  background-color:  var(--escan-naranja);
-}
-
-
-.mat-checkbox-checked .mat-checkbox-background, 
-.mat-checkbox-indeterminate .mat-checkbox-background {
-  background-color: var(--escan-naranja) !important;
-}
-
-
-.mat-checkbox:not(.mat-checkbox-disabled) .mat-checkbox-ripple .mat-ripple-element {
-  background-color: var(--escan-naranja) !important;
-}
-
-.mat-checkbox .mat-checkbox-inner-container {
-  width: 24px;
-  height: 24px;
-}
-
-.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
-  border-color: var(--escan-naranja) !important;
-}
-
-.mat-radio-button.mat-accent .mat-radio-inner-circle{
-  background-color: var(--escan-naranja) !important;
-}
-
-
-
-
-.escan-text{
-    font-style: italic;
-    font-family: 'SavingsBond';
-}
-
-.escan-min-width{
-    min-width: var(--escan-min--width); 
-}
-
-
-
-
-
-
-/**************************************************************************************************
-                                        FORMULARIO
-**************************************************************************************************/
-
-
-
-.formulario{
-    background-color: var(--escan-fondo);
-    border: 3px solid var(--escan-verde);
-    box-shadow: 3px 4px 14px 6px rgba(0,0,0,0.76);
-    border-radius: 5px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    min-width: var(--escan-min--width);
-}
-
-
-.btnAccion{
+    --escan-min--width: 360px;
+    --escan-font--size: 1em;
+  }
+  
+  
+  .mat-calendar-body-selected{
+    background-color: var(--escan-verde);
+    color: var(--escan-fondo);
+  }
+  .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical){
+    background-color: var(--escan-naranja) !important;
+    color: var(--escan-fondo) !important;
+  }
+  
+  
+  .mat-icon{
+    transform: scale(1.3);
+  }
+  
+  .ng-untouched  .mat-icon:no-button{
+    color: black;
+  }
+  
+  .mat-form-field.mat-focused  .mat-form-field-ripple{
+      background-color: var(--escan-verde); 
+  
+  }
+  
+  .mat-error,
+  .mat-form-field-invalid .mat-icon {
+      border-color: var(--escan-naranja);
+      color: var(--escan-naranja);
+  }
+  
+  .ng-valid > div > div > .mat-form-field-prefix .mat-icon {
+    color: var(--escan-verde);
+  }
+  
+  
+  .mat-form-field.mat-form-field-invalid .mat-form-field-ripple,
+  .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent {
+    background-color:  var(--escan-naranja);
+  }
+  
+  
+  .mat-checkbox-checked .mat-checkbox-background, 
+  .mat-checkbox-indeterminate .mat-checkbox-background {
+    background-color: var(--escan-naranja) !important;
+  }
+  
+  
+  .mat-checkbox:not(.mat-checkbox-disabled) .mat-checkbox-ripple .mat-ripple-element {
+    background-color: var(--escan-naranja) !important;
+  }
+  
+  .mat-checkbox .mat-checkbox-inner-container {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+    border-color: var(--escan-naranja) !important;
+  }
+  
+  .mat-radio-button.mat-accent .mat-radio-inner-circle{
+    background-color: var(--escan-naranja) !important;
+  }
+  
+  
+  
+  
+  .escan-text{
+      font-style: italic;
+      font-family: 'SavingsBond';
+  }
+  
+  .escan-min-width{
+      min-width: var(--escan-min--width); 
+  }
+  
+  
+  
+  
+  
+  
+  /**************************************************************************************************
+                                          FORMULARIO
+  **************************************************************************************************/
+  
+  
+  
+  .formulario{
+      background-color: var(--escan-fondo);
+      border: 3px solid var(--escan-verde);
+      box-shadow: 3px 4px 14px 6px rgba(0,0,0,0.76);
+      border-radius: 5px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      min-width: var(--escan-min--width);
+  }
+  
+  
+  .btnAccion{
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+      min-width: var(--escan-min--width);
+  }
+  
+  .formulario input, .formulario label{
+    margin-left: 10px;
+  }
+  
+  mat-label {
+    color: black;
+    font-size: var(--escan-font--size);
+  }
+  
+  .btnAccion button{
+      margin: 10px;
+  }
+  
+  .line-vertical {
+      
+      border-left: 2px solid black;
+      height: 100%;
+    }
+  
+  
+  
+  .btnAccion .btn-escan-aceptar{
+      background-color: transparent;
+      border: 2px solid var(--escan-verde);
+      color: var(--escan-verde);
+  }
+  
+  .btnAccion button .mat-icon {
+      transform: scale(1.5);
+    }
+  
+  .btnAccion .btn-escan-cancelar{
+      background-color: transparent;
+      border: 2px solid var(--escan-naranja);
+      color: var(--escan-naranja);
+  
+  }
+  
+  .btnAccion .btn-escan-salir, .btnAccion .btn-escan-buscar{
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+  
+  }
+  
+  
+  .btnAccion .btn-escan-aceptar:hover{
+      background-color: var(--escan-verde);
+      border: 0;
+      color: var(--escan-fondo);
+  }
+  
+  .btnAccion .btn-escan-cancelar:hover{
+      background-color: var(--escan-naranja);
+      border: 0;
+      color: var(--escan-fondo);
+  }
+  
+  .btnAccion .btn-escan-salir:hover, .btnAccion .btn-escan-buscar:hover{
+    background-color: black;
+    border: 0;
+    color: var(--escan-fondo);
+  }
+  
+  
+  /**************************************************************************************************
+                                          EXPANSION PANEL
+  **************************************************************************************************/
+  .mat-accordion{
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  
+  .mat-expansion-panel-header{
+    background-color: var(--escan-naranja);
+    color: var(--escan-fondo);
     display: flex;
     justify-content: center; 
     align-items: center;
+    padding-top: 10px;    
+  
+  }
+  
+  .mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
+    color: var(--escan-ver);
+  }
+  
+  
+  
+  .escan-expan-panel.mat-expanded,
+  .escan-expan-panel.mat-expanded:hover,
+  .escan-expan-panel:hover,
+  .escan-expan-panel.mat-expanded:focus,
+  .escan-expan-panel.mat-expanded:focus:not([aria-disabled=true]),
+  .mat-expansion-panel .escan-expan-panel.cdk-keyboard-focused:not([aria-disabled=true]),
+  .mat-expansion-panel .escan-expan-panel.cdk-program-focused:not([aria-disabled=true]),
+  .mat-expansion-panel:not(.mat-expanded) .escan-expan-panel:hover:not([aria-disabled=true]),
+  .escan-expan-panel.mat-expanded:hover:not([aria-disabled=true]) {
+    background-color: var(--escan-verde);
+  }
+  
+  
+  
+  
+  
+  /**************************************************************************************************
+                                          MAT-CARD
+  **************************************************************************************************/
+  
+  
+  .formulario .mat-card-header{
+    background-color: var(--escan-verde);
+    color: var(--escan-fondo);
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding-top: 10px;    
+  }
+  
+  .formulario  .mat-card-title{
+    font-weight: bold;
+    font-size: 1em;
+  }
+  
+  /**************************************************************************************************
+                                          TABLA
+  **************************************************************************************************/
+  
+  .mat-header-cell{
+    padding: 0 !important;
+  }
+  .escan-registros{
     min-width: var(--escan-min--width);
-}
-
-.formulario input, .formulario label{
-  margin-left: 10px;
-}
-
-mat-label {
-  color: black;
-  font-size: var(--escan-font--size);
-}
-
-.btnAccion button{
-    margin: 10px;
-}
-
-.line-vertical {
-    
-    border-left: 2px solid black;
+    border: 3px solid var(--escan-verde);
+  }
+  
+  
+  
+  table tr a{
+    margin: 15px;
+  }
+  
+  .escasan-contenedor-tabla{
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  
+  .escan-tabla{
+    overflow-x: auto;
+    width: 100%;
     height: 100%;
   }
-
-
-
-.btnAccion .btn-escan-aceptar{
-    background-color: transparent;
-    border: 2px solid var(--escan-verde);
-    color: var(--escan-verde);
-}
-
-.btnAccion button .mat-icon {
-    transform: scale(1.5);
-  }
-
-.btnAccion .btn-escan-cancelar{
-    background-color: transparent;
-    border: 2px solid var(--escan-naranja);
-    color: var(--escan-naranja);
-
-}
-
-.btnAccion .btn-escan-salir, .btnAccion .btn-escan-buscar{
-  background-color: transparent;
-  border: 2px solid black;
-  color: black;
-
-}
-
-
-.btnAccion .btn-escan-aceptar:hover{
-    background-color: var(--escan-verde);
-    border: 0;
-    color: var(--escan-fondo);
-}
-
-.btnAccion .btn-escan-cancelar:hover{
-    background-color: var(--escan-naranja);
-    border: 0;
-    color: var(--escan-fondo);
-}
-
-.btnAccion .btn-escan-salir:hover, .btnAccion .btn-escan-buscar:hover{
-  background-color: black;
-  border: 0;
-  color: var(--escan-fondo);
-}
-
-
-/**************************************************************************************************
-                                        EXPANSION PANEL
-**************************************************************************************************/
-.mat-accordion{
-  margin: 10px;
-  padding: 10px;
-}
-
-
-.mat-expansion-panel-header{
-  background-color: var(--escan-naranja);
-  color: var(--escan-fondo);
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  padding-top: 10px;    
-
-}
-
-.mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
-  color: var(--escan-ver);
-}
-
-
-
-.escan-expan-panel.mat-expanded,
-.escan-expan-panel.mat-expanded:hover,
-.escan-expan-panel:hover,
-.escan-expan-panel.mat-expanded:focus,
-.escan-expan-panel.mat-expanded:focus:not([aria-disabled=true]),
-.mat-expansion-panel .escan-expan-panel.cdk-keyboard-focused:not([aria-disabled=true]),
-.mat-expansion-panel .escan-expan-panel.cdk-program-focused:not([aria-disabled=true]),
-.mat-expansion-panel:not(.mat-expanded) .escan-expan-panel:hover:not([aria-disabled=true]),
-.escan-expan-panel.mat-expanded:hover:not([aria-disabled=true]) {
-  background-color: var(--escan-verde);
-}
-
-
-
-
-
-/**************************************************************************************************
-                                        MAT-CARD
-**************************************************************************************************/
-
-
-.formulario .mat-card-header{
-  background-color: var(--escan-verde);
-  color: var(--escan-fondo);
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  padding-top: 10px;    
-}
-
-.formulario  .mat-card-title{
-  font-weight: bold;
-  font-size: 1em;
-}
-
-/**************************************************************************************************
-                                        TABLA
-**************************************************************************************************/
-
-.mat-header-cell{
-  padding: 0 !important;
-}
-.escan-registros{
-  min-width: var(--escan-min--width);
-  border: 3px solid var(--escan-verde);
-}
-
-
-
-table tr a{
-  margin: 15px;
-}
-
-.escasan-contenedor-tabla{
-  margin: 0;
-  padding: 0;
-}
-
-
-
-.escan-tabla{
-  overflow-x: auto;
-  width: 100%;
-  height: 100%;
-}
-
-
-
-
-.escasan-contenedor-tabla .escan-tabla-franja{
-  font-size: 1.5em;
-  font-weight: bold;
-  color: var(--escan-naranja);
-  text-align: center;
-}
-
-.escasan-contenedor-tabla, .escan-tabla, .escan-tabla-franja, .escan-tabla-filtro{
-  background-color: var(--escan-fondo);
-}
-
-.escan-tabla .input-buscar, .mat-input-element {
-  margin-top: 10px !important;
-}
-
-
-
-.mat-header-row, .mat-header-cell{
-  background-color: var(--escan-verde);
-  color: var(--escan-fondo);
-}
-
-
-
-
-.mat-row .mat-cell {
-  border-bottom: 1px solid transparent;
-  border-top: 1px solid transparent;
-  cursor: pointer;
-}
-
-.mat-row:hover .mat-cell {
-  border-color: currentColor;
-}
-
-.nueva-fila{
-  background-color: var(--escan-naranja);
-  color: black;
-  font-weight: bold;
-  font-style: normal;
-  font-size: 1.1em;
-}
-
-
-.mat-paginator, .mat-paginator .mat-select-value,
-.mat-paginator .mat-select-arrow,
-.mat-paginator .mat-form-field-underline,
-.mat-paginator .mat-icon-button,
-.mat-paginator .mat-paginator-icon{
-  background-color: var(--escan-naranja);
-  color: var(--escan-fondo);
-}
-
-
-
-
-.mat-option:hover:not(.mat-option-disabled),
-.mat-option .mat-active{
-  background-color: var(--escan-verde);
-  color: var(--escan-fondo);
-}
-
-
-
-.mat-paginator .mat-form-field-underline{
-  background-color: var(--escan-fondo);
-}
-
-.ng-tns-c156-4 .ng-trigger .ng-trigger-transformPanel .mat-select-panel .mat-primary {
-  background-color: var(--escan-verde);
-}
-
-
-/***************************************************************************************************************/
-
-
-/**************************************************************************************************
-                                        COMBO BOX
-**************************************************************************************************/
-
-.igx-input-group__border{
-    background-color: var(--escan-verde) !important;
-    border: 1px solid var(--escan-verde) !important;
-}
-
-
-
-
-.igx-drop-down__header{
-  text-align: center !important;
-  padding: 4px !important;
   
-}
-
-.igx-drop-down__header span {
-    width: 100%;
-    color: var(--escan-naranja) !important;
+  
+  
+  
+  .escasan-contenedor-tabla .escan-tabla-franja{
+    font-size: 1.5em;
     font-weight: bold;
+    color: var(--escan-naranja);
+    text-align: center;
   }
-
-
-.igx-drop-down__item--focused,
-.igx-drop-down__item--selected{
-  background-color: var(--escan-verde)  !important;
-  color: var(--escan-fondo) !important;
-}
-
-.idle-bottom-line-color{
-    background-color: var(--escan-fondo) !important;
-    color: black !important;
+  
+  .escasan-contenedor-tabla, .escan-tabla, .escan-tabla-franja, .escan-tabla-filtro{
+    background-color: var(--escan-fondo);
   }
+  
+ 
 
-
-
-  .igx-checkbox__composite,
-  .igx-checkbox__composite-mark,
-  .igx-checkbox--checked,
-  .igx-drop-down__item--selected[type='checkbox']:checked{
-    color: var(--escan-fondo) !important;
-    background-color: var(--escan-naranja) !important;
-    border: 1px solid var(--escan-naranja) !important;
+  .mat-header-row, .mat-header-cell{
+    background-color: var(--escan-verde);
+    color: var(--escan-fondo);
   }
-
-  .igx-input-group--valid igx-suffix{
-    color: var(--escan-verde) !important;
+  
+  
+  
+  
+  .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
   }
-
-  .igx-input-group--invalid igx-suffix{
-    color: var(--escan-naranja) !important;
+  
+  .mat-row:hover .mat-cell {
+    border-color: currentColor;
   }
-
-
-  .igx-input-group--invalid .igx-input-group__bundle{
-    box-shadow: inset 0 -1px 0 0 var(--escan-naranja) !important;
+  
+  .nueva-fila{
+    background-color: var(--escan-naranja);
+    color: black;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1.1em;
   }
+  
+  
+  .mat-paginator, .mat-paginator .mat-select-value,
+  .mat-paginator .mat-select-arrow,
+  .mat-paginator .mat-form-field-underline,
+  .mat-paginator .mat-icon-button,
+  .mat-paginator .mat-paginator-icon{
+    background-color: var(--escan-naranja);
+    color: var(--escan-fondo);
+  }
+  
+  
+  
+  
+  .mat-option:hover:not(.mat-option-disabled),
+  .mat-option .mat-active{
+    background-color: var(--escan-verde);
+    color: var(--escan-fondo);
+  }
+  
+  
+  
+  .mat-paginator .mat-form-field-underline{
+    background-color: var(--escan-fondo);
+  }
+  
+  .ng-tns-c156-4 .ng-trigger .ng-trigger-transformPanel .mat-select-panel .mat-primary {
+    background-color: var(--escan-verde);
+  }
+  
+  .mat-form-field.mat-focused.mat-primary .mat-select-arrow{
+    color: var(--escan-verde);
+  }
+  
+  
+  /***************************************************************************************************************/
+  
+  
+  /**************************************************************************************************
+                                          COMBO BOX
+  **************************************************************************************************/
+  
+  .igx-input-group__border{
+      background-color: var(--escan-verde) !important;
+      border: 1px solid var(--escan-verde) !important;
+  }
+  
+  
+  
+  
+  .igx-drop-down__header{
+    text-align: center !important;
+    padding: 4px !important;
+    
+  }
+  
+  .igx-drop-down__header span {
+      width: 100%;
+      color: var(--escan-naranja) !important;
+      font-weight: bold;
+    }
+  
+  
+    /*
+    igx-combo-item.igx-drop-down__item--focused,
+    igx-combo-item.igx-drop-down__item--selected{
+    background-color: var(--escan-verde);
+    color: var(--escan-fondo);
+  }*/
 
 
 
   
-/**************************************************************************************************
-                                        MODAL
-**************************************************************************************************/
-
-.ui-modal-body{
-  padding: 0px !important;
-}
-  .dt-green {background-color: #4CAF50;} /* Green */
-  .dt-blue {background-color: #008CBA;} /* Blue */
-  .dt-red {background-color: #f44336;} /* Red */
-  .dt-orange {background-color: #ff9800;} /* Orange */
-  .dt-rocedes {background-color: #1b364c;} 
-
-
-
-  .escan-modal .ui-modal-header {
-    background-color: var(--escan-verde) !important;
-  }
-
+  .idle-bottom-line-color{
+      background-color: var(--escan-fondo) !important;
+      color: black !important;
+    }
   
-  .escan-modal .ui-modal {
-    min-width: var(--escan-min--width);
-    max-width: 1000000px;
-    width:var(--escan-min--width);
-  }
-
-  .escan-modal  .ui-modal-overlay, .escan-modal  .ui-modal {
-    z-index: 10;
-  }
-/*
+  
+  
+    .igx-checkbox__composite,
+    .igx-checkbox__composite-mark,
+    .igx-checkbox--checked,
+    .igx-drop-down__item--selected[type='checkbox']:checked{
+      color: var(--escan-fondo);
+      background-color: var(--escan-naranja) !important;
+      border: 1px solid var(--escan-naranja) !important;
+    }
+  
+    .igx-input-group--valid igx-suffix{
+      color: var(--escan-verde) !important;
+    }
+  
+    .igx-input-group--invalid igx-suffix{
+      color: var(--escan-naranja) !important;
+    }
+  
+  
+    .igx-input-group--invalid .igx-input-group__bundle{
+      box-shadow: inset 0 -1px 0 0 var(--escan-naranja) !important;
+    }
+  
+  
+  
+    
+  /**************************************************************************************************
+                                          MODAL
+  **************************************************************************************************/
+  
   .ui-modal-body{
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding: 0px !important;
   }
-  */
-
+    .dt-green {background-color: #4CAF50;} /* Green */
+    .dt-blue {background-color: #008CBA;} /* Blue */
+    .dt-red {background-color: #f44336;} /* Red */
+    .dt-orange {background-color: #ff9800;} /* Orange */
+    .dt-rocedes {background-color: #1b364c;} 
+  
+  
+  
+    .escan-modal .ui-modal-header {
+      background-color: var(--escan-verde) !important;
+    }
+  
+    
+    .escan-modal .ui-modal {
+      min-width: var(--escan-min--width);
+      max-width: 1000000px;
+      width:var(--escan-min--width);
+    }
+  
+    .escan-modal  .ui-modal-overlay, .escan-modal  .ui-modal {
+      z-index: 10;
+    }
+  /*
+    .ui-modal-body{
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    */
+  
+  

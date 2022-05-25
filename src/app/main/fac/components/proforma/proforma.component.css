@@ -24,7 +24,6 @@
 }
 
 
-
 .mat-column-Codigo {
   padding: 0 !important;
   max-width: 85px;
@@ -36,21 +35,41 @@
   padding: 0 !important;
   font-weight: bold;
   max-width: 85px;
+  vertical-align:bottom;
+  text-align:center;
+
 }
 
 .mat-column-Valor {
-    max-width: 100px;
+  max-width: 100px;
+  vertical-align:bottom;
+  text-align:center;
+
 }
 
 
+.escan-tabla .mat-form-field-appearance-legacy .mat-form-field-wrapper{
+  padding-bottom: 0;
+}
+
+.escan-tabla .mat-form-field-appearance-legacy .mat-form-field-underline {
+  bottom: 0;
+}
+
+.escan-tabla .mat-form-field-appearance-legacy .mat-form-field-infix, .escan-tabla mat-form-field {
+   padding: 0; 
+}
 
 
-  .escan-tabla mat-form-field {
-    padding: 0px !important;
-    margin: 0px !important;
-    text-align: end !important;
+  .escan-tabla  mat-form-field input {
+    padding: 0px;
+    margin: 0px;
+    text-align: end;
   }
 
+  .mat-paginator-container .mat-form-field{
+    text-align: center;;
+  }
   .mat-input-element:disabled{
     color: black;
   }
@@ -66,9 +85,9 @@
   }
 
 
-.escan-fila-borde{
-    border-top: 0;
-    border-bottom: 3px solid var(--escan-verde);
+.escan-fila-borde {
+    border-top: 0 !important;
+    border-bottom: 3px solid var(--escan-verde) !important;
 }
 
 
@@ -82,4 +101,7 @@
     /*transform: scaleY(0.7);*/
   }
 
+
+
+  tr.mat-row { height: 20px !important; }
   

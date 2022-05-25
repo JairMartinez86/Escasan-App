@@ -1,3 +1,9 @@
+mat-form-field {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
 #frmUsuario{
     max-width: 800px;
     border: 5px;
@@ -19,7 +25,8 @@
 
 
 
-#frmUsuario mat-card mat-form-field, #frmUsuario mat-card igx-combo{
+#frmUsuario mat-card mat-form-field,
+#frmUsuario mat-card igx-combo{
     margin-right: 5px;
     padding-left: 30px;
     padding-right: 30px;
@@ -33,4 +40,7 @@
     margin-right: 10px;
 }
 
-
+:root .igx-drop-down__item--focused{
+    background-color: var(--escan-verde) !important;
+    color: var(--escan-fondo) !important;
+  }

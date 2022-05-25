@@ -1,0 +1,8 @@
+.hide-element {
+    display: none !important;
+  }
+  
+  .escan-tabla .input-buscar, .mat-input-element {
+    margin-top: 10px !important;
+  }
+  

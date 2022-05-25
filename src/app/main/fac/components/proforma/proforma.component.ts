@@ -14,14 +14,12 @@ export interface I_Detalle {
   }
 
   let ELEMENT_DATA: I_Detalle[] = [
-    {Fila: "1", Codigo : '05-B1-AR11', Producto : 'Aretes de Identificación Animal: Hembra Visual Tipo Bandera y Macho de Botón de Cierre/Hembra de Botón Visual y Macho de Botón de Cierre (PARES)', Operacion : "", Valor : ""},
-    {Fila: "", Codigo : "05-B1-AR11", Producto : '', Operacion : "Cantidad", Valor : "10.00"},
+    {Fila: "1", Codigo : '05-B1-AR11', Producto : 'Aretes de Identificación Animal: Hembra Visual Tipo Bandera y Macho de Botón de Cierre/Hembra de Botón Visual y Macho de Botón de Cierre (PARES)', Operacion : "Cantidad", Valor : "10.00"},
     {Fila: "", Codigo : "05-B1-AR11", Producto : '', Operacion : "Precio", Valor : "45.25"},
     {Fila: "", Codigo : "05-B1-AR11", Producto : '', Operacion : "% Desc", Valor : "0.00"},
     {Fila: "", Codigo : "05-B1-AR11", Producto : '', Operacion : "Bonificado", Valor : ""},
     
-    {Fila: "2", Codigo : '02-B2-AB01', Producto : 'ABRAZADERA T/CLAMP/ACERO INOXIDABLE', Operacion : "", Valor : ""},
-    {Fila: "", Codigo : "02-B2-AB01", Producto : '', Operacion : "Cantidad", Valor : "1"},
+    {Fila: "2", Codigo : '02-B2-AB01', Producto : 'ABRAZADERA T/CLAMP/ACERO INOXIDABLE', Operacion : "Cantidad", Valor : "1.00"},
     {Fila: "", Codigo : "02-B2-AB01", Producto : '', Operacion : "Precio", Valor : "40.55"},
     {Fila: "", Codigo : "02-B2-AB01", Producto : '', Operacion : "% Desc", Valor : "100.00"},
     {Fila: "", Codigo : "02-B2-AB01", Producto : '', Operacion : "Bonificado", Valor : "Si"},
