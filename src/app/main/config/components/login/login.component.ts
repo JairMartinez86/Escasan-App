@@ -1,12 +1,11 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Validacion } from 'src/app/main/shared/class/validacion';
 import { ServerService } from 'src/app/main/shared/service/server.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
 

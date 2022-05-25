@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Validacion } from 'src/app/main/shared/class/validacion';
@@ -29,8 +29,7 @@ export interface I_Detalle {
 @Component({
   selector: 'app-proforma',
   templateUrl: './proforma.component.html',
-  styleUrls: ['./proforma.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./proforma.component.scss']
 })
 export class ProformaComponent implements OnInit {
 

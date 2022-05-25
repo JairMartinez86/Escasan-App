@@ -1,3 +1,14 @@
+
+
+
+
+body {
+	background: hsla(var(--igx-surface-500));
+	color: var(--igx-surface-500-contrast);
+}
+
+
+
 mat-form-field {
     padding-left: 10px;
     padding-right: 10px;
@@ -39,8 +50,22 @@ mat-form-field {
     margin-top: 10px;
     margin-right: 10px;
 }
+/*
 
-:root .igx-drop-down__item--focused{
-    background-color: var(--escan-verde) !important;
-    color: var(--escan-fondo) !important;
-  }
+:host-context([class^=igx-]){
+
+        igx-combo-item{
+            &.igx-drop-down__item--selected.igx-drop-down__item--focused{
+              background-color: red;
+            color: var(--escan-fondo);
+          }
+        }
+    
+    }
+    */
+
+
+
+
+
+  

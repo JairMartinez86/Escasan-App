@@ -5,7 +5,7 @@ import { ServerService } from 'src/app/main/shared/service/server.service';
 @Component({
   selector: 'app-usuario',
   templateUrl: './usuario.component.html',
-  styleUrls: ['./usuario.component.css'],
+  styleUrls: ['./usuario.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
 export class UsuarioComponent implements OnInit {

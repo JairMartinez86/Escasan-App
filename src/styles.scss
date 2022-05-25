@@ -1,4 +1,5 @@
 
+
 /* You can add global styles to this file, and also import other style files */
 html{
   min-height:100%;
@@ -16,7 +17,7 @@ body{
 
 html, body {
     min-width: var(--escan-min--width); 
-    background: url("src/assets/images/fondo.png") no-repeat center center fixed;
+    background: url("~src/assets/images/fondo.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -24,6 +25,9 @@ html, body {
     font-size: var(--escan-font--size);
 }
 
+div{
+  padding: 0;
+}
 
 mat-form-field {
   width: 100%;
@@ -49,9 +53,10 @@ mat-form-field {
     --escan-verde: #009d43;
     --escan-fondo: white;
   
-
-    --escan-min--width: 360px;
+    --escan-border-size: 3px;
+    --escan-min--width: calc(360px - --escan-border-size);
     --escan-font--size: 1em;
+   
   }
   
   
@@ -59,9 +64,15 @@ mat-form-field {
     background-color: var(--escan-verde);
     color: var(--escan-fondo);
   }
+
+  .mat-calendar-body-today{
+    background-color: var(--escan-naranja);
+    color: var(--escan-fondo);
+  }
+
   .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical){
-    background-color: var(--escan-naranja) !important;
-    color: var(--escan-fondo) !important;
+    background-color: var(--escan-naranja);
+    color: var(--escan-fondo);
   }
   
   
@@ -95,14 +106,9 @@ mat-form-field {
   }
   
   
-  .mat-checkbox-checked .mat-checkbox-background, 
-  .mat-checkbox-indeterminate .mat-checkbox-background {
-    background-color: var(--escan-naranja) !important;
-  }
-  
-  
-  .mat-checkbox:not(.mat-checkbox-disabled) .mat-checkbox-ripple .mat-ripple-element {
-    background-color: var(--escan-naranja) !important;
+
+  .mat-checkbox-checked.mat-primary .mat-checkbox-background{
+    background-color: var(--escan-naranja);
   }
   
   .mat-checkbox .mat-checkbox-inner-container {
@@ -111,11 +117,11 @@ mat-form-field {
   }
   
   .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
-    border-color: var(--escan-naranja) !important;
+    border-color: var(--escan-naranja) ;
   }
   
   .mat-radio-button.mat-accent .mat-radio-inner-circle{
-    background-color: var(--escan-naranja) !important;
+    background-color: var(--escan-naranja);
   }
   
   
@@ -143,15 +149,15 @@ mat-form-field {
   
   .formulario{
       background-color: var(--escan-fondo);
-      border: 3px solid var(--escan-verde);
-      box-shadow: 3px 4px 14px 6px rgba(0,0,0,0.76);
+      border: --escan-border-size solid var(--escan-verde);
+      box-shadow: --escan-border-size 4px 14px 6px rgba(0,0,0,0.76);
       border-radius: 5px;
       margin-top: 20px;
       margin-bottom: 20px;
       min-width: var(--escan-min--width);
   }
   
-  
+
   .btnAccion{
       display: flex;
       justify-content: center; 
@@ -288,9 +294,7 @@ mat-form-field {
                                           TABLA
   **************************************************************************************************/
   
-  .mat-header-cell{
-    padding: 0 !important;
-  }
+
   .escan-registros{
     min-width: var(--escan-min--width);
     border: 3px solid var(--escan-verde);
@@ -323,6 +327,10 @@ mat-form-field {
     font-weight: bold;
     color: var(--escan-naranja);
     text-align: center;
+  }
+
+  .escan-tabla-filtro > div{
+    padding: 0;
   }
   
   .escasan-contenedor-tabla, .escan-tabla, .escan-tabla-franja, .escan-tabla-filtro{
@@ -397,90 +405,65 @@ mat-form-field {
   /**************************************************************************************************
                                           COMBO BOX
   **************************************************************************************************/
-  
-  .igx-input-group__border{
-      background-color: var(--escan-verde) !important;
-      border: 1px solid var(--escan-verde) !important;
-  }
-  
-  
-  
-  
-  .igx-drop-down__header{
-    text-align: center !important;
-    padding: 4px !important;
+ 
+
+   [class^=igx-] {
+
     
-  }
-  
-  .igx-drop-down__header span {
-      width: 100%;
-      color: var(--escan-naranja) !important;
-      font-weight: bold;
-    }
-  
-  
-    /*
-    igx-combo-item.igx-drop-down__item--focused,
-    igx-combo-item.igx-drop-down__item--selected{
-    background-color: var(--escan-verde);
-    color: var(--escan-fondo);
-  }*/
+      igx-combo-item{
+       /* &.igx-drop-down__item--selected.igx-drop-down__item--focused{
+          background-color: var(--escan-verde);
+          color: var(--escan-fondo);
+        }*/
+        --selected-hover-item-background: var(--escan-verde);
+        --selected-item-background: var(--escan-verde);
+        --selected-focus-item-background :var(--escan-verde);
+      }
 
+      igx-input-group{
+        --focused-secondary-color: var(--escan-verde);
+        --success-secondary-color: var(--escan-verde);
+        --error-secondary-color: var(--escan-naranja);
+      }
 
+      
+      igx-checkbox {
+        --fill-color: var(--escan-naranja);
+      }
 
-  
-  .idle-bottom-line-color{
-      background-color: var(--escan-fondo) !important;
-      color: black !important;
     }
-  
-  
-  
-    .igx-checkbox__composite,
-    .igx-checkbox__composite-mark,
-    .igx-checkbox--checked,
-    .igx-drop-down__item--selected[type='checkbox']:checked{
-      color: var(--escan-fondo);
-      background-color: var(--escan-naranja) !important;
-      border: 1px solid var(--escan-naranja) !important;
-    }
-  
-    .igx-input-group--valid igx-suffix{
-      color: var(--escan-verde) !important;
-    }
-  
-    .igx-input-group--invalid igx-suffix{
-      color: var(--escan-naranja) !important;
-    }
-  
-  
-    .igx-input-group--invalid .igx-input-group__bundle{
-      box-shadow: inset 0 -1px 0 0 var(--escan-naranja) !important;
-    }
-  
-  
-  
     
+
+  
+
+  
+  
   /**************************************************************************************************
                                           MODAL
   **************************************************************************************************/
-  
-  .ui-modal-body{
-    padding: 0px !important;
-  }
+  app-modal{
+
+    
     .dt-green {background-color: #4CAF50;} /* Green */
     .dt-blue {background-color: #008CBA;} /* Blue */
     .dt-red {background-color: #f44336;} /* Red */
     .dt-orange {background-color: #ff9800;} /* Orange */
     .dt-rocedes {background-color: #1b364c;} 
-  
-  
-  
-    .escan-modal .ui-modal-header {
-      background-color: var(--escan-verde) !important;
+
+    .escan-modal, .ui-modal-header {
+      background-color: var(--escan-verde);
     }
-  
-    
+
+    .ui-modal-body {
+      padding: 0px;
+      width: 100%;
+    }
+
+    .hide-element {
+      display: none;
+    }
+
+     
     .escan-modal .ui-modal {
       min-width: var(--escan-min--width);
       max-width: 1000000px;
@@ -490,11 +473,9 @@ mat-form-field {
     .escan-modal  .ui-modal-overlay, .escan-modal  .ui-modal {
       z-index: 10;
     }
-  /*
-    .ui-modal-body{
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-    }
-    */
+  }
+ 
+ 
+  
   
   

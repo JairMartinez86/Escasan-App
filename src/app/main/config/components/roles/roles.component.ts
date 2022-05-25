@@ -1,15 +1,14 @@
-import { Component, OnInit, ViewContainerRef, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Validacion } from 'src/app/main/shared/class/validacion';
 import { ServerService } from 'src/app/main/shared/service/server.service';
 
 @Component({
   selector: 'app-roles',
   templateUrl: './roles.component.html',
-  styleUrls: ['./roles.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./roles.component.scss'],
 })
 export class RolesComponent implements OnInit {
-
+  public cities: { name: string, id: string }[] = [];
   public val = new Validacion();
   
   constructor(private ServerScv : ServerService) {
@@ -29,7 +28,7 @@ export class RolesComponent implements OnInit {
 }
 
   ngOnInit(): void {
-
+    this.cities = [{ name: 'London', id: 'UK01' }, { name: 'Sofia', id: 'BG01'}];
     this.ServerScv.change.subscribe(s =>{
 
       if(s instanceof Array){
