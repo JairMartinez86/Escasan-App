@@ -178,7 +178,7 @@
         
             </form>
 
-            <mat-accordion class="container">
+            <mat-accordion>
               <mat-expansion-panel   [expanded]="estadoPanel === true" hideToggle>
                 <mat-expansion-panel-header class="escan-expan-panel">
                   <mat-panel-title>
@@ -189,16 +189,16 @@
                   </mat-panel-description>
                 </mat-expansion-panel-header>
       
-                <mat-card-content>
+                <mat-card-content class="escan-contenedor">
                   
-                  <div class="container mat-elevation-z8 escan-tabla">
+                  <div class="mat-elevation-z8">
 
 
                     <table class="escan-tabla" mat-table   [dataSource]="dataSource"  matSort (matSortChange)="announceSort($event)">
                   
 
                       <ng-container matColumnDef="Codigo">
-                        <th mat-header-cell *matHeaderCellDef  mat-sort-header sortActionDescription="Sort by Codigo">
+                        <th  mat-header-cell *matHeaderCellDef  mat-sort-header sortActionDescription="Sort by Codigo">
                           Codigo
                         </th>
                         <td mat-cell *matCellDef="let element" [ngClass]="element.Operacion == 'Bonificado' ? 'escan-fila-borde' : 'escan-fila-no-borde'">

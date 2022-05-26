@@ -12,6 +12,7 @@
 }
 
 
+
 .escan-tabla{
     margin-top: 10px;
     width: 100%;
@@ -99,14 +100,21 @@ $breakpoints: (
 
 
   &-Producto{
-    text-align: justify;
-    margin-bottom: 0;
+    
+    &:not(.mat-header-cell){
 
-    &:after {
-      content: "";
-      display: inline-block;
+      text-align: justify;
+      margin-bottom: 0;
+      &:after {
+        content: "";
+        display: inline-block;
+      }
     }
 
+    
+
+ 
+   
   }
 
   &-Operacion:not(th){
@@ -122,7 +130,9 @@ $breakpoints: (
   }
 
 
-  
+  //mat-sort-header mat-header-cell cdk-header-cell ng-tns-c510-18 cdk-column-Codigo mat-column-Codigo ng-star-inserted
+
+
 
   .mat-cell{
 
