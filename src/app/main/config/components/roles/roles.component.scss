@@ -1,18 +1,4 @@
-
-#frmRoles{
-    border: 5px;
-    margin-top: 5px;
+.formulario{
     min-width: var(--escan-min--width);
-    max-width: 500px;
-    padding-left: 0;
-    padding-right: 0;
 }
 
-
-
-#frmRoles mat-card mat-form-field{
-    margin-top: 10px;
-    margin-right: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
-}

@@ -4,9 +4,11 @@
   --escan-fondo: white;
 
   --escan-border-size: 3px;
-  --escan-min--width: 360px;
+  --escan-min--width: calc(360px var(--escan-border-size)) ;
   --escan-font--size: 1em;
 }
+
+
 
 
   /* You can add global styles to this file, and also import other style files */
@@ -16,22 +18,21 @@
     box-sizing: border-box;
     }
     
-    
-    *, *::before, *::after{
-      box-sizing: inherit;
-    }
-    
+
     body{
     height:100%; 
-    margin: 0;
-    padding: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     line-height: default;
+    box-sizing: border-box;
     }
     
-    
+
     html, body {
       min-width: var(--escan-min--width); 
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 0;
+      margin-right: 0;
       background: url("~src/assets/images/fondo.png") no-repeat center center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
@@ -39,34 +40,39 @@
       background-size: cover;
       font-size: var(--escan-font--size);
     }
-    
-    
 
 
-//app-root{
+*, *::before, *::after{
+  box-sizing: inherit;
+}
+
+.no-padding-margin{
+  margin-left: 0;
+  margin-right: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+
+.escan-contenedor{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--escan-min--width);
+  background-color: #f44336;
+}
+
+
+
+app-root{
   
-  .row .escan-no-padding{
-    padding: 0 !important;
-  }
-  
-  
-  
-  
-  
+
+
   .igx-typography h1, .igx-typography h2, .igx-typography h3{
     line-height: 1.2em;
   }
   
-  .container, .container-fluid{
-    padding: 0;
-  }
-  
-  
-  
-  .mat-form-field-infix{
-    margin: 0;
-  }
-  
+
   
   
   .mat-calendar-body-selected{
@@ -156,101 +162,122 @@
   
   
   
-  .formulario{
-      background-color: var(--escan-fondo);
-      border: --escan-border-size solid var(--escan-verde);
-      box-shadow: --escan-border-size 4px 14px 6px rgba(0,0,0,0.76);
-      border-radius: 5px;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      min-width: var(--escan-min--width);
-  }
-  
-  
-  .btnAccion{
-      display: flex;
-      justify-content: center; 
-      align-items: center;
-      min-width: var(--escan-min--width);
-      width: 100%;
-  }
-  
-  .formulario input, .formulario label{
-    margin-left: 10px;
-  }
-  
-  mat-label {
-    color: black;
-    font-size: var(--escan-font--size);
-  }
-  
-  .btnAccion button{
+  .formulario,
+  .escan-registros{
+    background-color: var(--escan-fondo);
+    border: var(--escan-border-size ) solid var(--escan-verde);
+    box-shadow: var(--escan-border-size) 4px 14px 6px rgba(0,0,0,0.76);
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-width: var(--escan-min--width);
+    margin-left: 0;
+    margin-right: 0;
+
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+
+
+
+  & .btnAccion{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    min-width: var(--escan-min--width);
+    width: 100%;
+    
+    & button{
       margin: 10px;
-  }
-  
-  .line-vertical {
-      
+
+      & .mat-icon {
+        transform: scale(1.5);
+      }
+    }
+
+    & .line-vertical {
       border-left: 2px solid black;
       height: 100%;
     }
-  
-  
-  
-  .btnAccion .btn-escan-aceptar{
-      background-color: transparent;
-      border: 2px solid var(--escan-verde);
-      color: var(--escan-verde);
-  }
-  
-  .btnAccion button .mat-icon {
-      transform: scale(1.5);
+
+
+    & .btn-escan{
+
+      &-aceptar{
+        background-color: transparent;
+        border: 2px solid var(--escan-verde);
+        color: var(--escan-verde);
+
+        &:hover{
+          background-color: var(--escan-verde);
+          border: 0;
+          color: var(--escan-fondo);
+        }
+
+      }
+
+      &-cancelar{
+        background-color: transparent;
+        border: 2px solid var(--escan-naranja);
+        color: var(--escan-naranja);
+
+        &:hover{
+          background-color: var(--escan-naranja);
+          border: 0;
+          color: var(--escan-fondo);
+      }
     }
-  
-  .btnAccion .btn-escan-cancelar{
+
+    &-salir,
+    &-buscar{
       background-color: transparent;
-      border: 2px solid var(--escan-naranja);
-      color: var(--escan-naranja);
-  
+      border: 2px solid black;
+      color: black;
+
+      &:hover{
+        background-color: black;
+        border: 0;
+        color: var(--escan-fondo);
+      }
+    }
+    
+
+     
+  }
+
   }
   
-  .btnAccion .btn-escan-salir, .btnAccion .btn-escan-buscar{
-    background-color: transparent;
-    border: 2px solid black;
-    color: black;
-  
+  & input,
+  & label{
+    margin-left: 10px;
   }
+
+  
+}
   
   
-  .btnAccion .btn-escan-aceptar:hover{
-      background-color: var(--escan-verde);
-      border: 0;
-      color: var(--escan-fondo);
-  }
   
-  .btnAccion .btn-escan-cancelar:hover{
-      background-color: var(--escan-naranja);
-      border: 0;
-      color: var(--escan-fondo);
-  }
+mat-label {
+  color: black;
+  font-size: var(--escan-font--size);
+}
+
+
   
-  .btnAccion .btn-escan-salir:hover, .btnAccion .btn-escan-buscar:hover{
-    background-color: black;
-    border: 0;
-    color: var(--escan-fondo);
-  }
+  
+  
+  
+ 
+  
+
   
   
   /**************************************************************************************************
                                           EXPANSION PANEL
   **************************************************************************************************/
-  div{
-    padding-left: 0;
-    padding-right: 0;
-  }
-  mat-accordion::before, mat-accordion::after{
-    width: 100%;
-    margin: 0;
-  }
+
+
   .mat-expansion-panel-header{
     background-color: var(--escan-naranja);
     color: var(--escan-fondo);
@@ -263,7 +290,8 @@
   
   .mat-expansion-panel{
     &-body{
-      padding: 0 0 0;
+      padding: 0;
+      margin: 0;
     }
   } 
   
@@ -294,19 +322,31 @@
                                           MAT-CARD
   **************************************************************************************************/
   
-  .formulario .mat-card-header{
-    background-color: var(--escan-verde);
-    color: var(--escan-fondo);
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    padding-top: 10px;    
+  .formulario{
+
+    & .mat-card{
+
+      &-header{
+        background-color: var(--escan-verde);
+        color: var(--escan-fondo);
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        padding-top: 10px;    
+      }
+
+      &-title{
+        font-weight: bold;
+        font-size: 1em;
+      }
+
+    }
+
+ 
+    
   }
+
   
-  .formulario  .mat-card-title{
-    font-weight: bold;
-    font-size: 1em;
-  }
   
   
   /**************************************************************************************************
@@ -315,12 +355,22 @@
   
   table{
 
-    .mat-header-cell{
-      background-color: var(--escan-verde);
-      color: var(--escan-fondo);
-      border: none;
-    }
+    .mat-header{
 
+      display: flex;
+      width: 100%;
+
+      &-cell{
+        width: 100px;
+        background-color: var(--escan-verde);
+        color: var(--escan-fondo);
+        border: none;
+      }
+  
+    }
+    
+
+    
 
     .mat-sort-header{
       color: var(--escan-fondo);
@@ -341,11 +391,44 @@
         padding-left: 0;
       }
     }   
+   // mat-sort-header mat-header-cell cdk-header-cell ng-tns-c510-2 cdk-column-Rol mat-column-Rol ng-star-inserted
+    
   }
- 
 
 
+  .mat-expansion-panel{
+    &-body{
+      padding: 0;
+    }
+  }
+
+  .escan-tabla-franja{
+    background-color: var(--escan-naranja);
+    color: var(--escan-fondo);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .escan-tabla-filtro{
+
+    &-franja{
+      background-color: var(--escan-naranja);
+      color: var(--escan-fondo);
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-weight: bold;
+      font-size: 1.5em;
+      text-align: center;
+    }
+  }
   
+  & .mat-input-element{
+    margin-top: 3px;
+  }
+
   
   /***************************************************************************************************************/
   
@@ -428,4 +511,4 @@
   
   
   
-//}
+}

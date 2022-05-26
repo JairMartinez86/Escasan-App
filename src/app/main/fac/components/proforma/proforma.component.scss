@@ -3,7 +3,7 @@
 }
 
 .no-padding{
-  padding: 0;
+  padding-left: 15px;
 }
 
 
@@ -12,12 +12,17 @@
 }
 
 
-
-
 .escan-tabla{
     margin-top: 10px;
     width: 100%;
 }
+
+mat-form-field{
+  .mat-form-field{
+    padding-left: 70px;
+  }
+}
+
 
 
 $breakpoints: (

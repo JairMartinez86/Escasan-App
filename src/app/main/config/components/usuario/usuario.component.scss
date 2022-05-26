@@ -1,71 +1,21 @@
 
+.formulario{
 
+    min-width: var(--escan-min--width);
+    max-width: calc(var(--escan-min--width) * 2);
 
-
-body {
-	background: hsla(var(--igx-surface-500));
-	color: var(--igx-surface-500-contrast);
-}
-
-
-
-mat-form-field {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-
-#frmUsuario{
-    max-width: 800px;
-    border: 5px;
-    margin-top: 5px;
-}
-
-
-
-#frmUsuario igx-combo{
-    margin-bottom: 7px;
-}
-
-
-#frmUsuario .mat-card{
-    min-height: 220px;
-}
-
-
-
-
-
-#frmUsuario mat-card mat-form-field,
-#frmUsuario mat-card igx-combo{
-    margin-right: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-#frmUsuario mat-checkbox{
-    display: flex;
-    justify-content: flex-end; 
-    align-items: flex-end;
-    margin-top: 10px;
-    margin-right: 10px;
-}
-/*
-
-:host-context([class^=igx-]){
-
-        igx-combo-item{
-            &.igx-drop-down__item--selected.igx-drop-down__item--focused{
-              background-color: red;
-            color: var(--escan-fondo);
-          }
-        }
-    
+    & .mat-card{
+        max-width: calc(var(--escan-min--width) - 10px);;
     }
-    */
 
-
-
+    & mat-checkbox{
+        display: flex;
+        justify-content: flex-end; 
+        align-items: flex-end;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+}
 
 
   
