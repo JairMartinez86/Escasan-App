@@ -6,6 +6,29 @@
   --escan-border-size: 3px;
   --escan-min--width: calc(360px var(--escan-border-size)) ;
   --escan-font--size: 1em;
+
+
+  
+  .mat-calendar-body{
+
+    &-selected{
+      background-color: var(--escan-naranja);
+      color: var(--escan-fondo);
+    }
+
+    &-today{
+      background-color: var(--escan-verde);
+      color: var(--escan-fondo);
+
+      &:not(&-selected), &:not(&-comparison-identical){
+        background-color: var(--escan-verde);
+        color: var(--escan-fondo);
+      }
+    }
+
+
+
+  }
 }
 
 
@@ -83,34 +106,8 @@ app-root{
     }
   }
 
-  .mat-calendar-body{
-
-    &-selected{
-      background-color: var(--escan-verde);
-      color: var(--escan-fondo);
-    }
-
-    &-today{
-      background-color: var(--escan-naranja);
-      color: var(--escan-fondo);
-
-      &:not(&-selected), &:not(&-comparison-identical){
-        background-color: var(--escan-naranja);
-        color: var(--escan-fondo);
-      }
-    }
 
 
-
-  }
-  
-/*
-  .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical){
-    background-color: var(--escan-naranja);
-    color: var(--escan-fondo);
-  }
-  */
-  
   .mat-icon{
     transform: scale(1.3);
   }
@@ -119,11 +116,6 @@ app-root{
     color: black;
   }
   
-
-   /*
-  .mat-form-field.mat-focused  .mat-form-field-ripple{
-      background-color: var(--escan-verde); 
-  }*/
   .mat-form-field.mat-focused {
     .mat-form-field-ripple {
       background-color: var(--escan-verde); 
@@ -140,8 +132,11 @@ app-root{
     .mat-icon{
       border-color: var(--escan-naranja);
     }
+
+    
   }
   
+
   .ng-valid{
     .mat-form-field{
       &-prefix,
@@ -153,6 +148,8 @@ app-root{
       
     }
   }
+
+  
 
 
   
