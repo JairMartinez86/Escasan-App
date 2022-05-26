@@ -1,66 +1,176 @@
 .formulario{
     margin-top: 0;
 }
+
+.no-padding{
+  padding: 0;
+}
+
+
 #frmProforma{
     min-width: var(--escan-min-width); 
 }
 
 
-#registros-tabla{
-    width: 100%;
-    margin-top: 10px;
-}
 
 
 .escan-tabla{
     margin-top: 10px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    max-width: 500px;
-}
-
-.mat-header-cell{
-  padding: 0 !important;
+    width: 100%;
 }
 
 
-.mat-column-Codigo {
-  padding: 0 !important;
-  max-width: 85px;
+$breakpoints: (
+  sm : 360px,
+
+  md : 450px,
+
+  lg : 768px,
+
+  xl : 1024px
+
+);
+
+@mixin Tamano($points) {
+  @media screen and (min-width: map-get($breakpoints, $points)) {
+    @content;
+  }
 }
 
+.mat-column{
 
-
-.mat-column-Operacion:not(th) {
-  padding: 0 !important;
   font-weight: bold;
-  max-width: 85px;
-  vertical-align:bottom;
-  text-align:center;
 
+  @include Tamano(sm)
+  {
+    &-Codigo{
+      min-width: 70px;
+      max-width: 70px;
+    }
+
+    &-Producto{
+      min-width: 100px;
+      max-width: 100px;
+    }
+
+    &-Operacion:not(th){
+      min-width: 70px;
+      max-width: 70px;
+    }
+
+    &-Valor{
+      min-width: 120px;
+      max-width: 120px;
+    }
+
+  }
+
+
+  @include Tamano(md){
+
+    &-Codigo{
+      min-width: 150px;
+      max-width: 150px;
+    }
+  
+    &-Producto{
+      min-width: 350px;
+      max-width: 350px;
+    }
+  
+    &-Operacion:not(th){
+      min-width: 150px;
+      max-width: 150px;
+    }
+  
+    &-Valor{
+      min-width: 150px;
+      max-width: 150px;
+    }
+  
+  
+  }
+
+
+
+  &-Producto{
+    text-align: justify;
+    margin-bottom: 0;
+
+    &:after {
+      content: "";
+      display: inline-block;
+    }
+
+  }
+
+  &-Operacion:not(th){
+    vertical-align:bottom;
+    text-align:right;
+    margin-right: 5px;
+    
+  }
+
+  &-Valor{
+    vertical-align:bottom;
+    text-align:center;
+  }
+
+
+  
+
+  .mat-cell{
+
+    mat-form-field{
+      .mat-form-field{
+        
+
+        &-wrapper,
+        &-cript-wrapper{
+          padding-bottom: 0;
+          margin-top: 0;
+        }
+  
+        &-infix{
+          padding: 0px;
+          margin: 0px;
+          text-align: end;
+        }
+
+        
+      }
+
+
+      
+    }
+    
+
+
+    
+
+  
+  }
+
+
+  
 }
 
-
-.mat-column-Valor {
-  max-width: 100px;
-  vertical-align:bottom;
-  text-align:center;
+.input-tabla 
+{
+  width: 80%;
+  input{
+    text-align: end;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 
 }
+ 
 
 
-.escan-tabla .mat-form-field-appearance-legacy .mat-form-field-wrapper{
-  padding-bottom: 0;
-}
 
-.escan-tabla .mat-form-field-appearance-legacy .mat-form-field-underline {
-  bottom: 0;
-}
 
-.escan-tabla .mat-form-field-appearance-legacy .mat-form-field-infix, .escan-tabla mat-form-field {
-   padding: 0; 
-}
-
+/*
 
   .escan-tabla  mat-form-field input {
     padding: 0px;
@@ -98,11 +208,7 @@
 
 
 .scaled {
-    /*transform: scale(0.7);  Igual que: scaleX(0.7) scaleY(0.7) */
-    /*transform: scaleY(0.7);*/
-  }
-
-
-
-  tr.mat-row { height: 20px !important; }
+    transform: scale(0.7); 
+    transform: scaleY(0.7);
   
+}*/

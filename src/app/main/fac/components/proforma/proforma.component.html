@@ -1,10 +1,10 @@
-<div class="container" id="frmProforma">
+<div class="" id="frmProforma">
 
     <div class="formulario" >
         <div>
             <form [formGroup]="val.ValForm"  novalidate>
 
-                <div class="row col-12">
+                <div class="row  no-padding">
         
                     <div class="col-12 btnAccion">
                         <button mat-fab class="btn-escan-aceptar"><mat-icon>save</mat-icon></button>
@@ -27,16 +27,14 @@
         
         
         
-                          <div class="row">
+                          <mat-card-content class="row  no-padding">
                 
-                            <div class="col-12">
-                                <igx-combo class="combo" #withValueKey [data]="lstCliente" valueKey="Codigo" displayKey="Nombre"
+                            <igx-combo class="col-12" #withValueKey [data]="lstCliente" valueKey="Codigo" displayKey="Nombre"
                                     id="txtCliente"
                                     formControlName="txtCliente"
                                     placeholder="Cliente" searchPlaceholder="Seleccione un cliente..."
                                     (selectionChanging)="singleSelection($event)" [itemsMaxHeight]="250" appAutofocus>
                                 </igx-combo>
-                            </div>
         
         
                             <mat-form-field class="col-12">
@@ -78,7 +76,7 @@
                             </mat-form-field>
         
             
-                        </div>
+                        </mat-card-content>
         
         
                         </mat-expansion-panel>
@@ -86,7 +84,7 @@
                                              (closed)="estadoPanel = false">
                          
                         </mat-expansion-panel>
-                      </mat-accordion>
+                    </mat-accordion>
         
         
         
@@ -103,9 +101,9 @@
                           </mat-expansion-panel-header>
         
         
-                          <mat-card-content class="row">
+                          <mat-card-content class="row col-12">
         
-                            <div class="row">
+                            <div class="row col-12">
                                 <mat-form-field class="col-6">
                                     <mat-label>Serie.</mat-label>
                                     <input matInput type="text"  id="txtSerie" formControlName="txtSerie">
@@ -125,7 +123,7 @@
                             </div>
         
         
-                            <div class="row">
+                            <div class="row col-12">
                                
                                 <igx-combo class="col-5"  #withValueKey [data]="lstPlazo" valueKey="IdPlazo" displayKey="Dias"
                                     id="txtDias"
@@ -175,88 +173,93 @@
         
         
             </form>
-        </div>
 
-        <div id="registros-tabla" class="container">
-            <mat-accordion class="col-12" >
-                <mat-expansion-panel   [expanded]="estadoPanel === true" hideToggle>
-                  <mat-expansion-panel-header class="escan-expan-panel">
-                    <mat-panel-title>
-                      DETALLE
-                    </mat-panel-title>
-                    <mat-panel-description>
-                        PRODUCTOS
-                    </mat-panel-description>
-                  </mat-expansion-panel-header>
-        
-        
-                    <div class="container mat-elevation-z8 escan-tabla">
+            <mat-accordion class="container">
+              <mat-expansion-panel   [expanded]="estadoPanel === true" hideToggle>
+                <mat-expansion-panel-header class="escan-expan-panel">
+                  <mat-panel-title>
+                    DETALLE
+                  </mat-panel-title>
+                  <mat-panel-description>
+                      PRODUCTOS
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+      
+                <mat-card-content>
+                  
+                  <div class="container mat-elevation-z8 escan-tabla">
 
 
-                      <table mat-table   [dataSource]="dataSource"  matSort (matSortChange)="announceSort($event)">
+                    <table class="escan-tabla" mat-table   [dataSource]="dataSource"  matSort (matSortChange)="announceSort($event)">
+                  
+
+                      <ng-container matColumnDef="Codigo">
+                        <th mat-header-cell *matHeaderCellDef  mat-sort-header sortActionDescription="Sort by Codigo">
+                          Codigo
+                        </th>
+                        <td mat-cell *matCellDef="let element" [ngClass]="element.Operacion == 'Bonificado' ? 'escan-fila-borde' : 'escan-fila-no-borde'">
+                         <span *ngIf="element.Fila != '' "> {{element.Codigo}} </span>
+                        </td>
+                      </ng-container>
+
+
+                      <ng-container matColumnDef="Producto">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Producto">
+                          Producto
+                        </th>
+                        <td mat-cell *matCellDef="let element" [ngClass]="element.Operacion == 'Bonificado' ? 'escan-fila-borde' : 'escan-fila-no-borde'"> {{element.Producto}} </td>
+                      </ng-container>
+
+
+                      <ng-container matColumnDef="Operacion">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Operacion">
+                          Descripcion
+                        </th>
+                        <td mat-cell *matCellDef="let element" [ngClass]="element.Operacion == 'Bonificado' ? 'escan-fila-borde' : 'escan-fila-no-borde'"> {{element.Operacion}} </td>
+                      </ng-container>
+   
                     
 
-                        <ng-container matColumnDef="Codigo">
-                          <th mat-header-cell *matHeaderCellDef  mat-sort-header sortActionDescription="Sort by Codigo">
-                            Codigo
-                          </th>
-                          <td mat-cell *matCellDef="let element" [ngClass]="element.Operacion == 'Bonificado' ? 'escan-fila-borde' : 'escan-fila-no-borde'">
-                           <span *ngIf="element.Fila != '' "> {{element.Codigo}} </span>
-                          </td>
-                        </ng-container>
+                      <ng-container matColumnDef="Valor">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Valor">
+                          
+                        </th>
+                        <td mat-cell *matCellDef="let element" [ngClass]="element.Operacion == 'Bonificado' ? 'escan-fila-borde' : 'escan-fila-no-borde'" >
+                           <span *ngIf="element.Operacion =='Bonificado' && element.Valor =='Si'"><i class="bi bi-check" style="font-size: 3em; color: var(--escan-verde)"></i></span>
+
+                           <span *ngIf="element.Operacion !='Bonificado' && element.Valor != ''">
+
+                            <mat-form-field  class="input-tabla" floatLabel="never">
+                              <input  matInput placeholder="" [value]="element.Valor" [disabled]="TieneBonificado(element.Codigo)">
+                            </mat-form-field>
+                          </span>
+                          
+                        </td>
+                      </ng-container>
 
 
-                        <ng-container matColumnDef="Producto">
-                          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Producto">
-                            Producto
-                          </th>
-                          <td mat-cell *matCellDef="let element" [ngClass]="element.Operacion == 'Bonificado' ? 'escan-fila-borde' : 'escan-fila-no-borde'"> {{element.Producto}} </td>
-                        </ng-container>
 
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr
+                    mat-row  [class.demo-row-is-clicked]="clickedRows.has(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+                    
+                  </table>
+                  <mat-paginator [pageSizeOptions]="[25, 50, 100]"  showFirstLastButtons></mat-paginator>
+              </div>
 
-                        <ng-container matColumnDef="Operacion">
-                          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Operacion">
-                            Descripcion
-                          </th>
-                          <td mat-cell *matCellDef="let element" [ngClass]="element.Operacion == 'Bonificado' ? 'escan-fila-borde' : 'escan-fila-no-borde'"> {{element.Operacion}} </td>
-                        </ng-container>
-     
-                      
-
-                        <ng-container matColumnDef="Valor">
-                          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Valor">
-                            
-                          </th>
-                          <td mat-cell *matCellDef="let element" [ngClass]="element.Operacion == 'Bonificado' ? 'escan-fila-borde' : 'escan-fila-no-borde'" >
-                             <span *ngIf="element.Operacion =='Bonificado' && element.Valor =='Si'"><i class="bi bi-check" style="font-size: 3em; color: var(--escan-verde)"></i></span>
-
-                             <span *ngIf="element.Operacion !='Bonificado' && element.Valor != ''">
-  
-                              <mat-form-field floatLabel="never">
-                                <input  matInput placeholder="" [value]="element.Valor" [disabled]="TieneBonificado(element.Codigo)">
-                              </mat-form-field>
-                            </span>
-                            
-                          </td>
-                        </ng-container>
-
- 
-                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                      <tr
-                      mat-row  [class.demo-row-is-clicked]="clickedRows.has(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
-                      
-                    </table>
-                    <mat-paginator [pageSizeOptions]="[25, 50, 100]"  showFirstLastButtons></mat-paginator>
-                </div>
-        
-                </mat-expansion-panel>
-                <mat-expansion-panel (opened)="estadoPanel = true"
-                                     (closed)="estadoPanel = false">
+                </mat-card-content>
+      
                  
-                </mat-expansion-panel>
-              </mat-accordion>
-        
+      
+              </mat-expansion-panel>
+              <mat-expansion-panel (opened)="estadoPanel = true"
+                                   (closed)="estadoPanel = false">
+               
+              </mat-expansion-panel>
+            </mat-accordion>
         </div>
+
+     
     </div>
   
 

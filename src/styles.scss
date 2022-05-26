@@ -1,38 +1,59 @@
+:root{
+  --escan-naranja:  #ff4500;
+  --escan-verde: #009d43;
+  --escan-fondo: white;
 
-
-/* You can add global styles to this file, and also import other style files */
-html{
-  min-height:100%;
-  position:relative;
-}
-body{
-  height:100%; 
-  margin: 0;
-  padding: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  line-height: default;
+  --escan-border-size: 3px;
+  --escan-min--width: 360px;
+  --escan-font--size: 1em;
 }
 
 
-html, body {
-    min-width: var(--escan-min--width); 
-    background: url("~src/assets/images/fondo.png") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    font-size: var(--escan-font--size);
-}
+  /* You can add global styles to this file, and also import other style files */
+  html{
+    min-height:100%;
+    position:relative;
+    box-sizing: border-box;
+    }
+    
+    
+    *, *::before, *::after{
+      box-sizing: inherit;
+    }
+    
+    body{
+    height:100%; 
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    line-height: default;
+    }
+    
+    
+    html, body {
+      min-width: var(--escan-min--width); 
+      background: url("~src/assets/images/fondo.png") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      font-size: var(--escan-font--size);
+    }
+    
+    
 
-div{
-  padding: 0;
-}
 
-mat-form-field {
-  width: 100%;
-}
-
-.igx-typography h1, .igx-typography h2, .igx-typography h3{
+//app-root{
+  
+  .row .escan-no-padding{
+    padding: 0 !important;
+  }
+  
+  
+  
+  
+  
+  .igx-typography h1, .igx-typography h2, .igx-typography h3{
     line-height: 1.2em;
   }
   
@@ -41,34 +62,23 @@ mat-form-field {
   }
   
   
- 
+  
   .mat-form-field-infix{
     margin: 0;
   }
   
-  
-  :root {
-    --escan-naranja:  #ff4500;
-    --escan-verde: #009d43;
-    --escan-fondo: white;
-  
-    --escan-border-size: 3px;
-    --escan-min--width: calc(360px - --escan-border-size);
-    --escan-font--size: 1em;
-   
-  }
   
   
   .mat-calendar-body-selected{
     background-color: var(--escan-verde);
     color: var(--escan-fondo);
   }
-
+  
   .mat-calendar-body-today{
     background-color: var(--escan-naranja);
     color: var(--escan-fondo);
   }
-
+  
   .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical){
     background-color: var(--escan-naranja);
     color: var(--escan-fondo);
@@ -105,7 +115,7 @@ mat-form-field {
   }
   
   
-
+  
   .mat-checkbox-checked.mat-primary .mat-checkbox-background{
     background-color: var(--escan-naranja);
   }
@@ -156,12 +166,13 @@ mat-form-field {
       min-width: var(--escan-min--width);
   }
   
-
+  
   .btnAccion{
       display: flex;
       justify-content: center; 
       align-items: center;
       min-width: var(--escan-min--width);
+      width: 100%;
   }
   
   .formulario input, .formulario label{
@@ -232,12 +243,14 @@ mat-form-field {
   /**************************************************************************************************
                                           EXPANSION PANEL
   **************************************************************************************************/
-  .mat-accordion{
-    margin: 10px;
-    padding: 10px;
+  div{
+    padding-left: 0;
+    padding-right: 0;
   }
-  
-  
+  mat-accordion::before, mat-accordion::after{
+    width: 100%;
+    margin: 0;
+  }
   .mat-expansion-panel-header{
     background-color: var(--escan-naranja);
     color: var(--escan-fondo);
@@ -245,7 +258,15 @@ mat-form-field {
     justify-content: center; 
     align-items: center;
     max-height: 30px;
+    padding: 0;
   }
+  
+  .mat-expansion-panel{
+    &-body{
+      padding: 0 0 0;
+    }
+  } 
+  
   
   .mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
     color: var(--escan-ver);
@@ -273,7 +294,6 @@ mat-form-field {
                                           MAT-CARD
   **************************************************************************************************/
   
-  
   .formulario .mat-card-header{
     background-color: var(--escan-verde);
     color: var(--escan-fondo);
@@ -287,120 +307,44 @@ mat-form-field {
     font-weight: bold;
     font-size: 1em;
   }
-
-  :root{
-    .mat-expansion-panel-body{
-      padding: 0;
-    }
-  }
- 
+  
   
   /**************************************************************************************************
                                           TABLA
   **************************************************************************************************/
   
+  table{
 
-  .escan-registros{
-    min-width: var(--escan-min--width);
-    border: 3px solid var(--escan-verde);
-  }
-  
-  
-  
-  table tr a{
-    margin: 15px;
-  }
-  
-  .escasan-contenedor-tabla{
-    margin: 0;
-    padding: 0;
-  }
-  
-  
-  
-  .escan-tabla{
-    overflow-x: auto;
-    width: 100%;
-    height: 100%;
-  }
-  
-  
-  
-  
-  .escasan-contenedor-tabla .escan-tabla-franja{
-    font-size: 1.5em;
-    font-weight: bold;
-    color: var(--escan-naranja);
-    text-align: center;
-  }
+    .mat-header-cell{
+      background-color: var(--escan-verde);
+      color: var(--escan-fondo);
+      border: none;
+    }
 
 
-  .escasan-contenedor-tabla, .escan-tabla, .escan-tabla-franja, .escan-tabla-filtro{
-    background-color: var(--escan-fondo);
-  }
-  
-  mat-header-row{
-    max-height: 30px;
-  }
+    .mat-sort-header{
+      color: var(--escan-fondo);
 
-  .mat-header-row, .mat-header-cell{
-    background-color: var(--escan-verde);
-    color: var(--escan-fondo);
+      &-indicator,
+      &-pointer-left,
+      &-arrow,
+      &-pointer-right{
+        color: var(--escan-fondo);
+      }
+      
+    }
+
+    th.mat-header,
+    td.mat,
+    td.footer{
+      &-cell:first-of-type{
+        padding-left: 0;
+      }
+    }   
   }
-  
-  
-  
-  
-  .mat-row .mat-cell {
-    border-bottom: 1px solid transparent;
-    border-top: 1px solid transparent;
-    cursor: pointer;
-  }
-  
-  .mat-row:hover .mat-cell {
-    border-color: currentColor;
-  }
-  
-  .nueva-fila{
-    background-color: var(--escan-naranja);
-    color: black;
-    font-weight: bold;
-    font-style: normal;
-    font-size: 1.1em;
-  }
-  
-  
-  .mat-paginator, .mat-paginator .mat-select-value,
-  .mat-paginator .mat-select-arrow,
-  .mat-paginator .mat-form-field-underline,
-  .mat-paginator .mat-icon-button,
-  .mat-paginator .mat-paginator-icon{
-    background-color: var(--escan-naranja);
-    color: var(--escan-fondo);
-  }
-  
-  
-  
-  
-  .mat-option:hover:not(.mat-option-disabled),
-  .mat-option .mat-active{
-    background-color: var(--escan-verde);
-    color: var(--escan-fondo);
-  }
-  
-  
-  
-  .mat-paginator .mat-form-field-underline{
-    background-color: var(--escan-fondo);
-  }
-  
-  .ng-tns-c156-4 .ng-trigger .ng-trigger-transformPanel .mat-select-panel .mat-primary {
-    background-color: var(--escan-verde);
-  }
-  
-  .mat-form-field.mat-focused.mat-primary .mat-select-arrow{
-    color: var(--escan-verde);
-  }
+ 
+
+
   
   
   /***************************************************************************************************************/
@@ -409,10 +353,10 @@ mat-form-field {
   /**************************************************************************************************
                                           COMBO BOX
   **************************************************************************************************/
- 
-
+  
+  
    [class^=igx-] {
-
+  
     
       igx-combo-item{
        /* &.igx-drop-down__item--selected.igx-drop-down__item--focused{
@@ -423,50 +367,50 @@ mat-form-field {
         --selected-item-background: var(--escan-verde);
         --selected-focus-item-background :var(--escan-verde);
       }
-
+  
       igx-input-group{
         --focused-secondary-color: var(--escan-verde);
         --success-secondary-color: var(--escan-verde);
         --error-secondary-color: var(--escan-naranja);
       }
-
+  
       
       igx-checkbox {
         --fill-color: var(--escan-naranja);
       }
-
+  
     }
     
-
   
-
+  
+  
   
   
   /**************************************************************************************************
                                           MODAL
   **************************************************************************************************/
   app-modal{
-
+  
     
     .dt-green {background-color: #4CAF50;} /* Green */
     .dt-blue {background-color: #008CBA;} /* Blue */
     .dt-red {background-color: #f44336;} /* Red */
     .dt-orange {background-color: #ff9800;} /* Orange */
     .dt-rocedes {background-color: #1b364c;} 
-
+  
     .escan-modal, .ui-modal-header {
       background-color: var(--escan-verde);
     }
-
+  
     .ui-modal-body {
       padding: 0px;
       width: 100%;
     }
-
+  
     .hide-element {
       display: none;
     }
-
+  
      
     .escan-modal .ui-modal {
       min-width: var(--escan-min--width);
@@ -478,8 +422,10 @@ mat-form-field {
       z-index: 10;
     }
   }
- 
- 
   
   
   
+  
+  
+  
+//}

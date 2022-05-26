@@ -43,7 +43,7 @@ export class ProformaComponent implements OnInit {
   //displayedColumns: string[] = ["Fila", "Codigo", "IdProducto",  "Cantidad", "EsBonificado", "Precio",
  // "SubTotal", "Descuento", "SubTotalNeto", "Impuesto", "Total"];
 
- displayedColumns: string[] = ["Codigo", "Producto",  "Operacion", "Valor",];
+ displayedColumns: string[] = ["Codigo", "Producto",  "Operacion", "Valor"];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   clickedRows = new Set<I_Detalle>();
   private _liveAnnouncer: any;
