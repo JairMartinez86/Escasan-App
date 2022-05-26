@@ -59,7 +59,6 @@
   align-items: center;
   justify-content: center;
   min-width: var(--escan-min--width);
-  background-color: #f44336;
 }
 
 
@@ -68,28 +67,49 @@ app-root{
   
 
 
-  .igx-typography h1, .igx-typography h2, .igx-typography h3{
-    line-height: 1.2em;
-  }
+  /**************************************************************************************************
+                                          
+  **************************************************************************************************/
   
+  .igx{
 
-  
-  
-  .mat-calendar-body-selected{
-    background-color: var(--escan-verde);
-    color: var(--escan-fondo);
+    &-typography{
+
+      & h1,
+      & h2,
+      & h3{
+        line-height: 1.2em;
+      }
+    }
+  }
+
+  .mat-calendar-body{
+
+    &-selected{
+      background-color: var(--escan-verde);
+      color: var(--escan-fondo);
+    }
+
+    &-today{
+      background-color: var(--escan-naranja);
+      color: var(--escan-fondo);
+
+      &:not(&-selected), &:not(&-comparison-identical){
+        background-color: var(--escan-naranja);
+        color: var(--escan-fondo);
+      }
+    }
+
+
+
   }
   
-  .mat-calendar-body-today{
-    background-color: var(--escan-naranja);
-    color: var(--escan-fondo);
-  }
-  
+/*
   .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical){
     background-color: var(--escan-naranja);
     color: var(--escan-fondo);
   }
-  
+  */
   
   .mat-icon{
     transform: scale(1.3);
@@ -99,21 +119,42 @@ app-root{
     color: black;
   }
   
+
+   /*
   .mat-form-field.mat-focused  .mat-form-field-ripple{
       background-color: var(--escan-verde); 
+  }*/
+  .mat-form-field.mat-focused {
+    .mat-form-field-ripple {
+      background-color: var(--escan-verde); 
+    }
+  }
+
   
+  .mat-error
+  {
+    color: var(--escan-naranja);
   }
   
-  .mat-error,
-  .mat-form-field-invalid .mat-icon {
+  .mat-form-field-invalid{
+    .mat-icon{
       border-color: var(--escan-naranja);
-      color: var(--escan-naranja);
+    }
   }
   
-  .ng-valid > div > div > .mat-form-field-prefix .mat-icon {
-    color: var(--escan-verde);
+  .ng-valid{
+    .mat-form-field{
+      &-prefix,
+      &-suffix{
+        .mat-icon{
+          color: var(--escan-verde);
+        }
+      }
+      
+    }
   }
-  
+
+
   
   .mat-form-field.mat-form-field-invalid .mat-form-field-ripple,
   .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent {
@@ -146,14 +187,6 @@ app-root{
       font-style: italic;
       font-family: 'SavingsBond';
   }
-  
-  .escan-min-width{
-      min-width: var(--escan-min--width); 
-  }
-  
-  
-  
-  
   
   
   /**************************************************************************************************
