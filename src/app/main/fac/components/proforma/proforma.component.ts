@@ -48,7 +48,7 @@ export class ProformaComponent implements OnInit {
  // "SubTotal", "Descuento", "SubTotalNeto", "Impuesto", "Total"];
 
  MasterColumns: string[] = ["Codigo", "Producto", "Cantidad", "Bonif"];
- DetailColumns: string[] = ["Precio", "Sub Total", "Descuento", "Neto"];
+ DetailColumns: string[] = ["Precio", "SubTotal", "Descuento", "Neto"];
 
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   clickedRows = new Set<I_Detalle>();

@@ -396,6 +396,8 @@ mat-label {
   **************************************************************************************************/
   table{
 
+
+
     & .mat-header{
       &-cell{
         width: 100px;
@@ -442,8 +444,9 @@ mat-label {
     th.mat-header,
     td.mat,
     td.footer{
-      &-cell:first-of-type{
-        padding-left: 0;
+      &-cell:first-of-type,  &-cell:last-of-type{
+        padding-left: 5px;
+        padding-right: 5px;
       }
     }   
    // mat-sort-header mat-header-cell cdk-header-cell ng-tns-c510-2 cdk-column-Rol mat-column-Rol ng-star-inserted

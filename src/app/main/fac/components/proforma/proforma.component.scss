@@ -69,15 +69,8 @@ $breakpoints: (
       max-width: 30px;
     }
 
-    &-Precio,
-    &-SubTotal,
-    &-Descuento,
-    &-Neto{
-      min-width: 90px;
-      max-width: 90px;
-    }
-
-
+    
+    
   }
 
 
@@ -99,15 +92,7 @@ $breakpoints: (
       max-width: 80px;
     }
 
-  
-    &-Precio,
-    &-SubTotal,
-    &-Descuento,
-    &-Neto{
-      min-width: 175px;
-      max-width: 175px;
-    }
-  
+
   }
 
   &-Producto{
@@ -137,7 +122,32 @@ $breakpoints: (
   
 }
 
+
+
+.mat-header{
+  &-cell{
+    &-detail{
+
+      @include Tamano(sm){
+        width: 90px;
+      }
+
+      @include Tamano(md){
+        width: 182.5px;
+      }
+      
+    }
+   
+  }
+
+}
+
+
 .mat-cell{
+  
+  &-detail{
+    text-align: end;
+  }
 
   mat-form-field{
     .mat-form-field{
