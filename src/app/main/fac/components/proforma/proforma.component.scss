@@ -50,12 +50,12 @@ $breakpoints: (
   @include Tamano(sm)
   {
     &-Codigo{
-      min-width: 85px;
-      max-width: 85px;
+      min-width: 75px;
+      max-width: 75px;
     }
 
     &-Producto{
-      min-width: 160px;
+      min-width: 16px;
       max-width: 160px;
     }
 
@@ -65,8 +65,8 @@ $breakpoints: (
     }
 
     &-Bonif{
-      min-width: 30px;
-      max-width: 30px;
+      min-width: 40px;
+      max-width: 40px;
     }
 
     
@@ -123,8 +123,8 @@ $breakpoints: (
 }
 
 
-
 .mat-header{
+  
   &-cell{
     &-detail{
 
@@ -144,9 +144,20 @@ $breakpoints: (
 
 
 .mat-cell{
+
+  @include Tamano(sm){
+    font-size: 0.8em;
+  }
+
+
+  @include Tamano(md){
+    font-size: 1em;
+  }
   
+
   &-detail{
     text-align: end;
+    font-weight: bold;
   }
 
   mat-form-field{
