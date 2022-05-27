@@ -2,6 +2,7 @@
   --escan-naranja:  #ff4500;
   --escan-verde: #009d43;
   --escan-fondo: white;
+  --escan-fondo-secuendario: #d5d0ca;
 
   --escan-border-size: 3px;
   --escan-min--width: calc(360px var(--escan-border-size)) ;
@@ -393,26 +394,38 @@ mat-label {
   /**************************************************************************************************
                                           TABLA
   **************************************************************************************************/
-  
   table{
 
-    .mat-header{
-
+    & .mat-header{
       &-cell{
         width: 100px;
         background-color: var(--escan-verde);
         color: var(--escan-fondo);
         border: none;
+
+        &-detail{
+          background-color: var(--escan-naranja);
+        }
+       
       }
   
     }
+
+
     
+    & .mat-cell-detail{
+      background-color: var(--escan-fondo-secuendario);
+    }
+    
+
     &-container{
       width: 100%;
       padding: 0;
       margin: 0;
     }
     
+
+
 
     .mat-sort-header{
       color: var(--escan-fondo);
@@ -548,9 +561,35 @@ mat-label {
     }
   }
   
+
+
+
+  tr.example-detail-row {
+    height: 0;
+  }
+  /*
+  tr.example-element-row:not(.example-expanded-row):hover {
+    background: red;
+  }
+  
+  tr.example-element-row:not(.example-expanded-row):active {
+    background: blueviolet;
+  }*/
+  
+  .example-element-row td {
+    border-bottom-width: 0;
+  }
+  
+  .example-element-detail {
+    overflow: hidden;
+    display: flex;
+  }
   
   
+  .example-element-Cantidad {
+    padding: 16px;
+  }
   
-  
+
   
 }

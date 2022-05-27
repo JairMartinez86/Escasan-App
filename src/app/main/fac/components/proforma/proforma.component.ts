@@ -1,3 +1,4 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -6,30 +7,33 @@ import { ServerService } from 'src/app/main/shared/service/server.service';
 
 
 export interface I_Detalle {
-  Fila : string;
+  id : Number;
   Codigo : string;
   Producto : string
-  Operacion : string,
-  Valor : string
+  Cantidad : Number,
+  Bonif : string,
+  Precio : Number,
+  SubTotal : Number,
+  Descuento : Number
+  Neto : Number
   }
 
   let ELEMENT_DATA: I_Detalle[] = [
-    {Fila: "1", Codigo : '05-B1-AR11', Producto : 'Aretes de Identificación Animal: Hembra Visual Tipo Bandera y Macho de Botón de Cierre/Hembra de Botón Visual y Macho de Botón de Cierre (PARES)', Operacion : "Cantidad", Valor : "10.00"},
-    {Fila: "", Codigo : "05-B1-AR11", Producto : '', Operacion : "Precio", Valor : "45.25"},
-    {Fila: "", Codigo : "05-B1-AR11", Producto : '', Operacion : "% Desc", Valor : "0.00"},
-    {Fila: "", Codigo : "05-B1-AR11", Producto : '', Operacion : "Bonificado", Valor : ""},
-    
-    {Fila: "2", Codigo : '02-B2-AB01', Producto : 'ABRAZADERA T/CLAMP/ACERO INOXIDABLE', Operacion : "Cantidad", Valor : "1.00"},
-    {Fila: "", Codigo : "02-B2-AB01", Producto : '', Operacion : "Precio", Valor : "40.55"},
-    {Fila: "", Codigo : "02-B2-AB01", Producto : '', Operacion : "% Desc", Valor : "100.00"},
-    {Fila: "", Codigo : "02-B2-AB01", Producto : '', Operacion : "Bonificado", Valor : "Si"},
-    
+    {id: 1, Codigo : '05-B1-AR11', Producto : 'Aretes de Identificación Animal: Hembra Visual Tipo Bandera y Macho de Botón de Cierre/Hembra de Botón Visual y Macho de Botón de Cierre (PARES)', Cantidad : 10, Bonif : "", Precio : 54.25, SubTotal : 542.5, Descuento : 0, Neto: 542.5},
+    {id: 2, Codigo : '02-B2-AB01', Producto : 'ABRAZADERA T/CLAMP/ACERO INOXIDABLE', Cantidad : 1, Bonif : "Si", Precio : 35.25, SubTotal : 35.25, Descuento : 100, Neto: 0},
   ];
 
 @Component({
   selector: 'app-proforma',
   templateUrl: './proforma.component.html',
-  styleUrls: ['./proforma.component.scss']
+  styleUrls: ['./proforma.component.scss'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
 })
 export class ProformaComponent implements OnInit {
 
@@ -43,7 +47,9 @@ export class ProformaComponent implements OnInit {
   //displayedColumns: string[] = ["Fila", "Codigo", "IdProducto",  "Cantidad", "EsBonificado", "Precio",
  // "SubTotal", "Descuento", "SubTotalNeto", "Impuesto", "Total"];
 
- displayedColumns: string[] = ["Codigo", "Producto",  "Operacion", "Valor"];
+ MasterColumns: string[] = ["Codigo", "Producto", "Cantidad", "Bonif"];
+ DetailColumns: string[] = ["Precio", "Sub Total", "Descuento", "Neto"];
+
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   clickedRows = new Set<I_Detalle>();
   private _liveAnnouncer: any;
@@ -77,13 +83,6 @@ export class ProformaComponent implements OnInit {
 }
 
 
-public TieneBonificado(c : string) : boolean{
-  let retorno : boolean = true;
-
-  retorno = ELEMENT_DATA.findIndex(f => f.Codigo == c && f.Valor == "Si") > 0
-
-  return retorno;
-}
 
 
   /*************************EVENTOS TABLA************************************/
@@ -113,6 +112,15 @@ public TieneBonificado(c : string) : boolean{
   clickRow(evento : string, row : any){
 
 
+  }
+
+
+  toggleRow(element: { expanded: boolean; }) {
+    // Uncommnet to open only single row at once
+    // ELEMENT_DATA.forEach(row => {
+    //   row.expanded = false;
+    // })
+    element.expanded = !element.expanded
   }
 
    /*************************************************************************/

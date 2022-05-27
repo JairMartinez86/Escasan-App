@@ -194,7 +194,7 @@
                   <div class="mat-elevation-z8">
 
 
-                    <table class="escan-tabla" mat-table   [dataSource]="dataSource"  matSort (matSortChange)="announceSort($event)">
+                    <!--<table class="escan-tabla" mat-table   [dataSource]="dataSource"  matSort (matSortChange)="announceSort($event)">
                   
 
                       <ng-container matColumnDef="Codigo">
@@ -247,8 +247,134 @@
                     <tr
                     mat-row  [class.demo-row-is-clicked]="clickedRows.has(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
                     
-                  </table>
-                  <mat-paginator [pageSizeOptions]="[25, 50, 100]"  showFirstLastButtons></mat-paginator>
+                  </table>-->
+
+
+                  <table class="escan-tabla" mat-table multiTemplateDataRows  [dataSource]="dataSource"  matSort (matSortChange)="announceSort($event)">
+                  
+
+                    <ng-container matColumnDef="{{column}}" *ngFor="let column of MasterColumns">
+                      <th  mat-header-cell *matHeaderCellDef  mat-sort-header sortActionDescription="Sort by {{column}}">
+                        {{column}}
+                      </th>
+
+                  
+
+                      <td mat-cell *matCellDef="let element">
+
+                        <span *ngIf="column !='Cantidad'">
+
+                          <span *ngIf="column !='Bonif'">{{element[column]}}</span>
+                          <i *ngIf="column =='Bonif' && element.Bonif == 'Si'" class="bi bi-check" style="font-size: 3em; color: var(--escan-verde)"></i>
+
+                        </span>
+
+                        <span *ngIf="column =='Cantidad'">
+                          <mat-form-field  class="input-tabla" floatLabel="never">
+                            <input  matInput placeholder="" [value]="element.Cantidad" [disabled]="element.Bonif == 'Si'">
+                          </mat-form-field>
+                        </span>
+                        
+                      </td>
+
+
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="expandedDetail">
+
+                      <td mat-cell *matCellDef="let element" [attr.colspan]="DetailColumns.length">
+                        
+                        <div class="example-element-detail" [@detailExpand]="element.expanded ? 'expanded' : 'collapsed'">
+                          
+                          <table class="escan-tabla" mat-table   [dataSource]="dataSource"  matSort (matSortChange)="announceSort($event)">
+                  
+
+                            <ng-container matColumnDef="{{d_column}}" *ngFor="let d_column of DetailColumns">
+                              <th  mat-header-cell class="mat-header-cell-detail" *matHeaderCellDef  mat-sort-header sortActionDescription="Sort by {{d_column}}">
+                                {{d_column}}
+                              </th>
+                              <td mat-cell class="mat-cell-detail" *matCellDef="let d_element">{{d_element[d_column]}}</td>
+                            </ng-container>
+          
+                            <tr mat-header-row *matHeaderRowDef="DetailColumns"></tr>
+          
+                            <tr mat-row  [class.demo-row-is-clicked]="clickedRows.has(row)" *matRowDef="let row;
+                            columns: DetailColumns;"></tr>
+
+                          </table>
+
+                        </div>
+                      </td>
+
+              
+                    </ng-container>
+
+                     
+                
+          
+                  <tr mat-header-row *matHeaderRowDef="MasterColumns"></tr>
+
+                  <tr mat-row  [class.demo-row-is-clicked]="clickedRows.has(row)" *matRowDef="let row;
+                  columns: MasterColumns;"
+                  [class.example-expanded-row]="row.expanded" (click)="toggleRow(row)"
+                  class="example-element-row"></tr>
+
+                  <tr mat-row  *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+
+            
+                </table>
+
+
+                <!--<mat-table class="escan-tabla" multiTemplateDataRows [dataSource]="dataSource">
+                  
+
+                  <ng-container matColumnDef="{{column}}" *ngFor="let column of MasterColumns">
+                    <mat-header-cell *matHeaderCellDef> {{column}} </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element[column]}} </mat-cell>
+                  </ng-container>
+
+
+                  <ng-container matColumnDef="expandedDetail">
+                    <mat-cell *matCellDef="let element" [attr.colspan]="MasterColumns.length">
+                      <div class="example-element-detail" [@detailExpand]="element.expanded ? 'expanded' : 'collapsed'">
+                        <table class="detail-table">
+                          <tr>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Descuento</th>
+                            <th>Bonificacion</th>
+                          </tr>
+                          <tr>
+                            <td>{{element.Cantidad}}</td>
+                            <td>{{element.Precio}}</td>
+                            <td>{{element.Descuento}}</td>
+                            <td>{{element.Bonificacion}}</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </mat-cell>
+                  </ng-container>
+              
+                   
+              
+        
+
+                  <mat-header-row *matHeaderRowDef="MasterColumns"></mat-header-row>
+                  <mat-row *matRowDef="let element; columns: MasterColumns;" class="example-element-row"
+                    [class.example-expanded-row]="element.expanded" (click)="toggleRow(element)">
+                  </mat-row>
+                  <mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></mat-row>
+
+
+              </mat-table>-->
+
+
+                
+
+    
+
+
               </div>
 
                 </mat-card-content>
@@ -269,6 +395,8 @@
 
     
 
+
+    
     
 </div>
 
