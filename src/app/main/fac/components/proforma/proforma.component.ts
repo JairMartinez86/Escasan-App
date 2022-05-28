@@ -7,7 +7,7 @@ import { ServerService } from 'src/app/main/shared/service/server.service';
 
 
 export interface I_Detalle {
-  id : Number;
+  Index : Number;
   Codigo : string;
   Producto : string
   Cantidad : Number,
@@ -19,8 +19,8 @@ export interface I_Detalle {
   }
 
   let ELEMENT_DATA: I_Detalle[] = [
-    {id: 1, Codigo : '05-B1-AR11', Producto : 'Aretes de Identificación Animal: Hembra Visual Tipo Bandera y Macho de Botón de Cierre/Hembra de Botón Visual y Macho de Botón de Cierre (PARES)', Cantidad : 10, Bonif : "", Precio : 54.25, SubTotal : 542.5, Descuento : 0, Neto: 542.5},
-    {id: 2, Codigo : '02-B2-AB01', Producto : 'ABRAZADERA T/CLAMP/ACERO INOXIDABLE', Cantidad : 1, Bonif : "Si", Precio : 35.25, SubTotal : 35.25, Descuento : 100, Neto: 0},
+    {Index: 1, Codigo : '05-B1-AR11', Producto : 'Aretes de Identificación Animal: Hembra Visual Tipo Bandera y Macho de Botón de Cierre/Hembra de Botón Visual y Macho de Botón de Cierre (PARES)', Cantidad : 10, Bonif : "", Precio : 54.25, SubTotal : 542.5, Descuento : 0, Neto: 542.5},
+    {Index: 2, Codigo : '02-B2-AB01', Producto : 'ABRAZADERA T/CLAMP/ACERO INOXIDABLE', Cantidad : 1, Bonif : "Si", Precio : 35.25, SubTotal : 35.25, Descuento : 100, Neto: 0},
   ];
 
 @Component({
@@ -123,6 +123,9 @@ export class ProformaComponent implements OnInit {
     element.expanded = !element.expanded
   }
 
+  Buscar(Index : Number){
+    return ELEMENT_DATA.filter( f=> f.Index == Index)
+  }
    /*************************************************************************/
 
   Cerrar() : void{
