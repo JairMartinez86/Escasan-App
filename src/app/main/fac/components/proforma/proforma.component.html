@@ -332,40 +332,39 @@
                         
                       </td>
 
-                      <ng-container matColumnDef="expandedDetail">
-
-                        <td mat-cell *matCellDef="let d_element" [attr.colspan]="DetailColumns.length">
-                          
-                          <div class="example-element-detail" [@detailExpand]="d_element.expanded ? 'expanded' : 'collapsed'">
-                            
-                            <table class="escan-tabla" mat-table   [dataSource]="dataSource"  matSort (matSortChange)="announceSort($event)">
-                    
-  
-                              <ng-container matColumnDef="{{d_column}}" *ngFor="let d_column of DetailColumns">
-                                <th  mat-header-cell class="mat-header-cell-detail" *matHeaderCellDef  mat-sort-header sortActionDescription="Sort by {{d_column}}">
-                                  {{d_column}}
-                                </th>
-                                <td mat-cell class="mat-cell-detail" *matCellDef="let d_element">{{d_element[d_column]}}</td>
-                              </ng-container>
-            
-                              <tr mat-header-row *matHeaderRowDef="DetailColumns"></tr>
-            
-                              <tr mat-row  [class.demo-row-is-clicked]="clickedRows.has(row)" *matRowDef="let row;
-                              columns: DetailColumns;"></tr>
-  
-                            </table>
-  
-                          </div>
-                        </td>
-  
-                
-                      </ng-container>
-
                     </ng-container>
 
 
                    
 
+                    <ng-container matColumnDef="expandedDetail">
+
+                      <td mat-cell *matCellDef="let d_element" [attr.colspan]="DetailColumns.length">
+                        
+                        <div class="example-element-detail" [@detailExpand]="d_element.expanded ? 'expanded' : 'collapsed'">
+                          
+                          <table class="escan-tabla" mat-table   [dataSource]="Buscar(d_element.Index)"  matSort (matSortChange)="announceSort($event)">
+                  
+
+                            <ng-container matColumnDef="{{d_column}}" *ngFor="let d_column of DetailColumns">
+                              <th  mat-header-cell class="mat-header-cell-detail" *matHeaderCellDef  mat-sort-header sortActionDescription="Sort by {{d_column}}">
+                                {{d_column}}
+                              </th>
+                              <td mat-cell class="mat-cell-detail" *matCellDef="let d_element">{{d_element[d_column]}}</td>
+                            </ng-container>
+          
+                            <tr mat-header-row *matHeaderRowDef="DetailColumns"></tr>
+          
+                            <tr mat-row  [class.demo-row-is-clicked]="clickedRows.has(row)" *matRowDef="let row;
+                            columns: DetailColumns;"></tr>
+
+                          </table>
+
+                        </div>
+                      </td>
+
+              
+                    </ng-container>
                      
                 
           
