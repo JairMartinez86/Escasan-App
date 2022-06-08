@@ -11,6 +11,9 @@
     min-width: var(--escan-min-width); 
 }
 
+.escan-mat-accordion{
+  min-height: 330px;
+}
 
 
 .escan-tabla{
@@ -54,8 +57,8 @@ $breakpoints: (
     }
 
     &-Producto{
-      min-width: 16px;
-      max-width: 160px;
+      min-width: 157px;
+      max-width: 157px;
     }
 
     &-Cantidad{
