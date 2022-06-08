@@ -1,3 +1,4 @@
+
 .formulario{
     margin-top: 0;
 }
@@ -31,7 +32,7 @@ mat-form-field{
 $breakpoints: (
   sm : 360px,
 
-  md : 450px,
+  md : 400px,
 
   lg : 768px,
 
@@ -76,7 +77,29 @@ $breakpoints: (
   }
 
 
+
   @include Tamano(md){
+
+    &-Codigo,
+    &-Cantidad{
+      min-width: 85px;
+      max-width: 85px;
+    }
+  
+    &-Producto{
+      min-width: 187px;
+      max-width: 187px;
+    }
+
+    &-Bonif{
+      min-width: 40px;
+      max-width: 40px;
+    }
+
+
+  }
+
+  @include Tamano(lg){
 
     &-Codigo,
     &-Cantidad{
@@ -85,13 +108,35 @@ $breakpoints: (
     }
   
     &-Producto{
-      min-width: 350px;
-      max-width: 350px;
+      min-width: 347px;
+      max-width: 347px;
     }
 
     &-Bonif{
       min-width: 80px;
       max-width: 80px;
+    }
+
+
+  }
+
+
+  @include Tamano(xl){
+
+    &-Codigo,
+    &-Cantidad{
+      min-width: 150px;
+      max-width: 150px;
+    }
+  
+    &-Producto{
+      min-width: 627px;
+      max-width: 627px;
+    }
+
+    &-Bonif{
+      min-width: 100px;
+      max-width: 100px;
     }
 
 
@@ -131,11 +176,22 @@ $breakpoints: (
     &-detail{
 
       @include Tamano(sm){
-        width: 90px;
+        width: 89.25px;
       }
 
+
       @include Tamano(md){
-        width: 182.5px;
+        width: 99.25px;
+      }
+
+
+      @include Tamano(lg){
+        width: 191.25px;
+      }
+
+
+      @include Tamano(xl){
+        width: 255.25px;
       }
       
     }
