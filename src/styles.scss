@@ -498,6 +498,7 @@ mat-label {
   
    [class^=igx-] {
   
+    --box-background : var(--escan-fondo);
     
       igx-combo-item{
        /* &.igx-drop-down__item--selected.igx-drop-down__item--focused{

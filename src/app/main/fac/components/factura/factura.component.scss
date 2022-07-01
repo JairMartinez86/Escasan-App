@@ -1,31 +1,10 @@
 
-.formulario{
-    margin-top: 0;
-}
-
-.no-padding{
-  padding-left: 15px;
-}
-
-
-#frmProforma{
-    min-width: var(--escan-min-width); 
-}
-
-.escan-mat-accordion{
-  min-height: 330px;
-}
-
-
-.escan-tabla{
-    margin-top: 10px;
-}
-
-mat-form-field{
-  .mat-form-field{
-    padding-left: 70px;
+@mixin Tamano($points) {
+  @media screen and (min-width: map-get($breakpoints, $points)) {
+    @content;
   }
 }
+
 
 
 
@@ -40,11 +19,47 @@ $breakpoints: (
 
 );
 
-@mixin Tamano($points) {
-  @media screen and (min-width: map-get($breakpoints, $points)) {
-    @content;
+
+.formulario{
+    margin-top: 0;
+}
+
+.no-padding{
+  padding-left: 15px;
+}
+
+
+#frmFactura{
+    min-width: var(--escan-min-width); 
+}
+
+.escan-mat-accordion{
+  min-height: 330px;
+
+}
+
+#PanelTotal{
+  @include Tamano(sm){
+
+    .escan-mat-accordion{
+      min-height: 0;
+    }
+    
   }
 }
+
+.escan-tabla{
+    margin-top: 10px;
+}
+
+mat-form-field{
+  .mat-form-field{
+    padding-left: 70px;
+  }
+}
+
+
+
 
 .mat-column{
 
@@ -52,6 +67,7 @@ $breakpoints: (
 
   @include Tamano(sm)
   {
+
     &-Codigo{
       min-width: 75px;
       max-width: 75px;

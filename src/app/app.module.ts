@@ -69,11 +69,13 @@ import { IgxComboModule } from 'igniteui-angular';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ModalModule } from 'ng-modal-lib';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+
+
+//import { library } from '@fortawesome/fontawesome-svg-core';
+//import { faUser, faSackDollar  } from '@fortawesome/free-solid-svg-icons';
 import { RolesComponent } from './main/config/components/roles/roles.component';
 import { RolesRegistroComponent } from './main/config/components/roles/roles-registro/roles-registro.component';
-import { ProformaComponent } from './main/fac/components/proforma/proforma.component';
+import { FacturaComponent } from './main/fac/components/factura/factura.component';
 import {MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
 //FIN
 
@@ -106,7 +108,7 @@ export const DateFormat = {
     DynamicFormDirective,
     RolesComponent,
     RolesRegistroComponent,
-    ProformaComponent
+    FacturaComponent
   ],
   imports: [
     BrowserModule,
@@ -156,7 +158,7 @@ export const DateFormat = {
     ReactiveFormsModule,
     HttpClientModule,
     IgxComboModule,
-    ModalModule
+    ModalModule,
 
   ],
   exports: [
@@ -207,6 +209,6 @@ export const DateFormat = {
 export class AppModule {
 
   constructor() {
-    library.add(faUser);
+    //library.add(faUser, faSackDollar);
   }
 }

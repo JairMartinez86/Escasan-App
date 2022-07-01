@@ -24,9 +24,9 @@ export interface I_Detalle {
   ];
 
 @Component({
-  selector: 'app-proforma',
-  templateUrl: './proforma.component.html',
-  styleUrls: ['./proforma.component.scss'],
+  selector: 'app-factura',
+  templateUrl: './factura.component.html',
+  styleUrls: ['./factura.component.scss'],
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({ height: '0px', minHeight: '0' })),
@@ -35,13 +35,15 @@ export interface I_Detalle {
     ]),
   ],
 })
-export class ProformaComponent implements OnInit {
+export class FacturaComponent implements OnInit {
 
   public lstCliente: { Codigo: string, Nombre: string }[] = [];
   public lstPlazo: { IdPlazo: string, Dias: string }[] = [];
   public lstBodega: { Codigo: string, Bodega: string }[] = [];
   public lstVendedor: { IdVendedor: string, Codigo: string, Vendedor: string  }[] = [];
   public val = new Validacion();
+
+  public bol_Exportacion : boolean = false;
 
 
   //displayedColumns: string[] = ["Fila", "Codigo", "IdProducto",  "Cantidad", "EsBonificado", "Precio",
@@ -58,20 +60,24 @@ export class ProformaComponent implements OnInit {
   public estadoPanel = true;
 
   constructor(private ServerScv : ServerService) { 
+    this.val.add("txtCodCliente", "1","LEN>", "0");
     this.val.add("txtCliente", "1","LEN>", "0");
     this.val.add("txtNombre", "1","LEN>=", "0");
     this.val.add("txtRuc", "1","LEN>=", "0");
-    this.val.add("txtCedula", "1","LEN>=", "0");
+    this.val.add("txtLimite", "1","LEN>=", "0");
     this.val.add("txtTelefono", "1","LEN>=", "0");
-    this.val.add("txtCelular", "1","LEN>=", "0");
-    this.val.add("txtCorreo", "1","LEN>=", "0");
+    this.val.add("txtDisponible", "1","LEN>=", "0");
     this.val.add("txtSerie", "1","LEN>", "0");
     this.val.add("txtFecha", "1","LEN>", "0");
     this.val.add("txtDias", "1","LEN>", "0");
+    this.val.add("txtCodBodega", "1","LEN>", "0");
     this.val.add("txtBodega", "1","LEN>", "0");
+    this.val.add("txtCodVendedor", "1","LEN>", "0");
     this.val.add("txtVendedor", "1","LEN>", "0");
-
-
+    this.val.add("txtOrdenCompra", "1","LEN>=", "0");
+    this.val.add("chkExportacion", "1","LEN>=", "0");
+    
+    
   }
   
 
@@ -82,6 +88,12 @@ export class ProformaComponent implements OnInit {
     }
 }
 
+
+
+
+ExPortacion() :void{
+  this.bol_Exportacion = !this.bol_Exportacion;
+}
 
 
 
@@ -130,9 +142,21 @@ export class ProformaComponent implements OnInit {
 
   Cerrar() : void{
       this.ServerScv.CerrarFormulario();
+      this.ServerScv.change.emit(["CerrarModal", "modal-factura-venta", undefined]);
   }
 
   ngOnInit(): void {
+
+    this.ServerScv.change.subscribe(s =>{
+
+      if(s instanceof Array){
+        if(s[0] == "DatosModal" && s[1] == "modal-factura-venta" ) {
+          console.log(s[2]);
+        }
+      }
+
+    });
+
   }
 
 }
