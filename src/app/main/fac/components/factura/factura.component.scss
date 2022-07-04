@@ -1,4 +1,5 @@
 
+
 @mixin Tamano($points) {
   @media screen and (min-width: map-get($breakpoints, $points)) {
     @content;
@@ -9,6 +10,7 @@
 
 
 $breakpoints: (
+  
   sm : 360px,
 
   md : 400px,
@@ -50,12 +52,10 @@ $breakpoints: (
 
 .escan-tabla{
     margin-top: 10px;
-}
-
-mat-form-field{
-  .mat-form-field{
-    padding-left: 70px;
-  }
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 
@@ -69,19 +69,26 @@ mat-form-field{
   {
 
     &-Codigo{
-      min-width: 75px;
-      max-width: 75px;
+      min-width: 150px;
+      max-width: 150px;
     }
 
     &-Producto{
-      min-width: 157px;
-      max-width: 157px;
+      min-width: 250px;
+      max-width: 250px;
     }
 
     &-Cantidad{
-      min-width: 85px;
-      max-width: 85px;
+      min-width: 60px;
+      max-width: 60px;
     }
+
+    &-PorcDesc{
+      min-width: 60px;
+      max-width: 60px;
+    }
+
+    
 
     &-Bonif{
       min-width: 40px;
@@ -97,14 +104,15 @@ mat-form-field{
   @include Tamano(md){
 
     &-Codigo,
-    &-Cantidad{
-      min-width: 85px;
-      max-width: 85px;
+    &-Cantidad
+    &-PorcDesc{
+      min-width: 150px;
+      max-width: 150px;
     }
   
     &-Producto{
-      min-width: 187px;
-      max-width: 187px;
+      min-width: 250px;
+      max-width: 250px;
     }
 
     &-Bonif{
@@ -118,14 +126,15 @@ mat-form-field{
   @include Tamano(lg){
 
     &-Codigo,
-    &-Cantidad{
+    &-Cantidad
+    &-PorcDesc{
       min-width: 150px;
       max-width: 150px;
     }
   
     &-Producto{
-      min-width: 347px;
-      max-width: 347px;
+      min-width: 350px;
+      max-width: 350px;
     }
 
     &-Bonif{
@@ -140,24 +149,26 @@ mat-form-field{
   @include Tamano(xl){
 
     &-Codigo,
-    &-Cantidad{
+    &-Cantidad
+    &-PorcDesc{
       min-width: 150px;
       max-width: 150px;
     }
   
     &-Producto{
-      min-width: 627px;
-      max-width: 627px;
+      min-width: 600px;
+      max-width: 600px;
     }
 
+    
     &-Bonif{
-      min-width: 100px;
-      max-width: 100px;
+      min-width: 80px;
+      max-width: 80px;
     }
 
 
   }
-
+/*
   &-Producto{
     
     &:not(.mat-header-cell){
@@ -172,7 +183,7 @@ mat-form-field{
 
 
   }
-
+*/
 
   &-Cantidad{
     text-align: end;
@@ -190,6 +201,7 @@ mat-form-field{
   
   &-cell{
     &-detail{
+      
 
       @include Tamano(sm){
         width: 89.25px;
@@ -208,6 +220,7 @@ mat-form-field{
 
       @include Tamano(xl){
         width: 255.25px;
+        
       }
       
     }
@@ -234,40 +247,41 @@ mat-form-field{
     font-weight: bold;
   }
 
-  mat-form-field{
-    .mat-form-field{
-      
+  igx-input-group{
 
-      &-wrapper,
-      &-cript-wrapper{
-        padding-bottom: 0;
-        margin-top: 0;
+    padding-right: 10px;
+    padding-left: 10px;
+    input{
+      text-align: end;
+      margin-left: 1px;
+
+      :disabled{
+        color: var(--escan-verde) !important;
+        font-weight: bold;
       }
-
-      &-infix{
-        padding: 0px;
-        margin: 0px;
-        text-align: end;
-      }
-
-      
     }
+
+
+    
 
 
     
   }
 
 
+  
 }
+
+
+/*
 
 
 .input-tabla 
 {
-  width: 80%;
+
   input{
     text-align: end;
-    margin-left: 0px;
-    margin-right: 0px;
+  
   }
 
   .mat-input-element{
@@ -281,7 +295,7 @@ mat-form-field{
 
 }
  
-
+*/
 
 .scaled {
     transform: scale(0.7); 

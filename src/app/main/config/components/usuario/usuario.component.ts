@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Validacion } from 'src/app/main/shared/class/validacion';
 import { ServerService } from 'src/app/main/shared/service/server.service';
 
@@ -6,7 +6,6 @@ import { ServerService } from 'src/app/main/shared/service/server.service';
   selector: 'app-usuario',
   templateUrl: './usuario.component.html',
   styleUrls: ['./usuario.component.scss'],
-  encapsulation: ViewEncapsulation.Emulated
 })
 export class UsuarioComponent implements OnInit {
 

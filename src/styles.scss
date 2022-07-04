@@ -31,6 +31,49 @@
 
 
   }
+
+
+    
+  /***************************************************************************************************************/
+  
+  
+  /**************************************************************************************************
+                                          COMBO BOX
+  **************************************************************************************************/
+  
+ 
+
+  [class^=igx-] {
+  
+    --box-background : var(--escan-fondo);
+    
+      igx-combo-item{
+       /* &.igx-drop-down__item--selected.igx-drop-down__item--focused{
+          background-color: var(--escan-verde);
+          color: var(--escan-fondo);
+        }*/
+        --selected-hover-item-background: var(--escan-verde);
+        --selected-item-background: var(--escan-verde);
+        --selected-focus-item-background :var(--escan-verde);
+      }
+  
+      igx-input-group{
+        --focused-secondary-color: var(--escan-verde);
+        --success-secondary-color: var(--escan-verde);
+        --error-secondary-color: var(--escan-naranja);
+      }
+  
+      
+      igx-checkbox {
+        --fill-color: var(--escan-naranja);
+      }
+  
+    }
+
+
+
+
+    
 }
 
 
@@ -487,43 +530,8 @@ mat-label {
     margin-top: 3px;
   }
 
-  
-  /***************************************************************************************************************/
-  
-  
-  /**************************************************************************************************
-                                          COMBO BOX
-  **************************************************************************************************/
-  
-  
-   [class^=igx-] {
-  
-    --box-background : var(--escan-fondo);
-    
-      igx-combo-item{
-       /* &.igx-drop-down__item--selected.igx-drop-down__item--focused{
-          background-color: var(--escan-verde);
-          color: var(--escan-fondo);
-        }*/
-        --selected-hover-item-background: var(--escan-verde);
-        --selected-item-background: var(--escan-verde);
-        --selected-focus-item-background :var(--escan-verde);
-      }
-  
-      igx-input-group{
-        --focused-secondary-color: var(--escan-verde);
-        --success-secondary-color: var(--escan-verde);
-        --error-secondary-color: var(--escan-naranja);
-      }
-  
-      
-      igx-checkbox {
-        --fill-color: var(--escan-naranja);
-      }
-  
-    }
-    
-  
+
+
   
   
   

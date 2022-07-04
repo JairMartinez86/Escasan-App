@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Validacion } from 'src/app/main/shared/class/validacion';
@@ -11,6 +11,7 @@ export interface I_Detalle {
   Codigo : string;
   Producto : string
   Cantidad : Number,
+  PorcDesc : Number,
   Bonif : string,
   Precio : Number,
   SubTotal : Number,
@@ -19,14 +20,15 @@ export interface I_Detalle {
   }
 
   let ELEMENT_DATA: I_Detalle[] = [
-    {Index: 1, Codigo : '05-B1-AR11', Producto : 'Aretes de Identificación Animal: Hembra Visual Tipo Bandera y Macho de Botón de Cierre/Hembra de Botón Visual y Macho de Botón de Cierre (PARES)', Cantidad : 10, Bonif : "", Precio : 54.25, SubTotal : 542.5, Descuento : 0, Neto: 542.5},
-    {Index: 2, Codigo : '02-B2-AB01', Producto : 'ABRAZADERA T/CLAMP/ACERO INOXIDABLE', Cantidad : 1, Bonif : "Si", Precio : 35.25, SubTotal : 35.25, Descuento : 100, Neto: 0},
+    {Index: 1, Codigo : '05-B1-AR11', Producto : 'Aretes de Identificación Animal: Hembra Visual Tipo Bandera y Macho de Botón de Cierre/Hembra de Botón Visual y Macho de Botón de Cierre (PARES)', Cantidad : 10, PorcDesc : 0, Bonif : "", Precio : 54.25, SubTotal : 542.5, Descuento : 0, Neto: 542.5},
+    {Index: 2, Codigo : '02-B2-AB01', Producto : 'ABRAZADERA T/CLAMP/ACERO INOXIDABLE', Cantidad : 1, PorcDesc : 0, Bonif : "Si", Precio : 35.25, SubTotal : 35.25, Descuento : 35.25, Neto: 0},
   ];
 
 @Component({
   selector: 'app-factura',
   templateUrl: './factura.component.html',
   styleUrls: ['./factura.component.scss'],
+  encapsulation: ViewEncapsulation.None,
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({ height: '0px', minHeight: '0' })),
@@ -49,7 +51,7 @@ export class FacturaComponent implements OnInit {
   //displayedColumns: string[] = ["Fila", "Codigo", "IdProducto",  "Cantidad", "EsBonificado", "Precio",
  // "SubTotal", "Descuento", "SubTotalNeto", "Impuesto", "Total"];
 
- MasterColumns: string[] = ["Codigo", "Producto", "Cantidad", "Bonif"];
+ MasterColumns: string[] = ["Codigo", "Producto", "Cantidad", "PorcDesc", "Bonif"];
  DetailColumns: string[] = ["Precio", "SubTotal", "Descuento", "Neto"];
 
   dataSource = new MatTableDataSource(ELEMENT_DATA);
