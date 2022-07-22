@@ -53,11 +53,7 @@ $breakpoints: (
 .escan-tabla{
     margin-top: 10px;
     width: 100%;
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
 }
-
 
 
 
@@ -69,13 +65,13 @@ $breakpoints: (
   {
 
     &-Codigo{
-      min-width: 150px;
-      max-width: 150px;
+      min-width: 75px;
+      max-width: 75px;
     }
 
     &-Producto{
-      min-width: 250px;
-      max-width: 250px;
+      min-width: 122px;
+      max-width: 122px;
     }
 
     &-Cantidad{
@@ -106,13 +102,13 @@ $breakpoints: (
     &-Codigo,
     &-Cantidad
     &-PorcDesc{
-      min-width: 150px;
-      max-width: 150px;
+      min-width: 75px;
+      max-width: 75px;
     }
   
     &-Producto{
-      min-width: 250px;
-      max-width: 250px;
+      min-width: 138px;
+      max-width: 138px;
     }
 
     &-Bonif{
@@ -128,13 +124,13 @@ $breakpoints: (
     &-Codigo,
     &-Cantidad
     &-PorcDesc{
-      min-width: 150px;
-      max-width: 150px;
+      min-width: 100px;
+      max-width: 100px;
     }
   
     &-Producto{
-      min-width: 350px;
-      max-width: 350px;
+      min-width: 385px;
+      max-width: 385px;
     }
 
     &-Bonif{
@@ -150,22 +146,16 @@ $breakpoints: (
 
     &-Codigo,
     &-Cantidad
-    &-PorcDesc{
-      min-width: 150px;
-      max-width: 150px;
+    &-PorcDesc,
+    &-Bonif{
+      min-width: 100px;
+      max-width: 100px;
     }
   
     &-Producto{
-      min-width: 600px;
-      max-width: 600px;
+      min-width: 621px;
+      max-width: 621px;
     }
-
-    
-    &-Bonif{
-      min-width: 80px;
-      max-width: 80px;
-    }
-
 
   }
 /*
@@ -201,7 +191,6 @@ $breakpoints: (
   
   &-cell{
     &-detail{
-      
 
       @include Tamano(sm){
         width: 89.25px;
@@ -247,30 +236,11 @@ $breakpoints: (
     font-weight: bold;
   }
 
-  igx-input-group{
-
-    padding-right: 10px;
-    padding-left: 10px;
-    input{
-      text-align: end;
-      margin-left: 1px;
-
-      :disabled{
-        color: var(--escan-verde) !important;
-        font-weight: bold;
-      }
-    }
-
-
-    
-
-
-    
-  }
-
 
   
 }
+
+
 
 
 /*

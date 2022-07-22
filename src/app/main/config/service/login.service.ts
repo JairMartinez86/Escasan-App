@@ -20,9 +20,10 @@ export class LoginService {
 
   private Nombre : string = "";
   private str_Form : string = "";
-  private str_user : string = "";
+  public str_user : string = "";
   private str_pass : string = "";
   private str_Fecha : string = "";
+  public int_Vendedor: Number = 0;
 
 
   constructor(private _Router: Router, private http : HttpClient, private _Dialog: MatDialog) { }
@@ -36,6 +37,7 @@ export class LoginService {
       this.str_user = <string>localStorage.getItem("User");
       this.str_pass = <string>localStorage.getItem("Pwd");
       this.Nombre = <string>localStorage.getItem("Nombre");
+      this.int_Vendedor = parseInt(<string>localStorage.getItem("IdVendedor"));
     }
 
     if(this.str_user == "") {
@@ -60,12 +62,13 @@ export class LoginService {
 
   }
 
-  private GuardarSession(bol_recordar : boolean, str_user : string, str_pass : string, str_Nombre : string, str_Fecha : string ) : void
+  private GuardarSession(bol_recordar : boolean, str_user : string, str_pass : string, str_Nombre : string, str_Fecha : string, int_Vendedor : Number ) : void
   {
     this.Nombre = str_Nombre;
     this.str_user = str_user;
     this.str_pass = str_pass;
     this.str_Fecha = str_Fecha;
+    this.int_Vendedor = int_Vendedor;
 
     if(bol_recordar)
     {
@@ -73,12 +76,14 @@ export class LoginService {
       localStorage.setItem('User', str_user);
       localStorage.setItem('Pwd', str_pass);
       localStorage.setItem('Fecha', str_Fecha);
+      localStorage.setItem('IdVendedor', int_Vendedor.toString());
     }
 
     sessionStorage.setItem('Nombre', str_Nombre);
     sessionStorage.setItem('User', str_user);
     sessionStorage.setItem('Pwd', str_pass);
     sessionStorage.setItem('Fecha', str_Fecha);
+    sessionStorage.setItem('IdVendedor', int_Vendedor.toString());
 
     this.isLogin = true;
 
@@ -91,6 +96,7 @@ export class LoginService {
     this.str_user = "";
     this.str_pass = "";
     this.str_Fecha = "";
+    this.int_Vendedor = 0;
 
     localStorage.removeItem("User");
     localStorage.removeItem("Pwd");
@@ -122,7 +128,7 @@ export class LoginService {
         if(Object.keys(_json["d"]).length > 0)
         {
 
-          this.GuardarSession(bol_recordar,  str_user, str_pass, _json["d"][0]["Nombre"], _json["d"][0]["Fecha"]);
+          this.GuardarSession(bol_recordar,  str_user, str_pass, _json["d"][0]["Nombre"], _json["d"][0]["Fecha"], _json["d"][0]["IdVendedor"]);
           this.ProcesarAcceso(_json);
         }
         else

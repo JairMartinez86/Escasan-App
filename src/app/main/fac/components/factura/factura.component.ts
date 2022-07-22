@@ -39,13 +39,15 @@ export interface I_Detalle {
 })
 export class FacturaComponent implements OnInit {
 
-  public lstCliente: { Codigo: string, Nombre: string }[] = [];
-  public lstPlazo: { IdPlazo: string, Dias: string }[] = [];
-  public lstBodega: { Codigo: string, Bodega: string }[] = [];
-  public lstVendedor: { IdVendedor: string, Codigo: string, Vendedor: string  }[] = [];
+  public lstCliente: { IdCliente : Number, Codigo: String, Cliente: String, Ruc : String, Telefono : String, esEventual : boolean}[] = [];
+  public lstPlazo: { IdPlazo: String, Dias: String }[] = [];
+  public lstBodega: {IdBodega : Number, Codigo: String, Bodega: String, VendedorBod : String, ClienteBod : String }[] = [];
+  public lstVendedor: { IdVendedor: String, Codigo: String, Vendedor: String  }[] = [];
+  public lstProducto: {IdProducto : Number, Codigo: String, Producto: String}[] = [];
   public val = new Validacion();
 
-  public bol_Exportacion : boolean = false;
+  public bol_Exportacion : boolean = true;
+  private str_Iva : string = "";
 
 
   //displayedColumns: string[] = ["Fila", "Codigo", "IdProducto",  "Cantidad", "EsBonificado", "Precio",
@@ -62,7 +64,6 @@ export class FacturaComponent implements OnInit {
   public estadoPanel = true;
 
   constructor(private ServerScv : ServerService) { 
-    this.val.add("txtCodCliente", "1","LEN>", "0");
     this.val.add("txtCliente", "1","LEN>", "0");
     this.val.add("txtNombre", "1","LEN>=", "0");
     this.val.add("txtRuc", "1","LEN>=", "0");
@@ -71,23 +72,196 @@ export class FacturaComponent implements OnInit {
     this.val.add("txtDisponible", "1","LEN>=", "0");
     this.val.add("txtSerie", "1","LEN>", "0");
     this.val.add("txtFecha", "1","LEN>", "0");
-    this.val.add("txtDias", "1","LEN>", "0");
-    this.val.add("txtCodBodega", "1","LEN>", "0");
+    this.val.add("rdTipoVenta", "1","LEN>=", "0");
     this.val.add("txtBodega", "1","LEN>", "0");
-    this.val.add("txtCodVendedor", "1","LEN>", "0");
     this.val.add("txtVendedor", "1","LEN>", "0");
     this.val.add("txtOrdenCompra", "1","LEN>=", "0");
     this.val.add("chkExportacion", "1","LEN>=", "0");
-    
+    this.val.add("rdIva", "1","LEN>=", "0");
     
   }
   
 
 
+private _Evento(str_Evento : string) : void{
+
+  switch(str_Evento)
+  {
+    case "Iniciar":
+      this._Evento("Limpiar");
+      this._BuscarBodega("");
+      this._BuscarCliente("");
+      this._BuscarProducto("");
+
+      break;
+
+    case "Limpiar":
+
+      this.str_Iva = "1"
+      this.bol_Exportacion = false;
+
+
+      this.val.ValForm.get("txtCliente")?.setValue([]);
+      this.val.ValForm.get("txtNombre")?.setValue("");
+      this.val.ValForm.get("txtRuc")?.setValue("");
+      this.val.ValForm.get("txtLimite")?.setValue("0.00");
+      this.val.ValForm.get("txtTelefono")?.setValue("");
+      this.val.ValForm.get("txtDisponible")?.setValue("0.00");
+      this.val.ValForm.get("txtSerie")?.setValue("");
+      this.val.ValForm.get("txtFecha")?.setValue("");
+      this.val.ValForm.get("rdTipoVenta")?.setValue("Contado");
+      this.val.ValForm.get("txtBodega")?.setValue([]);
+      this.val.ValForm.get("txtVendedor")?.setValue([]);
+      this.val.ValForm.get("txtOrdenCompra")?.setValue("");
+      this.val.ValForm.get("chkExportacion")?.setValue(this.bol_Exportacion);
+      this.val.ValForm.get("rdIva")?.setValue(this.str_Iva);
+      
+
+      break;
+  }
+}
+
+
+
+//#region "EVENTOS CLIENTE"
+
+
+private _BuscarCliente(datos : string) : void{
+
+  if(datos == "")
+  {
+    this.ServerScv._facturaserv.b_Cliente(this.val.ValForm.get("txtBodega")?.value);
+  }
+  else
+  {
+    let _json = JSON.parse(datos);
+    _json["d"].forEach((b: any) => {
+      this.lstCliente.push({IdCliente : b.IdCliente, Codigo : b.Codigo, Cliente: b.Cliente, Ruc : b.Ruc, Telefono: b.Telefono, esEventual : b.esEventual});
+    });
+
+    if(this.lstCliente.length == 0) return;
+    this.b_Buscar_Cliente_Eventual();
+  }
+  
+}
+
+
+private b_Buscar_Cliente_Eventual() : void
+{
+  let _Bodega : any = this.lstBodega.find(f => f.Codigo == String(this.val.ValForm.get("txtBodega")?.value))
+
+  if(_Bodega == undefined) return;
+
+  let _Eventual : any = this.lstCliente.find(f => f.IdCliente === _Bodega?.ClienteBod)
+
+  if(_Eventual == undefined) return;
+
+  if(this.val.ValForm.get("txtCliente")?.value != [])
+  {
+    let _Cliente : any = this.lstCliente.find(f => f.Codigo == String(this.val.ValForm.get("txtCliente")?.value));
+
+    if(_Cliente != undefined)
+    {
+      if(!_Cliente?.esEventual && _Cliente?.IdCliente != _Bodega?.ClienteBod) return
+    }
+   
+
+  }
+
+  this.val.ValForm.get("txtCliente")?.setValue([_Eventual?.Codigo]);
+  
+}
+
+//#endregion "EVENTOS CLIENTE"
+
+
+//#region "EVENTOS BODEGA"
+
+
+private _BuscarBodega(datos : string) : void{
+
+  if(datos == "")
+  {
+    this.ServerScv._facturaserv.b_Bodega(this.ServerScv._loginserv.str_user, this.bol_Exportacion);
+  }
+  else
+  {
+    let _json = JSON.parse(datos);
+  
+    _json["d"].forEach((b: any) => {
+      this.lstBodega.push({IdBodega : b.IdBodega, Codigo: b.Codigo, Bodega : b.Bodega, VendedorBod: b.VendedorBod, ClienteBod: b.ClienteBod});
+    });
+
+    if(this.lstBodega.length == 0) return;
+
+    this.val.ValForm.get("txtBodega")?.setValue([this.lstBodega[0]?.Codigo]);
+
+  }
+  
+}
+
+
+public seleccion_Bodega(event: any) {
+  if (event.added.length) {
+      event.newSelection = event.added;
+      let _Fila : any =  this.lstBodega.find(f => f.Codigo == event.added)
+      this.val.ValForm.get("txtBodega")?.setValue([_Fila.Codigo]);
+      this.b_Buscar_Cliente_Eventual();
+  }
+}
+
+/*
+public enter_Bodega(event : any){
+  let _value = event.target.value;
+  let _Fila : any = this.lstBodega.find(f => f.Codigo === String(_value))
+  this.val.ValForm.get("txtBodega")?.setValue([]);
+  if(_Fila == undefined) return;
+  this.val.ValForm.get("txtBodega")?.setValue([_Fila.Codigo]);
+  this.b_Buscar_Cliente_Eventual();
+}
+
+public focus_out_Bodega(event: any) {
+  let _Fila : any = this.lstBodega.find(f => f.Codigo === String(this.val.ValForm.get("txtCodBodega")?.value))
+  this.val.ValForm.get("txtBodega")?.setValue([]);
+  if(_Fila == undefined) return;
+  this.val.ValForm.get("txtBodega")?.setValue([_Fila.Codigo]);
+  this.b_Buscar_Cliente_Eventual();
+}*/
+
+
+//#endregion "EVENTOS BODEGA"
+
+
+
+
+//#region "EVENTOS PRODUCTO"
+
+private _BuscarProducto(datos : string) : void{
+
+  if(datos == "")
+  {
+    this.ServerScv._facturaserv.b_Producto();
+  }
+  else
+  {
+    let _json = JSON.parse(datos);
+  
+    _json["d"].forEach((b: any) => {
+      this.lstProducto.push({IdProducto : b.IdProducto, Codigo: b.Codigo, Producto : b.Producto});
+    });
+  }
+  
+}
+//#endregion "EVENTOS PRODUCTO"
+
+
   public singleSelection(event: any) {
     if (event.added.length) {
         event.newSelection = event.added;
+        
     }
+
+
 }
 
 
@@ -95,6 +269,13 @@ export class FacturaComponent implements OnInit {
 
 ExPortacion() :void{
   this.bol_Exportacion = !this.bol_Exportacion;
+
+  if(!this.bol_Exportacion){
+    this.str_Iva = "1" ;
+    this.val.ValForm.get("rdIva")?.setValue(this.str_Iva);
+  }
+
+  
 }
 
 
@@ -147,18 +328,50 @@ ExPortacion() :void{
       this.ServerScv.change.emit(["CerrarModal", "modal-factura-venta", undefined]);
   }
 
+
+
+
+
+  ngAfterContentInit(): void {
+    this._Evento("Iniciar");
+  }
+
+
+
+
+
   ngOnInit(): void {
 
     this.ServerScv.change.subscribe(s =>{
-
       if(s instanceof Array){
         if(s[0] == "DatosModal" && s[1] == "modal-factura-venta" ) {
           console.log(s[2]);
+        }
+      }
+    });
+
+
+    
+    this.ServerScv._facturaserv.change.subscribe(s =>{
+
+      if(s instanceof Array){
+        if(s[0] == "Datos_Bodega") {
+          this._BuscarBodega(s[1])
+        }
+
+        if(s[0] == "Datos_Cliente") {
+          this._BuscarCliente(s[1])
+        }
+
+        if(s[0] == "Datos_Producto") {
+          this._BuscarProducto(s[1])
         }
       }
 
     });
 
   }
+
+  
 
 }
